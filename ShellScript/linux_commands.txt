@@ -1,0 +1,4 @@
+1) ps aux
+   a = show processes for all users
+   u = display the process user / owner
+   x = also show processes not attach to a terminal

@@ -1,0 +1,45 @@
+1)docker version
+ Gives the details of docker client and server(docker engine) and its version details
+ 
+2)docker info
+ Gives the details of docker (container , version and all) . gives most of the configuration details out of the engine
+ 
+3) docker command options :
+  old way 
+		  docker <command> options
+		  e.g - docker run
+		  docker <command> <sub-command> options
+		  e.g - docker container run
+		  
+4)For running docker container
+
+  docker container run --detach --publish  80:80 --name webhost nginx
+  When this command run , docker-engine looks for a nginx image from the image cache , if dont find any image there , it will download the image from
+  default remote repository repositories (docker-hub) and stores in the image cache and craeting one container by executing the command which is specified
+  in the 'CMD' section in the dockerfile . and publish the conatiner on the 80 port on the local machine ( --publish 80:80 or -p 80:80 )
+  detach --> detach option is used to run the container in background and print the the container id in stdout
+  --env or -e is used to  declare the environment variable
+
+5) docker container ls / docker ps
+   shows the running container
+
+6) docker container ls -a / docker ps -a
+   shows the running as well as exited container
+
+7) docker container logs <container-name>
+   It will show the logs for a specified container
+
+8) docker container --help ( to get the all options for docker container command)
+
+9) docker container rm <container-id>
+   It will remove all stopped/exited container,
+   For forefully remove the running docker container command would be
+   docker rm -f <container-id>
+   
+10) docker top <container-name>
+   listing out the process running inside a specific container
+   
+11) container is just a process running on localmachine
+
+
+   
