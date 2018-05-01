@@ -1,0 +1,646 @@
+// Folders
+def workspaceFolderName = "${WORKSPACE_NAME}"
+def projectFolderName = "${PROJECT_NAME}"
+
+//Defining the Server IP Globally
+def proc = "curl -s  http://169.254.169.254/latest/meta-data/local-ipv4".execute()
+	Thread.start { System.err << proc.err }
+	 proc.waitFor()
+def PS_Server_IP = proc.text
+
+// Variables
+def psFourSumToolGITRepo = projectFolderName +"/foursumtool"
+def psFourSumToolGITURL = "ssh://jenkins@gerrit:29418/" + psFourSumToolGITRepo
+def psFourSumToolGITURLhttp = "http://jenkins@$PS_Server_IP/gerrit/" + psFourSumToolGITRepo
+def psCommonUtilityGITRepo = projectFolderName +"ps_common_utility"
+def psCommonUtilityGITURL = "ssh://jenkins@gerrit:29418/" + psCommonUtilityGITRepo
+def psAATTExtensionGITRepo = projectFolderName +"/adop-platform-extension-aatt"
+def psAATTExtensionGITURL = "ssh://jenkins@gerrit:29418/" + psAATTExtensionGITRepo
+def psAccessibilityToolGITRepo = projectFolderName +"/accessibilitytool"
+def psAccessibilityToolGITURL = "ssh://jenkins@gerrit:29418/" + psAccessibilityToolGITRepo
+
+// Jobs
+def vulnerabilityJob = freeStyleJob (projectFolderName + "/vulnerabilityjob")
+def getcodeJob = freeStyleJob (projectFolderName + "/applicationcodejob")
+def buildJob = freeStyleJob (projectFolderName + "/buildjob")
+def nexusJob = freeStyleJob (projectFolderName + "/nexusjob")
+def junitJob = freeStyleJob (projectFolderName + "/junitjob")
+def sonarJob = freeStyleJob (projectFolderName + "/sonarjob")
+def deployJob = freeStyleJob (projectFolderName + "/deployjob")
+def completionreportJob = freeStyleJob (projectFolderName + "/completionreportjob")
+def backupJob = freeStyleJob (projectFolderName + "/backupjob")
+def AATTJob = freeStyleJob(projectFolderName + "/AATTJob")
+def AATTBuildJob = freeStyleJob(projectFolderName + "/AATTBuildJob")
+def PhantomJSJob = freeStyleJob(projectFolderName + "/Phantomjs")
+
+
+// Views
+def pipelineView = buildPipelineView(projectFolderName + "/PS_Pipeline_View")
+def AATTpipelineView = buildPipelineView(projectFolderName + "/AATT_Pipeline_View")
+
+
+pipelineView.with {
+    title('Pipeline for PS')
+    displayedBuilds(5)
+    selectedJob(projectFolderName + "/vulnerabilityjob")
+    showPipelineParameters()
+    showPipelineDefinitionHeader()
+    refreshFrequency(5)
+}
+
+AATTpipelineView.with {
+    title('Pipeline for AATT')
+    displayedBuilds(5)
+    selectedJob(projectFolderName + "/AATTJob")
+    showPipelineParameters()
+    showPipelineDefinitionHeader()
+    refreshFrequency(5)
+}
+
+vulnerabilityJob.with {
+    description("It will list out all the Vulnerability/Security check")
+	logRotator {
+        numToKeep(10)
+	}
+	label ("ADOP slave")
+	scm {
+        git {
+            remote {
+                name('origin')
+				url("${psFourSumToolGITURLhttp}")
+		        credentials("jenkins")
+			}
+	    	branch("*/master")    
+		}
+	}
+	wrappers {
+		preBuildCleanup()
+	}
+	environmentVariables {
+        env('WORKSPACE_NAME', workspaceFolderName)
+        env('PROJECT_NAME', projectFolderName)
+		env('PS_Server_IP', PS_Server_IP)
+	}
+	steps{
+		shell('''
+				|cd $WORKSPACE/securityScripts/
+				|chmod 755 script-Linux-generic-scripts.sh
+				|./script-Linux-generic-scripts.sh
+				|set -x'''.stripMargin()
+			)
+    }
+	publishers {
+        downstreamParameterized {
+            trigger(projectFolderName + "/applicationcodejob") {
+                condition("UNSTABLE_OR_BETTER")
+				parameters {
+					triggerWithNoParameters(triggerWithNoParameters = true)
+				}
+            }
+        }
+    }
+}
+
+getcodeJob.with {
+    description("This job downloads application code")
+	logRotator {
+        numToKeep(10)
+	}
+	label ('swarm')
+	scm {
+        git {
+            remote {
+                name('origin')
+				url("${psFourSumToolGITURL}")
+		        credentials("adop-jenkins-master")
+					}
+	    	branch("*/master")
+            }
+	}
+	wrappers {
+		preBuildCleanup()
+	}
+	environmentVariables {
+        env('WORKSPACE_NAME', workspaceFolderName)
+        env('PROJECT_NAME', projectFolderName)
+		env('PS_Server_IP', PS_Server_IP)
+    }
+	steps{
+		
+	}
+	publishers {
+		archiveArtifacts('**/*')
+		downstreamParameterized {
+            trigger(projectFolderName + "/buildjob") {
+                condition("UNSTABLE_OR_BETTER")
+				parameters {
+					triggerWithNoParameters(triggerWithNoParameters = true)
+				}
+            }
+        }
+    }
+}
+
+buildJob.with {
+    description("This creates build job")
+	logRotator {
+        numToKeep(10)
+	}
+	label ('swarm')
+	scm {
+        git {
+            remote {
+                name('origin')
+				url("${psFourSumToolGITURL}")
+		        credentials("adop-jenkins-master")
+					}
+	    	branch("*/master")
+            }
+	}
+	wrappers {
+		preBuildCleanup()
+	}
+	environmentVariables {
+        env('WORKSPACE_NAME', workspaceFolderName)
+        env('PROJECT_NAME', projectFolderName)
+		env('PS_Server_IP', PS_Server_IP)
+    }
+	steps{
+		ant {
+            target('build')
+            buildFile('BuildAndDeploymentFiles/build.xml')
+            antInstallation('ADOP Ant')
+		}
+	}
+	publishers {
+		archiveArtifacts('**/*')
+		downstreamParameterized {
+            trigger(projectFolderName + "/nexusjob") {
+                condition("UNSTABLE_OR_BETTER")
+				parameters {
+					predefinedProp("B" , '${BUILD_NUMBER}')
+					predefinedProp("PARENT_BUILD" , '${JOB_NAME}')
+				}
+            }
+        }
+    }
+}
+
+nexusJob.with {
+    description("This creates Nexus job")
+	parameters {
+        stringParam('B', '', 'Parent Build Number')
+		stringParam('PARENT_BUILD', '', 'Parent Build Name')
+    }
+	label ('swarm')
+	wrappers {
+        preBuildCleanup()
+        injectPasswords()
+        maskPasswords()
+		credentialsBinding {
+			usernamePassword('nexuscred', 'PS_USER')
+		}
+    }
+	environmentVariables {
+        env('WORKSPACE_NAME', workspaceFolderName)
+        env('PROJECT_NAME', projectFolderName)
+		env('PS_Server_IP', PS_Server_IP)
+    }
+	steps {
+        copyArtifacts("buildjob") {
+            excludePatterns()
+            targetDirectory()
+            buildSelector {
+                buildNumber('${B}')
+			}
+        }
+		shell('''set +x
+				|cat <<EOT > nexus_repo.xml
+				|<repository>
+				|<data>
+				|<id>\\${repo}</id>
+				|<name>\\${repo}</name>
+				|<exposed>true</exposed>
+				|<repoType>hosted</repoType>
+				|<repoPolicy>RELEASE</repoPolicy>
+				|<providerRole>org.sonatype.nexus.proxy.repository.Repository</providerRole>
+				|<provider>maven2</provider>
+				|<writePolicy>ALLOW_WRITE</writePolicy>
+				|<browseable>true</browseable>
+				|<format>maven2</format>
+				|</data>
+				|</repository>
+				|EOT
+				|cat nexus_repo.xml
+				|repoList=(psrepo)
+				|for nexusrepo in ${repoList[@]}
+				|do
+				|sed -i 's/${repo}/'$nexusrepo'/g' nexus_repo.xml
+				|echo "################content of nexus_repo.xml after replacing with variable $nexusrepo################"
+				|echo "Start-----------------nexus_repo.xml-------------------"
+				|cat nexus_repo.xml
+				|echo "End-----------------nexus_repo.xml-------------------"
+				|response=$(curl -u  ${nexuscred} -I -s http://$PS_Server_IP/nexus/service/local/repositories/$nexusrepo|head -n 1|cut -d" " -f2)
+				|if [[ $response -eq 200 ]] ; then 
+				|echo "nexus repo $nexusrepo already exist" 
+				|	else 
+				|echo "repo $nexusrepo does not exists"
+				|	echo "Creating nexus repo for $nexusrepo"
+				|	curl -i -H "Accept: application/xml" -H "Content-Type: application/xml" -f -X POST -v -d "@nexus_repo.xml" -u ${nexuscred} 
+				http://$PS_Server_IP/nexus/service/local/repositories
+				|fi
+				|done
+				|echo "$B"
+				|artifactName="Dipa-${B}.tar.gz"
+				|artifact="${artifactName}"
+				|echo "$B"
+				|echo "$artifact"
+				|curl -u "${nexuscred}" --upload-file $WORKSPACE/$PROJECT_NAME/*.tar.gz http://$PS_Server_IP/nexus/content/repositories/$nexusrepo//${artifact} --fail
+				|echo "Job ran successfully"
+				|set -x'''.stripMargin()
+		)
+	}
+	 publishers {
+        downstreamParameterized {
+            trigger(projectFolderName + "/junitjob") {
+                condition("UNSTABLE_OR_BETTER")
+				parameters {
+					predefinedProp("B" , '${B}')
+					predefinedProp("PARENT_BUILD" , '${JOB_NAME}')
+              	}
+             }
+		}
+	}
+}
+
+junitJob.with {
+    description("This creates test junit job")
+	parameters {
+        stringParam('B', '', 'Parent Build Number')
+		stringParam('PARENT_BUILD', '', 'Parent Build Name')
+    }
+	logRotator {
+        numToKeep(10)
+	}
+	label ('swarm')
+	scm {
+        git {
+            remote {
+                name('origin')
+				url("${psFourSumToolGITURL}")
+		        credentials("adop-jenkins-master")
+			}
+	    	branch("*/master")
+        }
+	}
+	wrappers {
+		preBuildCleanup()
+	}
+	environmentVariables {
+        env('WORKSPACE_NAME', workspaceFolderName)
+        env('PROJECT_NAME', projectFolderName)
+		env('PS_Server_IP', PS_Server_IP)
+    }
+	steps{
+		ant {
+            target('unitTests')
+            buildFile('BuildAndDeploymentFiles/build.xml')
+            antInstallation('ADOP Ant')
+		}
+	}
+	publishers {
+        downstreamParameterized {
+            trigger(projectFolderName + "/sonarjob") {
+                condition("UNSTABLE_OR_BETTER")
+				parameters {
+					predefinedProp("B" , '${B}')
+					predefinedProp("PARENT_BUILD" , '${JOB_NAME}')
+              	}
+            }
+        }
+    }
+}
+
+sonarJob.with {
+    description("This creates test sonar job")
+	parameters {
+        stringParam('B', '', 'Parent Build Number')
+		stringParam('PARENT_BUILD', '', 'Parent Build Name')
+    }
+	logRotator {
+        numToKeep(10)
+	}
+	label ('swarm')
+	scm {
+        git {
+            remote {
+                name('origin')
+				url("${psFourSumToolGITURL}")
+		        credentials("adop-jenkins-master")
+			}
+	    	branch("*/master")
+        }
+	}
+	wrappers {
+		preBuildCleanup()
+	}
+	environmentVariables {
+        env('WORKSPACE_NAME', workspaceFolderName)
+        env('PROJECT_NAME', projectFolderName)
+		env('PS_Server_IP', PS_Server_IP)
+    }
+	steps{
+		shell('''set +x
+				|set -x'''.stripMargin()
+	)
+	ant {
+		target('sonar')
+		buildFile('BuildAndDeploymentFiles/build.xml')
+		antInstallation('ADOP Ant')
+		prop('sonar.server' , 'http://$PS_Server_IP/sonar')
+		}
+	}
+	publishers {
+        downstreamParameterized {
+            trigger(projectFolderName + "/deployjob") {
+                condition("UNSTABLE_OR_BETTER")
+				parameters {
+					predefinedProp("B" , '${B}')
+					predefinedProp("PARENT_BUILD" , '${JOB_NAME}')
+              	}
+            }
+        }
+    }
+}
+
+deployJob.with {
+    description("This creates test deploy job")
+	parameters {
+        stringParam('B', '', 'Parent Build Number')
+		stringParam('PARENT_BUILD', '', 'Parent Build Name')
+    }
+	logRotator {
+        numToKeep(10)
+	}
+	label ('swarm')
+	scm {
+        git {
+            remote {
+                name('origin')
+				url("${psFourSumToolGITURL}")
+		        credentials("adop-jenkins-master")
+			}
+	    	branch("*/master")
+        }
+	}
+	wrappers {
+		preBuildCleanup()
+		credentialsBinding {
+			usernamePassword('nexuscred', 'PS_USER')
+		}
+		environmentVariables {
+			env('WORKSPACE_NAME', workspaceFolderName)
+			env('PROJECT_NAME', projectFolderName)
+			env('PS_Server_IP', PS_Server_IP)
+		}
+	}
+	steps{
+		shell('''set +x
+				|echo "$B"
+				|artifactName="Dipa-${B}.tar.gz"
+				|artifact="${artifactName}"
+				|echo "$B"
+				|echo "$artifact"
+				|curl -u "${nexuscred}" -O http://$PS_Server_IP/nexus/content/repositories/psrepo//${artifact} --fail 
+				|set -x'''.stripMargin()
+		)
+		ant {
+            target('wldeploy')
+            buildFile('BuildAndDeploymentFiles/deploy.xml')
+            antInstallation('ADOP Ant')
+		}
+	}
+	publishers {
+        downstreamParameterized {
+            trigger(projectFolderName + "/completionreportjob") {
+                condition("UNSTABLE_OR_BETTER")
+				parameters {
+					predefinedProp("B" , '${B}')
+					predefinedProp("PARENT_BUILD" , '${JOB_NAME}')
+              	}
+            }
+        }
+    }
+}
+
+completionreportJob.with {
+    description("It will provide Assessment completion repor for PS Project Security check")
+	logRotator {
+        numToKeep(10)
+	}
+	label ("ADOP slave")
+	scm {
+        git {
+            remote {
+                name('origin')
+				url("${psFourSumToolGITURLhttp}")
+		        credentials("jenkins")
+			}
+	    	branch("*/master")
+        }
+	}
+	wrappers {
+		preBuildCleanup()
+	}
+	environmentVariables {
+        env('WORKSPACE_NAME', workspaceFolderName)
+        env('PROJECT_NAME', projectFolderName)
+		env('PS_Server_IP', PS_Server_IP)
+    }
+	steps{
+		shell('''
+				|cd $WORKSPACE/securityScripts/
+				|chmod 755 *
+				|./combine.sh
+				|set -x'''.stripMargin()
+		)
+    }         
+}
+
+backupJob.with {
+    description("This job creates test backup job")
+	parameters {
+        stringParam('B', '', 'Parent Build Number')
+		stringParam('PARENT_BUILD', '', 'Parent Build Name')
+    }
+	logRotator {
+        numToKeep(10)
+	}
+	label ('swarm')
+	scm {
+        git {
+            remote {
+                name('origin')
+				url("${psFourSumToolGITURL}")
+		        credentials("adop-jenkins-master")
+			}
+	    	branch("*/master")
+        }
+	}
+	wrappers {
+		preBuildCleanup()
+	}
+	environmentVariables {
+        env('WORKSPACE_NAME', workspaceFolderName)
+        env('PROJECT_NAME', projectFolderName)
+		env('PS_Server_IP', PS_Server_IP)
+    }
+	steps{
+		ant {
+			target('backup_deploy')
+            buildFile('BuildAndDeploymentFiles/deploy.xml')
+            antInstallation('ADOP Ant')
+		}
+	}
+}
+
+AATTJob.with {
+    description("This Job download the package of AATT")
+	logRotator {
+        numToKeep(10)
+	}
+	label ('swarm')
+	scm {
+        git {
+            remote {
+                name('origin')
+				url("${psAccessibilityToolGITURL}")
+		        credentials("adop-jenkins-master")
+					}
+	    	branch("*/master")
+                
+			}
+	}
+	wrappers {
+		preBuildCleanup()
+        injectPasswords()
+        maskPasswords()
+	}
+	environmentVariables {
+        env('WORKSPACE_NAME', workspaceFolderName)
+        env('PROJECT_NAME', projectFolderName)
+		env('PS_Server_IP', PS_Server_IP)
+    }
+	steps{
+	}
+	publishers {
+		archiveArtifacts('**/*')
+		downstreamParameterized {
+            trigger(projectFolderName + "/AATTBuildJob") {
+                condition("UNSTABLE_OR_BETTER")
+				parameters {
+					predefinedProp("B" , '${BUILD_NUMBER}')
+					predefinedProp("PARENT_BUILD" , '${JOB_NAME}')
+				}
+            }
+        }
+    }
+}
+
+AATTBuildJob.with {
+    description("This job creates NodeJS with AATT Image and container")
+	parameters {
+        stringParam('B', '', 'Parent Build Number')
+		stringParam('PARENT_BUILD', '', 'Parent Build Name')
+    }
+    scm {
+        git {
+            remote {
+                name("origin")
+                url("${psAATTExtensionGITURL}")
+                credentials("adop-jenkins-master")
+            }
+            branch("*/master")
+        }
+    }
+	wrappers {
+        preBuildCleanup()
+        injectPasswords()
+        maskPasswords()
+        credentialsBinding {
+          usernamePassword('Jenkins_User', 'jenkins')
+        }
+    }
+	environmentVariables {
+			env('WORKSPACE_NAME', workspaceFolderName)
+			env('PROJECT_NAME', projectFolderName)
+			env('PS_Server_IP', PS_Server_IP)
+	}
+	label("swarm")
+	steps {
+		copyArtifacts("AATTJob") {
+            excludePatterns()
+            targetDirectory()
+            buildSelector {
+                buildNumber('${B}')
+			}
+        }
+		shell('''set +x
+				|cd ${WORKSPACE}
+				|echo "${WORKSPACE}"
+				|cp -R AATT ${WORKSPACE}/service/docker
+				|cd ${WORKSPACE}/service/docker
+				|mv AATT-Dockerfile.yml Dockerfile
+				|mv AATT-docker-compose.yml docker-compose.yml
+				|echo "Listing current directory"
+				|ls -ltr
+				|docker build -t nodejsimage .
+				|export CUSTOM_NETWORK_NAME=local_network
+				|docker-compose up -d
+				|docker cp bp/PS-AATT-components.json proxy:/resources/release_note/bp/
+				|docker cp bp/PS-release-note.html proxy:/resources/release_note/bp/
+				|docker cp img/AATT_image.png proxy:/resources/release_note/img/
+				|docker cp scripts/reload_release_notes.sh proxy:/resources/scripts/
+				|docker exec -i proxy /bin/bash << EOF
+				|chmod +x /resources/scripts/reload_release_notes.sh;
+				|cat /resources/configuration/sites-enabled/tools-context.conf |head -n -1 > /etc/nginx/sites-enabled/tmp;
+				|echo -e 'location /AATT { \n rewrite ^/AATT http://\\$host:3020; \n }\n } ' >> /etc/nginx/sites-enabled/tmp;
+				|mv /etc/nginx/sites-enabled/tmp /etc/nginx/sites-enabled/tools-context.conf;
+				|sh /resources/scripts/reload_release_notes.sh;
+				|nginx -s reload 
+				|EOF
+				|set -x'''.stripMargin()
+			)
+    }
+}
+
+PhantomJSJob.with {
+    description("This job creates PhantomJS Image and container")
+	scm {
+	    git {
+	    	remote {
+		        name("origin")
+		        url("${psCommonUtilityGITURL}")
+		        credentials("adop-jenkins-master")
+	    	}
+	    	branch("*/master")
+    	}
+  	}
+	wrappers {
+    	preBuildCleanup()
+        injectPasswords()
+        maskPasswords()
+    }
+	environmentVariables {
+       env('PS_Server_IP', PS_Server_IP)
+    }
+	label("swarm")
+	steps {
+        shell('''
+				|cd ${WORKSPACE}/PhantomJS
+				|docker build -t phantomjsimage .
+				|docker run -d --name phantomjs --restart=always phantomjsimage
+				|set -x'''.stripMargin()
+		)
+    }
+}
