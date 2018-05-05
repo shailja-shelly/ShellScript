@@ -1,0 +1,30 @@
+Rule   Illegal Catch
+File                                             Line
+BulkUploadBatch.java                             407, 188, 466, 156
+BulkUploadContractService.java                   258, 224, 170
+TemplateProcess1Impl.java                        851, 1158
+AccessAspect.java                                371, 287
+ContractsStatusUpdateBatch.java                  284, 462, 201, 327, 970
+ContractsBatchService.java                       1840, 139, 1189, 1425
+---------------------------
+
+
+awk '$0 == "UNIX" {i=1;next};i && i++ <= 2' file
+
+--- print line between two pattern
+
+awk '/abc/{flag=1;next}/mno/{flag=0}flag' file
+
+
+---print line between pattern and blank line
+sed -n '/pattern/,/^$/p' logcat
+
+
+------
+
+awk '/Rule/{flag=1;next}/^$/{flag=0}flag' sonar.txt > first.txt (Working)
+
+grep -w "Rule" sonar.txt | tr -s " " | awk -F' ' '{print $2,$3}' > bug_list.txt
+
+awk '/Excessive Method Length/{flag=1;next}/^$/{flag=0}flag' sonar.txt
+

@@ -1,0 +1,3 @@
+----awk examples
+1> exclude first and last field from  file
+   $egrep -w "NO|NOT" Script_vulnerability_violation.txt | awk '{for (i=2;i<NF;i++) printf $i " "; print $NF}' | awk 'NF{NF-=1};1'  

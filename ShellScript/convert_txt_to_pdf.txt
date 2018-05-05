@@ -1,0 +1,19 @@
+-- Different way to convert txt file into pdf file
+option -1 
+sudo apt-get install enscript
+enscript my_text_file.txt -o - | ps2pdf - output.pdf
+
+option -2
+cupsfilter foo.txt > foo.pdf
+
+option -3
+paps file.txt | ps2pdf - output.pdf
+
+option -4
+sudo apt-get install texlive-latex-base
+pandoc final2.txt --latex-engine=xelatex -o example.pdf
+
+option -5
+pandoc final2.txt --latex-engine=xelatex -o example.pdf
+
+

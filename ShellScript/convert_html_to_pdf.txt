@@ -1,0 +1,33 @@
+--Convert html file to pdf file
+wkhtmltopdf [html file] [pdf file]
+
+--installing wkhtmltopdf
+
+option -1>
+
+sudo aptitude install openssl build-essential xorg libssl-dev
+wget http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-static-amd64.tar.bz2 
+tar xvjf wkhtmltopdf-0.9.9-static-amd64.tar.bz2
+mv wkhtmltopdf-amd64 /usr/local/bin/wkhtmltopdf
+chmod +x /usr/local/bin/wkhtmltopdf
+
+option -2>
+(Working -- Tested)
+sudo yum install wkhtmltopdf
+	
+
+wkhtmltopdf chart.htm chart.pdf
+
+/home/anirban.khan/test
+
+cp $CHART /home/anirban.khan/test/pie_chart.htm
+wkhtmltopdf pie_chart.htm pie_chart.pdf
+
+
+
+https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-i386.tar.xz
+
+https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+
+--- if encoding issue comes after installation of wkhtmltopdf
+yum install libXrender libXext fontconfig urw-fonts

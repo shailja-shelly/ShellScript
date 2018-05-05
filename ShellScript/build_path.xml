@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="BuildPaths"> 
+
+<!-- Sample examples for setting-up the Path elements-->
+	
+	<path id="WebLogic System Libraries.libraryclasspath">
+		<fileset dir="${MODULES}">		
+						<include name="com.bea.core.apache_1.3.0.1.jar" />
+						<include name="javax.xml.rpc_1.2.1.jar" />
+        </fileset>
+
+	</path>
+	<path id="Web App Libraries.libraryclasspath">
+		
+			<fileset dir="${LIBDIR}">
+	      		</fileset>
+	</path>
+	<path id="Shared Library [p13n-app-lib-base].libraryclasspath">
+		<fileset dir="${libraries}">
+			<include name="junit-4.12.jar" />
+			<include name="mockito-all-1.10.19.jar" />
+			<include name="netuix_servlet.jar" />
+	      		</fileset>
+	</path>
+	
+	<path id="SharedLibrary.libraryclasspath">
+	
+		<fileset dir="${libraries}">
+		
+			<include name="junit-4.12.jar" />
+			<include name="mockito-all-1.10.19.jar" />
+			<include name="javax.servlet-3.0.jar" />
+			<include name="log4j-1.2.15.jar" />
+	      		</fileset>
+	</path>
+
+	<path id="project.classpath">
+		<pathelement location="./build/classes" />
+		<path refid="SharedLibrary.libraryclasspath" />
+	</path>
+	
+	
+</project>

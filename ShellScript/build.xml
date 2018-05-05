@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="Portal">
+	<property environment="env" />
+	<!--<property file="build.properties"/>-->
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+	<!--<property file="build.properties"/>-->
+	<!--<import xml="build_path.xml"/>-->
+	<!--<ant target="all" antfile="build_path.xml"/> -->
+	<import file="build_path.xml"/>
+	<!--<property name="libraries" value="/var/jenkins_home/RamWorkSpace/RamProject/dipa-code/ChatBot/chatbot/WebContent/WEB-INF/lib"/>-->
+	<!--<property name="war.name" value="chatbot.war"/>-->
+	<property name="sonar.host.url" value="http://sonar:9000/sonar"/>
+	
+	<!--<path id="SharedLibrary.libraryclasspath">
+	
+		<fileset dir="${libraries}">
+		
+			<include name="junit-4.12.jar" />
+			<include name="mockito-all-1.10.19.jar" />
+			<include name="javax.servlet-3.0.jar" />
+			<include name="log4j-1.2.15.jar" />
+	      		</fileset>
+	</path>
+
+	<path id="project.classpath">
+		<pathelement location="./build/classes" />
+		<path refid="SharedLibrary.libraryclasspath" />
+	</path>-->
+	
+	
+
+<target name="init">
+	<delete dir="tmp_src" />
+		<mkdir dir="tmp_src" />
+		<copy includeemptydirs="false" todir="tmp_src">
+		<fileset dir="${sonar.sources}">
+
+                                <!--<exclude name="**/*.java" />-->
+                        </fileset>	
+		</copy>
+		<echo message="copy src" />
+		<mkdir dir="build/classes" />
+		<copy includeemptydirs="false" todir="build/classes">
+			<fileset dir="tmp_src">
+			
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="build/classes" />
+	</target>
+	<target depends="clean" name="cleanall" />
+	<target depends="build-subprojects,build-project" name="build" />
+	<target name="build-subprojects" />
+	<target depends="init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<!--<javac debug="on" debuglevel="${debuglevel}" destdir="build/classes" source="${source}" target="${target}">
+			<src path="tmp_src" />
+			<classpath refid="${classpath.id}" />
+		</javac>-->
+		<javac destdir="build/classes" source="${source}" target="${target}">
+            <compilerarg value="-Xlint:unchecked"/>
+            <!--classpath path="${libraries}/javax.servlet-3.0.jar" />	
+            <classpath path="${libraries}/log4j-1.2.15.jar" />	-->
+			<classpath>
+            <path refid="${classpath.id}" />
+            </classpath>			
+			 <src path="tmp_src"/>
+        </javac> 
+
+		<antcall target="build-artifacts"/>
+
+	</target>
+
+<target name="build-artifacts">
+
+		<mkdir dir="archives/war" />
+		<mkdir dir="archives/ear" />
+
+		<war destfile="archives/war/${war.name}" webxml="${webxmlpath}">
+
+			<fileset dir="${webcontentpath}" />
+			<classes dir="build/classes" />
+
+		</war>
+
+
+		<!--<ear destfile="archives/ear/${ear.name}" appxml="${application.xml.path}">
+			<metainf dir="${metainf.path}" />
+			<fileset dir="archives/war" includes="${war.name}" />
+
+			<zipfileset dir="${appinf.path}" prefix="APP-INF">
+			</zipfileset>
+
+		</ear>-->
+
+</target>
+
+<!--Below script is useful if the project is integrated with OJdeploy along with ant scripts-->
+<!--
+  <target name="deploy" description="Deploy JDeveloper profiles">
+    <taskdef name="ojdeploy"
+             classname="oracle.jdeveloper.deploy.ant.OJDeployAntTask"
+             uri="oraclelib:OJDeployAntTask"
+             classpath="${oracle.jdeveloper.ant.library}"/>
+    <ora:ojdeploy xmlns:ora="oraclelib:OJDeployAntTask"
+                  executable="${oracle.jdeveloper.ojdeploy.path}"
+                  ora:buildscript="${oracle.jdeveloper.deploy.dir}/ojdeploy-build.xml"
+                  ora:statuslog="${oracle.jdeveloper.deploy.dir}/ojdeploy-statuslog.xml">
+      <ora:deploy>
+			<ora:parameter name="workspace" value="${workspace}"/>
+			<ora:parameter name="project" value="${projectName}"/>
+			<ora:parameter name="profile" value="${profileName}"/>
+			<ora:parameter name="nocompile" value="false"/>
+			<ora:parameter name="outputfile"
+						   value="${outputfile.lib}"/>
+      </ora:deploy>
+    </ora:ojdeploy>
+  </target>
+-->
+
+<target name="sonar">
+	<echo message="${java.version}"/> 
+    <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+
+        <!-- Update the following line, or put the "sonarqube-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
+
+        <classpath path="${sonar.home}/lib/sonarqube-ant-task-2.4.1.jar" />
+		<!--<classpath path="/tools/hudson.tasks.Ant_AntInstallation/ADOP_Ant/lib/sonarqube-ant-task-2.4.1.jar" />-->
+	
+    </taskdef>
+
+    <!-- Execute the SonarQube analysis -->
+
+    <sonar:sonar xmlns:sonar="antlib:org.sonar.ant" >
+    </sonar:sonar>
+
+</target>
+
+<target name="testScripts">
+	<antcall target="unitTests"/>
+
+</target> 
+
+<target name="unitTests">
+        <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+			<classpath path="/opt/sonarqube/lib/org.jacoco.ant-0.7.9.jar" />
+			<classpath path="/opt/sonarqube/lib/org.jacoco.report-0.7.9.jar" />
+			<classpath path="/opt/sonarqube/lib/org.jacoco.core-0.7.9.jar" />
+			<classpath path="/opt/sonarqube/lib/org.jacoco.agent-0.7.9.jar" />
+			<classpath path="/opt/sonarqube/lib/jacocoagent.jar" />
+			<classpath path="/opt/sonarqube/lib/jacocoant.jar" />			
+		</taskdef>
+		<echo message="${libraries}" />
+		<jacoco:coverage destfile="./jacoco.exec" xmlns:jacoco="antlib:org.jacoco.ant">
+			<junit  fork="true" printsummary="true" haltonfailure="true" showoutput="yes"
+				filtertrace="on">
+				<classpath>
+					<pathelement location="${output.dir}"/>
+					<path refid="${classpath.id}" />
+				</classpath>
+				<formatter type="plain" usefile="false"/>
+				<formatter type="xml"/>
+				<batchtest>
+       <fileset dir="${output.dir}">
+            <include name="${test.files.path}"/>
+       </fileset>
+				</batchtest>
+			</junit>
+        </jacoco:coverage>
+  </target> 
+</project>

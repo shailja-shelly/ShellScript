@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="deployment" name="Portal">
+
+	<!--property file="deploy.properties"/>-->
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+	<property name="war-file-name" value="${project-name}.war" />
+	<property name="source" value="1.6" />
+    <property name="source-directory" value="src" />
+    <property name="classes-directory" value="bin" />
+    <property name="web-directory" value="web" />
+    <property name="web-xml-file" value="web/WEB-INF/web.xml" />
+	<property name="build-directory" value="build" />
+	<property name="ftp-remotedir" value="uploaded-wars/${project-name}/${build-info.year-month-day}" />
+    
+  <path id="catalina-ant-classpath">
+   <fileset dir="${catalina-ant-dir}">
+      <include name="catalina-ant.jar"/>
+      <include name="tomcat-coyote.jar"/>
+      <include name="tomcat-util.jar"/>
+      <!--<include name="tomcat-juli.jar"/>-->
+   </fileset>
+   </path> 
+	
+    <taskdef name="start" classname="org.apache.catalina.ant.StartTask">
+			 <classpath refid="catalina-ant-classpath"/>
+	</taskdef>
+    <taskdef name="stop" classname="org.apache.catalina.ant.StopTask">
+			  <classpath refid="catalina-ant-classpath"/>
+	</taskdef>
+    <taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask">
+			  <classpath refid="catalina-ant-classpath"/>
+	</taskdef>
+    <taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask">
+			  <classpath refid="catalina-ant-classpath"/>
+	</taskdef>
+	 <taskdef name="install" classname="org.apache.catalina.ant.DeployTask">
+        <classpath refid="catalina-ant-classpath"/>
+	 </taskdef>
+  	<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+	<!-- Deploying Applications  -->
+	<target name="deployment">
+	<trycatch>
+	<try>
+	<taskdef name="wldeploy" 
+	         classname="weblogic.ant.taskdefs.management.WLDeploy"
+			 classpath="${mw.home}/wlserver_10.3/server/lib/weblogic.jar"/>
+        <echo message="In try" />
+		<mkdir dir="backup_EAR"/>
+		<!--<available file="backup_EAR/*.ear"  property="file.found"/>-->
+			  <antcall target="undeploy"/>
+			  <antcall target="deploy"/>
+			  <antcall target="copyVersion"/>
+    </try>
+    <catch>
+        <echo message="Failure Message is :: ${failure}" />
+		<echo message="Failure Message is :: ${dir.contains-files}" />
+		<antcall target="undeploy"/>
+		<antcall target="backup_deploy"/>
+    </catch>
+</trycatch>		
+	</target>
+	<target name="undeploy">
+	<taskdef name="wldeploy" 
+	         classname="weblogic.ant.taskdefs.management.WLDeploy"
+			 classpath="${mw.home}/wlserver_10.3/server/lib/weblogic.jar"/>
+			 <wldeploy action="undeploy"
+	          name="${project.name}"
+	          failonerror="false"
+	          user="${deploy.user}"
+	          password="${deploy.password}"
+	          verbose="true"
+			  targets="${deploy.server}"
+	          adminurl="t3://${deploy.server.host}:${deploy.port}"/>
+			  <echo>	 	============================================================================
+						${project.name}-WS Service is completed
+		============================================================================</echo>	  
+	</target> 
+	
+	<target name="backup_deploy">
+	<wldeploy action="deploy"
+	          name="${project.name}"
+	          failonerror="true"
+			  source="${deploy.source}"
+	          user="${deploy.user}"
+	          password="${deploy.password}"
+	          verbose="true"
+			  remote="${deploy.remote}"
+			  targets="${deploy.server}"
+	          adminurl="t3://${deploy.server.host}:${deploy.port}"/>
+</target>
+
+<target name="deploy">
+	<wldeploy action="deploy"
+	          name="${project.name}"
+	          failonerror="true"
+			  source="${ear.source}"
+	          user="${deploy.user}"
+	          password="${deploy.password}"
+	          verbose="true"
+			  remote="${deploy.remote}"
+			  targets="${deploy.server}"
+	          adminurl="t3://${deploy.server.host}:${deploy.port}"/>
+</target>
+
+<target name="copyVersion">
+  <tstamp>
+    <format property="TimeStamp" pattern="yyyy_MM_dd_HH_mm_ss" locale="en"/>
+  </tstamp>
+		<mkdir dir="${dist}"/>
+		<echo> Coping the jar from Code location to release folder</echo> 
+		<echo> dist: ${dist}\{project.name}-${deploy.appversion}-${TimeStamp}.zip</echo>
+		<!--<mkdir dir="${dist}\${project.name}-${deploy.appversion}-${TimeStamp}"/>-->
+		<copy todir="${dist}">
+	 <fileset dir="${proj.dir}">
+			</fileset>
+	</copy>
+	<zip destfile="${dist}\${project.name}-${deploy.appversion}-${TimeStamp}.zip">
+			 <zipfileset dir="${proj.dir}">
+				 <!--<exclude name="${dist}"/>-->
+			 </zipfileset>
+		</zip>
+		<mkdir dir="${output.lib.dir}"/>
+	 <copy todir="${output.lib.dir}">
+	 <fileset dir="${dist}">
+			</fileset>
+	</copy>
+	<copy todir="backup_EAR">
+	 <fileset dir="${dist}">
+		<include name="*.ear"/>
+			</fileset>
+	</copy>				  
+	 <echo> Removing the jar from temp folder</echo>   
+	 <delete includeemptydirs="true" failonerror="false">
+	 <fileset dir="${dist}">
+			</fileset>
+			</delete>
+	</target>
+
+<!-- Deploy to Tomcate server -->
+
+	<target name="stop-tomcat" description="stop application in tomcat">
+		<stop url="${tomcat-manager-url}" username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}" path="/${project-name}" />
+	</target>
+
+	<target name="start-tomcat" description="start application in tomcat">
+		<start url="${tomcat-manager-url}" username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}" path="/${project-name}" />
+	</target>
+	
+	<target name="undeploy-tomcat" description="undeploy from tomcat">
+		<undeploy 
+			failonerror="no"
+			url="${tomcat-manager-url}"
+			username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}"
+			path="/${project-name}"
+		/>
+	</target>
+	
+	<target name="install-tomcat" description="Install application in Tomcat">
+        <install url="${tomcat-manager-url}"
+                 username="${tomcat-manager-username}"
+                 password="${tomcat-manager-password}"
+                 path="/${project-name}"
+				 war="${war-path}"/>
+                <!-- war="/temp/BuildAndDeploymentFiles/archives/war/chatbot.war"/>-->
+				 
+    </target>
+	
+	<target name="war-tomcat" depends="">
+		<mkdir dir="${build-directory}" />
+		<delete file="${build-directory}/${war-file-name}" />
+		<war warfile="${build-directory}/${war-file-name}" webxml="${web-xml-file}">
+			<classes dir="${classes-directory}" />
+			<fileset dir="${web-directory}">
+				<!-- Need to exclude it since webxml is an attribute of the war tag above -->
+				<exclude name="WEB-INF/web.xml" />
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="${builder}" />
+				<attribute name="Built-On" value="${build-info.current-date}" />
+				<attribute name="Built-At" value="${build-info.current-time}" />
+			</manifest>
+		</war>
+	</target>
+
+	<target name="ftp-tomcat" depends="" description="upload war file to server">
+		<ftp 
+			server="${ftp-server}" remotedir="${ftp-remotedir}"
+			userid="${ftp-userid}" password="${ftp-password}"
+			action="mkdir" verbose="yes">
+		</ftp>
+		<ftp 
+			server="${ftp-server}" remotedir="${ftp-remotedir}"
+			userid="${ftp-userid}" password="${ftp-password}"
+			action="send" verbose="yes" depends="yes">
+			<fileset file="${build-directory}/${war-file-name}" />
+		</ftp>
+	</target>
+
+		<target name="build-and-ftp" depends="war-tomcat,ftp-tomcat" />
+	    <target name="build-and-deploy" depends="undeploy-tomcat,install-tomcat,start-tomcat" />
+	
+	<!--<fail message="Logging tools missing. Cannot continue build proces">
+     <condition>
+      <not>
+          <available classname="org.mycompany.tools.CustomLogger"/>
+      </not>
+     </condition>
+   </fail>-->
+
+</project>

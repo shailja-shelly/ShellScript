@@ -1,0 +1,53 @@
+set +x
+
+cat <<EOT > nexus_repo.xml
+<repository>
+<data>
+<id>\${repo}</id>
+<name>\${repo}</name>
+<exposed>true</exposed>
+<repoType>hosted</repoType>
+<repoPolicy>RELEASE</repoPolicy>
+<providerRole>org.sonatype.nexus.proxy.repository.Repository</providerRole>
+<provider>maven2</provider>
+<writePolicy>ALLOW_WRITE</writePolicy>
+<browseable>true</browseable>
+<format>maven2</format>
+</data>
+</repository>
+EOT
+	
+cat nexus_repo.xml
+	
+	
+repoList=(repo1_test)
+for nexusrepo in ${repoList[@]}
+do
+sed -i 's/${repo}/'$nexusrepo'/g' nexus_repo.xml
+echo "################content of nexus_repo.xml after replacing with variable $nexusrepo################"
+echo "Start-----------------nexus_repo.xml-------------------"
+cat nexus_repo.xml
+echo "End-----------------nexus_repo.xml-------------------"
+	
+response=$(curl -u  ${nexuscred} -I -s http://$PS_Server_IP/nexus/service/local/repositories/$nexusrepo|head -n 1|cut -d" " -f2)
+if [[ $response -eq 200 ]] ; then 
+	echo "nexus repo $nexusrepo already exist" 
+else 
+	echo "repo $nexusrepo does not exists"
+	echo "Creating nexus repo for $nexusrepo"
+	curl -i -H "Accept: application/xml" -H "Content-Type: application/xml" -f -X POST -v -d "@nexus_repo.xml" -u ${nexuscred} http://$PS_Server_IP/nexus/service/local/repositories
+fi
+done
+
+echo "$B"
+
+artifactName="Blockchain-${B}.tar.gz"
+artifact="${artifactName}"
+
+echo "$B"
+echo "$artifact"
+
+
+curl -u "${nexuscred}" --upload-file $WORKSPACE/$PROJECT_NAME/*.tar.gz http://$PS_Server_IP/nexus/content/repositories/$nexusrepo//${artifact} --fail
+echo "Job ran successfully"
+set -x

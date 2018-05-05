@@ -1,0 +1,7 @@
+option 1 :
+sudo apt-get install pdftk
+pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf
+
+option 2:
+
+ pdfunite page1.pdf page2.pdf page3.pdf output.pdf(Working)

@@ -1,0 +1,3 @@
+---installing pdftotext, pdfunite , installl poppeler-utils(package)
+yum install poppeler-utils
+ pdftotext -layout page1.pdf page1.txt
