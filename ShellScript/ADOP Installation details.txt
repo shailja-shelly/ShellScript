@@ -1,0 +1,88 @@
+yum update
+
+yum install git
+
+https://github.com/Accenture/adop-docker-compose (Got to this link & click on clone or download, you will get the below UrL)
+
+https://github.com/Accenture/adop-docker-compose.git
+
+##Copy the URL and clone it in the server as mentioned belw
+git clone https://github.com/Accenture/adop-docker-compose.git
+
+##Iner source path for Cloudformation template
+https://innersource.accenture.com/projects/ADOP-E-PUBLIC/repos/adop-service-adop-c/browse/templates/cloudformation/service-adop-c.json
+
+http://docs.master.dockerproject.org/engine/installation/linux/rhel/
+
+#To install docker Registry
+sudo tee /etc/yum.repos.d/docker.repo <<-EOF
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/7
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF
+
+#Installing Docker Engine (It contains docker-daemon as well)
+yum install docker-engine
+
+#Starting Docker
+service docker start
+
+#Installing Docker machine
+curl -L https://github.com/docker/machine/releases/download/v0.10.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
+  chmod +x /tmp/docker-machine &&
+  sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+
+#Installing the Docker compose
+curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/bin/docker-compose
+chmod +x /usr/bin/docker-compose
+
+#It is not required
+export PRIVATE_IP=$(curl http://instance-data/latest/meta-data/local-ipv4)
+
+export INITIAL_ADMIN_USER=PS_USER
+
+export INITIAL_ADMIN_PASSWORD_PLAIN='P$_U$ER'
+
+export JENKINS_TOKEN=gAsuE35s
+
+export DOCKER_HOST=tcp://${PRIVATE_IP}:2375
+
+export METADATA_URL='http://169.254.169.254/latest/meta-data'
+
+export MAC_ADDRESS=$(curl -s ${METADATA_URL}/network/interfaces/macs/)
+
+#
+/data/adop-docker-compose
+./adop compose -i 172.31.19.83 init (when we run for the first time, got the error to remove this file - platform.secrets.sh)
+
+So, we removed platform.secrets.sh and run this script - sh credentials.generate.sh
+
+WARNING: The DOCKER_HOST variable is not set. Defaulting to a blank string.
+WARNING: The DOCKER_TLS_VERIFY variable is not set. Defaulting to a blank string.
+
+Reference for Spin up ADOP into existing Ec2 Instance without quick start and JSON:
+https://alm.accenture.com/wiki/pages/viewpage.action?pageId=261331875
+
+
+SUCCESS, your new ADOP instance is ready!
+
+Run these commands in your shell:
+  source ./conf/env.provider.sh
+  source credentials.generate.sh
+  source env.config.sh
+
+You can check if any variables are missing with: ./adop compose config  | grep 'WARNING'
+
+Navigate to http://172.31.19.83 in your browser to use your new DevOps Platform!
+Login using the following credentials:
+Username: PS_USER
+Password: fb2573bf5ee77028
+
+##To start the docker daemon automatically when we reboot/restart the server
+systemctl enable docker 
+
+##To verify
+systemctl | grep docker

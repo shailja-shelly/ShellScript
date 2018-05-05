@@ -1,0 +1,32 @@
+1> LILO
+LILO is linux loader , It is configured initially for LINUX installation process , During installation it is used to load linux into memory and start the Operating system
+
+2> GRUB
+GRUB is a boot loader , Password protecting GRUB access prevents unauthorized users from entering single user mode and changing settings at boot time. 
+
+3>Single user mode
+
+In Single user mode - multi-user linux system boots into a single user environment with superuser privilege , 
+If it is not enforced with password , then it will directly get bash prompt , without entering root password.
+
+If you would like to force a login password prompt even in single user mode, you can add the following to /etc/inittab.
+
+  ~~:S:wait:/sbin/sulogin
+
+4>check syslogd is running
+The workhorse of LINUX logging system is the system logging daemon or syslogd ; 
+This daemon is normally started from the system startup scripts , almost any part of the system , including applications , drivers , as well as other daemons can make log entries.
+
+5>check authpriv is enabled
+authpriv is separate bucket for routing authorization messege to a log file , 
+that has more restricted permission that those of auth . Different OS's will send different messege to auth vs. authpriv
+
+6>Check permission of /var/log/secure file
+Contains information related to authentication and authorization privileges. For example, sshd logs all the messages here, including unsuccessful login.
+
+7>content of /etc/motd file
+The /etc/motd is a file on unix like system , that contains a "messages of the day" , used to send common messeges to all users in a more efficient manner.
+The contents of /etc/motd are displaying by the unix login command after a successful login , and just before it executes the login shell.
+
+8>content of /etc/issue file
+The file /etc/issue is a text file , which contains a message or system identification to be printed before the login prompt.

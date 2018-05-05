@@ -1,0 +1,75 @@
+1)Installing openldap: --Done
+docker run -d --name ldap -p 389:389 --restart=always -e SLAPD_PASSWORD=admin -e SLAPD_DOMAIN=ldap.example.org dinkel/openldap
+2) Installing ldap manager:
+***) Installing volume for ldap manager --Done
+docker run -d --restart unless-stopped --name lam-volume mwaeckerlin/lam sleep infinity
+***) Installing ldap manager --Done
+docker run -d --restart unless-stopped -p 18080:80 --name lam --volumes-from lam-volume --link ldap:ldap mwaeckerlin/lam 
+1) Installing postgres: --Done
+docker run --name pg-gerrit -p 5432:5432 --restart=always -e POSTGRES_USER=gerrit2 -e POSTGRES_PASSWORD=gerrit -e POSTGRES_DB=reviewdb -d postgres
+2) Installing gerrit: --Done
+docker run --name gerrit --link pg-gerrit:db --link ldap:ldap -p 8080:8080 -p 29418:29418 --restart=always -e WEBURL=http://172.31.28.56:8080 -e DATABASE_TYPE=postgresql -e AUTH_TYPE=LDAP -e LDAP_SERVER=ldap://ldap:389 -e LDAP_ACCOUNTBASE="dc=ldap,dc=example,dc=org" -e LDAP_USERNAME="cn=admin,dc=ldap,dc=example,dc=org" -e LDAP_PASSWORD=admin -d openfrontier/gerrit 
+3)Installing mysql command: --Done
+docker run -td --name sonar-mysql --expose=3306 --restart=always -v /data/sonar:/var/lib/mysql -e MYSQL_USERNAME=root -e MYSQL_PASSWORD=sonar -e MYSQL_DATABASE=sonar -e MYSQL_ROOT_PASSWORD=sonar mysql:5.7
+4)Installing sonarqube container: --Done
+docker run -d --name sonarqube --link ldap:ldap --link sonar-mysql:mysql --restart=always -p 19000:9000 -p 9092:9092 -e SONARQUBE_JDBC_USERNAME=root -e SONARQUBE_JDBC_PASSWORD=sonar -e SONARQUBE_JDBC_URL="jdbc:mysql://sonar-mysql:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance" sonarqube:5.6.7
+5)Installing nexus container --Not Done (facing some issue)
+docker run -d --name nexus -p 8081:8081 -e LDAP_SEARCH_BASE=dc=ldap,dc=example,dc=org -e LDAP_ENABLED=true -e LDAP_URL=ldap://ldap:389 -e LDAP_BIND_DN=cn=admin,dc=ldap,dc=example,dc=org -e LDAP_USER_PASSWORD_ATTRIBUTE=userPassword -e LDAP_USER_BASE_DN=ou=People -e LDAP_GROUP_BASE_DN=ou=group -e LDAP_BIND_PASSWORD=admin sonatype/nexus
+
+6)Installing nginx container -- Done
+docker run --name nginx -p 80:80 -v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx
+
+
+------------------------------------LDAP Configuration Setting used in Sonar --------------------------
+
+# LDAP configuration
+# General Configuration
+sonar.security.realm=LDAP
+sonar.security.savePassword=false
+ldap.url=ldap://10.53.67.8:389/
+ldap.bindDn=o=techmahindra
+ldap.bindPassword=secret
+
+# User Configuration
+ldap.user.baseDn=o=techmahindra
+ldap.user.request=(&(objectClass=inetOrgPerson)(uid={login})(memberOf=cn=sonar-users,ou=groups,ou=devops,o=techmahindra))
+ldap.user.realNameAttribute=cn
+ldap.user.emailAttribute=mail
+
+# Group Configuration
+ldap.group.baseDn=ou=groups,ou=devops,o=techmahindra
+ldap.group.request=(&(objectClass=groupOfNames)(cn=sonar-users)(member={dn}))
+ldap.group.idAttribute=cn
+----------------------------------------------------------------------------------------------------------------
+
+
+
+ docker run \
+  --name adop-jenkins \
+  -p 8080:8080 \
+  -e LDAP_SERVER="ldap:389" \
+  -e LDAP_ROOTDN="${LDAP_FULL_DOMAIN}" \
+  -e LDAP_USER_SEARCH_BASE="ou=people" \
+  -e LDAP_USER_SEARCH="uid={0}" \
+  -e LDAP_GROUP_SEARCH_BASE="ou=groups" \
+  -e LDAP_GROUP_SEARCH_FILTER="" \
+  -e LDAP_GROUP_MEMBERSHIP_FILTER="" \
+  -e LDAP_MANAGER_DN="cn=admin,${LDAP_FULL_DOMAIN}" \
+  -e LDAP_MANAGER_PASSWORD=${LDAP_PWD} \
+  -e LDAP_INHIBIT_INFER_ROOTDN="false" \
+  -e LDAP_DISABLE_MAIL_ADDRESS_RESOLVER="false" \
+  -e LDAP_DISPLAY_NAME_ATTRIBUTE_NAME="displayName" \
+  -e LDAP_MAIL_ADDRESS_ATTRIBUTE_NAME="mail" \
+  -d accenture/adop-jenkins:VERSION
+
+
+
+
+############
+
+7) Installing Jenkins Container
+docker run --name myjenkins --link ldap:ldap -p 8081:8080 -p 50000:50000 -v /var/jenkins_home -d jenkins
+
+
+
+https://www.texasattorneygeneral.gov/og/how-to-request-public-information
