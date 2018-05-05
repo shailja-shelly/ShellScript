@@ -1,0 +1,208 @@
+#!/bin/ksh
+#####################################################################
+## Script to monitor heap space on weblogic & Diskspace on server.
+## Author: Saurabh Oza
+## Date: 07 Jan 2015
+## Version: 0.1
+#####################################################################
+
+#####   VARIABLES #####
+
+envName=wls10dada
+domain=/wls_domains/$envName
+LOG_FILE=$domain/scripts/logs/monitoring.log
+MOUNT_LIST=$domain/scripts/monitoring/MountList.txt
+STATS=$domain/scripts/monitoring/Stats.txt
+RUNSERV=$domain/scripts/monitoring/RunningServers.txt
+flag_hs=0
+flag_ds=0
+date=_`(date +%Y%m%d_%H.%M.%S)`
+
+#####   FILE PRE-CHECKS #####
+
+#Check for files and take backup if already present
+if [ -s $LOG_FILE ];
+then
+        echo "Rotating Log File..!!"
+        mv $LOG_FILE $LOG_FILE$date
+fi
+
+echo "Starting Script at `date +%d-%m-%Y,%H:%M:%S`..!!" >> $LOG_FILE
+
+# Check if stats file exists or not and take backup if required.
+if [ -s $STATS ]
+then
+        echo "File $STATS already exists.. Taking Backup..!!" >> $LOG_FILE
+#        mv $STATS $STATS$date
+        rm $STATS
+fi
+
+#Check and remove temporary files if present
+if [ -s $RUNSERV ];
+then
+        echo "File RunningServers.txt already exists.. Deleting RunningServers.txt..!!" >> $LOG_FILE
+        rm $RUNSERV
+        echo "File deletion completed.." >> $LOG_FILE
+fi
+
+#####   HEAP-SPACE REPORT #####
+
+#Gather the details of managed servers
+touch $RUNSERV
+$domain/ucbps.sh | grep rdms | tr -s " " > $RUNSERV
+
+echo "Subject: GREEN $envName Health" > $STATS
+echo "FROM: saurabh oza" >> $STATS
+#echo "FROM: LCS " >> $STATS
+echo "To: lcs-support@TechMahindra.com" >> $STATS
+#echo "To: SO00111074@TechMahindra.com" >> $STATS
+echo "Content-Type: text/html; charset=us-ascii" >> $STATS
+echo >> $STATS
+echo "<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">" >> $STATS
+echo "<html>" >> $STATS
+echo "<head>" >> $STATS
+echo "<h2 style=\"color:GREEN;\">Health Summary : GREEN</h2><br>" >> $STATS
+echo "<h2>Heap Space Details:</h2>\n" >> $STATS
+echo "<table>" >> $STATS
+while read server
+do
+        pid=`echo $server | cut -d" " -f2`
+        heap=`/software/java/jdk1.6.0_45/bin/jmap -d64 -heap $pid | tail -1 | tr -s " " | cut -d"." -f1`
+
+        #If Server has been started today, it will have time stamp like "HH:MM:SS".
+        #Else, it will contain date in format "DD Mon" which will contain extra space " "
+        #Hence the below to check servername accordingly.
+        temp=`echo $server | grep ":" | wc -l`
+        if [ $temp == 0 ]
+        then
+                serverName=`echo $server | cut -d" " -f7`
+        else
+                serverName=`echo $server | cut -d" " -f6`
+        fi
+
+        if [ $heap -gt 80 ]
+        then
+                echo "<tr style=\"color:red;\"><td>$serverName</td><td> ::: </td><td>$heap%</td></tr>" >> $STATS
+                flag_hs=1
+        else
+                echo "<tr><td>$serverName</td><td> ::: </td><td>$heap%</td></tr>" >> $STATS
+        fi
+
+done < $RUNSERV
+echo "</table>" >> $STATS
+
+#####   DISK-SPACE UTILIZATION REPORT #####
+
+echo "\n\n<h2>Disk Space Utilizations:</h2>\n" >> $STATS
+echo "<table>" >> $STATS
+
+if [ -s $MOUNT_LIST ]
+then
+        while read mount
+        do
+                percentage=`df -h | grep $mount\$ | awk '{print $5}'`
+                perVal=`echo $percentage | sed 's/%//g'`
+                if [ $perVal -gt 80 ]
+                then
+                echo "<tr style=\"color:red;\"><td>$mount</td><td> ::: </td><td>$percentage</td></tr>" >> $STATS
+                        flag_ds=1
+                else
+                echo "<tr><td>$mount</td><td> ::: </td><td>$percentage</td></tr>" >> $STATS
+                fi
+        done < $MOUNT_LIST
+else
+        echo "Please check MountList.txt is at script location to get diskspace report..!!" >> $STATS
+fi
+
+echo "</table>" >> $STATS
+
+echo "<br><br>-LCS" >> $STATS
+echo "<br>BT Wholesale Platform" >> $STATS
+echo "</head>" >> $STATS
+echo "</html>" >> $STATS
+cat $STATS >> $LOG_FILE
+
+#Send an email update
+echo "Sending email to LCS support.." >> $LOG_FILE
+if [ $flag_ds -eq 1 ]
+then
+        if [ $flag_hs -eq 1 ]
+        then
+                sed -e 's/GREEN/RED-DiskSpace \& HeapSpace/g' $STATS > tempfile.tmp
+                mv tempfile.tmp $STATS
+                sed -e 's/color:RED-DiskSpace \& HeapSpace/color:RED/g' $STATS > tempfile.tmp
+                mv tempfile.tmp $STATS
+        else
+                sed -e 's/GREEN/RED-DiskSpace/g' $STATS > tempfile.tmp
+                mv tempfile.tmp $STATS
+                sed -e 's/color:RED-DiskSpace/color:RED/g' $STATS > tempfile.tmp
+                mv tempfile.tmp $STATS
+        fi
+elif [ $flag_hs -eq 1 ]
+then
+                sed -e 's/GREEN/RED-HeapSpace/g' $STATS > tempfile.tmp
+                mv tempfile.tmp $STATS
+                sed -e 's/color:RED-HeapSpace/color:RED/g' $STATS > tempfile.tmp
+                mv tempfile.tmp $STATS
+else
+        echo ""
+fi
+
+/usr/lib/sendmail "lcs-support@TechMahindra.com" < $STATS
+#/usr/lib/sendmail "am00334566@TechMahindra.com" < $STATS
+echo "Mail sent.." >> $LOG_FILE
+
+echo "Removing temporary files.." >> $LOG_FILE
+rm $RUNSERV
+echo "Temporary files deleted.." >> $LOG_FILE
+
+echo "Script execution completed at `date +%d-%m-%Y,%H:%M:%S`..!!" >> $LOG_FILE
+aps02539waapp01:
+**************************************
+envName=whmodbdc
+domain=/wls_domains/$envName
+STATS=$domain/Stats.txt
+flag_hs=1
+df -h |tr -s " " |  cut -d " " -f5,6  > str1.txt 2>&1
+
+
+
+if [ -s $STATS ]
+then
+        rm $STATS
+fi
+echo "<html>" >> $STATS
+echo "<head>" >> $STATS
+
+echo "<h2>Capacity Mounted:</h2>\n" >> $STATS
+echo "<table style="width:50%" border="1" bordercolor="blue" bgcolor="yellow">" >> $STATS
+while read mount
+do
+
+
+    mnt=`echo $mount | cut -d " " -f1`
+    cap=`echo $mount | cut -d " " -f2`
+echo "<tr style=\"color:red;\"><td>$mnt</td><td>$cap</td></tr>" >> $STATS
+
+
+done < str1.txt
+echo "</table>" >> $STATS
+
+echo "<br><br>-LCS" >> $STATS
+echo "<br>BT Wholesale Platform" >> $STATS
+echo "</head>" >> $STATS
+echo "</html>" >> $STATS
+mailtext=`cat $domain/Stats.txt`
+MAILTO=AK00360863@techmahindra.com
+SUBJECT="lcs capacity mounted"
+mailx -t <<EOF
+From:donotreply@bt.com
+To: $MAILTO
+Subject: $SUBJECT
+MIME-Version: 1.0;
+Content-Type: text/html;
+Content-Disposition: inline
+$mailtext
+$signature
+EOF
+
