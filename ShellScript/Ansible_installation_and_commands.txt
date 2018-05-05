@@ -1,0 +1,201 @@
+##### Ansible installation and setup steps #############
+
+Installation :
+
+yum install epel-release
+yum install openssl
+yum install ansible
+yum install python
+yum install python-pip
+yum install python-devel
+
+after installation check the version
+ansible --version
+config path -- /etc/ansible/ansible.cfg
+change ansible.cfg file according to your env requirement , there is no daemon running in Ansible , so no need to restart service for ansible
+it will read the /etc/ansible/ansible.cfg command , whenever you run the ansible command
+
+Add hosts in /etc/ansible/hosts file
+
+create a ansible user in the server where ansible is installed and on remote server .
+$>useradd ansible
+$>passwd ansible
+established password less connectivity between servers
+$> ssh-keygen
+$> ssh-copy-id user@ip
+
+> work on modules 
+> specific tusks are written in playbook using specific module
+> Ansible documentation -- docs.ansible.com
+
+##Starting with commands using ansible
+$> ansible all -m ping
+$> ansible all -a 'ls -la /home/ansible'
+
+(rc = 0 , means zero return code)
+  output would be in this format
+ 
+localhost | SUCCESS | rc=0 >>
+.
+..
+.ansible
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.ssh
+
+172.31.24.242 | SUCCESS | rc=0 >>
+.
+..
+.ansible
+.bash_history
+.bash_logout
+.bash_profile
+
+#) Running a command in remote host with root privileged
+$> ansible all -s -a 'cat /var/log/choose_repo.log'
+
+$>ansible rhel -m copy -a "src=test dest=/tmp/test"
+  ansible --> command
+  rhel --> group name defined in /etc/ansible/host file
+  a --> a option is used for attribute
+.bashrc
+.ssh
+
+**) ansible config file
+[root@ip-172-31-28-209 ansible]# cat /etc/ansible/hosts
+[local]
+localhost
+
+[rhel]
+172.31.24.242
+
+
+
+**) Install packages using apt module
+ ansible rhel -m apt -a "name=elinks state=latest"
+ rhel == group name defined in /etc/ansible/host file
+ -m apt== m option to give the module name , here apt
+ -a == to gives the attribute
+ 
+ **) Install packages using yum module
+ ansible local -s -m yum -a "name=httpd state=latest"
+  -s => this option is for running the command as root privilaged
+ **) Delete packages which is already installed using yum module
+ ansible local -s -m yum -a "name=httpd state=absent"
+ 
+ **) Adding user using user module 
+ create user :
+ ansible local -s -m user -a "name=test"
+  It will create a user
+ ansible local -s -m user -a "name=test state=absent"
+  It will delete a existing user
+  
+***) Ansible using playbook
+ create a yaml(e.g - structure.yaml) like below:
+ 
+#--- This is a structural YAML to install httpd on local
+- hosts: local
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: yes
+  vars:
+    username: myuser
+  tasks:
+  - name: Install httpd server on local
+    yum:
+      name: httpd
+      state: latest
+    notify:
+    - startservice
+  handlers:
+  - name: startservice
+    service:
+      name: httpd
+      state: restarted
+	  
+*) Run ansible-playbook command
+ ansible-playbook structure.yaml
+ 
+*) Gathering Facts
+	ansible rhel -m setup
+ Ansible does this by default while running playbook
+ 
+*)For filtering any string in ansible
+ansible rhel -m setup -a 'filter=*ipv4*'
+
+*) creating playbook and remotly execute scripts on different nodes
+##content of diskspace.yaml file #####
+--- # This script is for running healthcheck script in different servers
+- hosts: all
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  connection: ssh
+  tasks:
+   - name: Transfer the script
+     copy:
+       src: diskspace.sh
+       dest: /home/ansible
+       mode: 0777
+
+   - name: Execute the script
+     command: sh /home/ansible/diskspace.sh
+
+*)Now run the below command
+ ansible-playbook diskspace.yaml
+ 
+*)creating and run ansible playbook with debug mode with registering the result and display the output in a json format with result variable
+----contains of debug.yaml -------
+--- # This file is for installing telnet packages on different server
+- hosts: local
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  connection: ssh
+  tasks:
+   - name: This will install telnet on remote server
+     yum:
+      name: telnet
+      state: latest
+     register: result
+   - debug: var=result
+   
+ ansible-playbook debug.yaml
+ 
+*) creation and restatred nginx server using playbook
+### contains of notify.yaml ######
+notify and handlers is used in playbook to run dependent tasks
+--- # this playbook is for installation and run nginx service ( if it install it , if it is already installed , then it will not restart the service
+      
+- hosts: local
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  connection: ssh
+  tasks:
+   - name: installation of nginx server
+     yum:
+       name: nginx
+       state: latest
+	 notify: 
+	 - restarted the nginx server after installation
+   handlers:
+   - name: restarted the nginx server after installation
+     service:
+        name: nginx
+        enabled: yes
+        state: restarted    
+
+ansible-playbook notify.yaml		
+  
+
+ 
+
+
+ 
+	  
+ 

@@ -29,6 +29,7 @@
 7) docker container logs <container-name>
    It will show the logs for a specified container
 
+   
 8) docker container --help ( to get the all options for docker container command)
 
 9) docker container rm <container-id>
@@ -41,5 +42,92 @@
    
 11) container is just a process running on localmachine
 
+12) docker container inspect
+    details of one container config
+	it will resturn a json to see the details of how the container started
+
+13)docker container stats
+   performance statistics for all containers
+   
+14)docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql
+   creation of mysql container with generation of random root password
+
+14)docker container run --rm -it --name ubuntu bash
+   It will automaticlly remove the conatiner after exit from the container , no need to clean it
+   
+15)docker container top mysql
+   listing out the processes running inside mysql container
+   To see the processes running inside the container
+   
+16)docker container stats
+   performance stats for all containers
+
+   
+   
+####################################   
+---Docker Network Defaults
+1) Each container connected to a private virtual network "bridge"
+2) Each virtual network routes through NAT firewall on host IP 
+3) All containers on a virtual network can talk to each other without -p
+4) Best practices would be creation of new virtual network for each app
+   Like :
+    > network "my_web_app" for php and mysql containers
+	> network "my_api" for nodejs and mongo container
+####################################
+
+17)docker container port <continer-id>
+   To see the port exposed for a particular container
+  It shows the port mapping means , which port of localhost is forwarding traffic to which port of container
+  
+18)docker container inspect --format '{{ .NetworkSettings.IPAddress }}' <container-name>
+  It will show the IP of the container
+  
+18)docker network ls
+  listing the docker networks(networkid, name, driver, scope)
+  
+19)docker network inspect bridge
+  It shows the container attached to bridge network
+
+20) host networking
+ It will avoid the container to connect to the virtual network and it will connect the docker to the localhost interface
+
+21)docker network create my_app_net
+  It will create new network my_app_net on the driver bridge(default driver is bridge)
+  Need to specify driver name by specifying the option --driver , if you dont want to use default bridge network
+
+22)docker container run -d --name new-nginx --network my_app_net nginx 
+create a docker container from a created network (my_app_net) , now run 
+docker network inspect my_app_net 
+to see the container , its allocated ip and container configuration details
+
+23)docker container connect <network-id> <container-id>
+  To attach a container in a existing network
+  
+24)docker container disconnect <network-id> <container-id>
+ To disconnect a container from a network
+ 
+so . it is better to always create new network(docker network create my_app_net) , if your container requiress inter communication , 
+rather than using --link option to bridge network 
+
+need to check practically 
+> create a network 
+> attach two new containers into it
+> docker exec -it <first_container> bash ping <second_container>
+
+Images :
+
+	> images are the excutables which is required to create a container .
+	> It contains the application binaries , libraries and modules .
+
+	
+25) for pushing images to docker registry (ofiicial or private )
+   Authentication is stored in .docker/config.json file
+26) docker login (looging into dockerhub using docker cli )
+27) docker image push <image_name>:tag
+28) I can make the repository as private while creating repository , in that case code will not be publish as public
+
+ 
+ 
+  
 
    
