@@ -1,0 +1,1417 @@
+172.31.24.242 -- RHEL7.2_new
+172.31.24.5  -- Git_Jenkins
+172.31.19.83 -- PS Catridge
+172.31.20.13 -- PSVPN
+---vpn server host
+vpn1.ps-innovation.acp.accenture.com
+
+---AWS urls
+
+https://ps-innovation.signin.aws.amazon.com/console
+username: anirban.khan
+password: Anirban@123
+
+----Jenkins url
+http://172.31.24.5:8080
+
+---ADOP url
+http://172.31.19.83
+
+--new ADOP url
+	
+
+****credential:
+UN   : anirban
+Pwd : Anirban@123
+
+
+1)PACT: https://172.31.24.242:9000
+2)MHRA: https://172.31.24.242:3102/
+3)Testimony: https://172.31.24.242:3101
+4)TrackMe: https://172.31.24.242:8443/
+5)Healthcare: http://172.31.24.242:9002/
+
+
+
+---To execute job
+login -> commandcenter -> select job 
+
+
+----Jenkins tutorial
+https://github.com/jenkinsci/job-dsl-plugin/wiki/Tutorial---Using-the-Jenkins-Job-DSL ---jenkins job DSL
+http://www.seleniumeasy.com/jenkins-tutorials/configure-maven-github-jenkins-to-run-testng.xml --jenkins configuration with maven and github
+sudo docker exec -it jenkins bash -- command for creating jenkins_home from docker
+
+FastTrack --commandcenter(Jenkins job)
+MyFamily 
+ 
+Twitterservice (.242)
+cd /opt/apache-tomcat-8.0.15/webapps
+
+git checkout -b webapp
+git push -u origin webapp
+git push -u origin master
+git clone url_name (for checking out code git to local)
+
+https://bigfile.accenture.com/default.aspx  -- big file url
+
+--Predictive record script path (/opt/temp)
+/opt/temp
+-- server stop/start schedule url	
+	 
+https://sso.cloudportal.accenture.com/openam/acplogin?goto=https%3A%2F%2Fcloudportal.accenture.com%2Fdashboard%2Fcatalog%2Forders%2Fall
+1> For scheduling
+  Resource manager - Resource group - select instance - click on scheduling - add scheduling - save
+2> For adding new instance in resource group for scheduling
+  Resource Manager - Discover resource (It will come in resource manager , instaces available in aws console ) - Create Resource group - Add vm's to the added resource group
+ 
+----git commands
+    1  git --version
+    2  git clone http://anirban@172.31.24.108/gerrit/PS_WORKSPACE/PS_PROJECT/FourSumTool
+    3  pwd
+    4  git status
+    5  git add .
+    6  git commit -am "changed"
+    7  git push
+    8  history
+---link for taking backup of aws instances (through snapshot,volumes and AMI )
+ http://www.n2ws.com/how-to-guides/automate-amazon-ec2-instance-backup.html
+--Transfer volume to a newly created instance
+http://www.n2ws.com/how-to-guides/connect-aws-ebs-volume-another-instance.html
+
+
+Message from syslogd@ip-172-31-24-108 at Jun 13 09:48:37 ...
+kernel:unregister_netdevice: waiting for lo to become free. Usage count = 1
+
+docker exec -it jenkins bash
+
+--creating new project in gerrit and creating branch (develop)
+
+1> project -> Create New project -> give project name like (PS_WORKSPACE/PS_PROJECT/new_project_name) 
+2> clone it to your local (git clone url_name)
+3> fire git command
+
+  vi test
+  git add .
+  git commit -m "test"
+  git push -u origin master
+  git checkout -b develop
+  git push -u origin develop
+
+-------------------------------------------
+more git commands
+--If you haven't connected your local repository to a remote server, add the server to be able to push to it:
+git remote add origin <server>
+---------------------------
+aws kt--
+for deleting backup more than 2 
+ami -- deregister
+snapshot -- delete
+
+-----
+taking backup in aws
+1) click on instances -> right click -> click create image -> fill up required field 
+2> It will create an AMI and taking backup of volumes on snapshots (for snapshot give the names)
+
+-----------------------------
+jenkins job dsl pipelinng tutorial
+https://jenkinsci.github.io/job-dsl-plugin/
+http://job-dsl.herokuapp.com/
+https://www.cloudbees.com/jenkins/juc-2015/presentations/JUC-2015-USEast-Groovy-With-Jenkins-McCollum.pdf -- jekins/groovy PPT
+https://github.com/Accenture/adop-cartridge-java/blob/master/jenkins/jobs/dsl/java_reference_application_jobs.groovy
+
+https://35.154.119.42/admin/ --- psvpn admin
+------------------------
+install , run packages inside docker container --  https://www.tecmint.com/install-run-and-delete-applications-inside-docker-containers/
+docker hub website - https://hub.docker.com
+http://172.31.24.108/gerrit/gitweb?p=PS_Common_Utility.git;a=tree;h=6c547ba604c995fb3e6cee9cc67da548cd54c2fc;hb=6c547ba604c995fb3e6cee9cc67da548cd54c2fc -- nodejs docker file
+docker build -t my-nodejs-app -- build docker image from docker docker file .
+docker run -it --rm --name my-running app my-nodejs-app  --- images to software
+---------------
+--tomcat restart command
+sh /opt/apache-tomcat-8.0.15/bin/startup.sh restart &
+---------------
+--python command
+ps -ef | grep New_social_bot.py
+python New_social_bot.py > bot_output.txt &
+---------
+--openssl command for generating key
+https://www.sslshopper.com/article-most-common-openssl-commands.html
+------
+----new adop url
+https://public-pr-proxyela-10937moaunbkv-1063034374.ap-south-1.elb.amazonaws.com/ (without vpn -- public dns)
+http://172.31.35.12/ (with vpn -- private IP)
+
+------------------
+PS_USER/8d700c736fb87689
+
+To restart the nginx: 
+1.) need to login to the nginx container
+2.) docker exec -it containername bash
+3.) once you aer inside the container, execute the below command
+
+4.) nginx -s reload
+
+----------------------
+-- downloading slave.jar
+curl -O -u username:password http://ip_addr/jenkins/jnlpJars/slave.jar 
+curl -O -u PS_USER:fb2573bf5ee77028 http://172.31.19.83/jenkins/jnlpJars/slave.jar 
+
+
+java -jar slave.jar -auth PS_USER:8d700c736fb87689 -jnlpUrl http://172.31.35.12/jenkins/computer/ADOP%20slave/slave-agent.jnlp -secret 6f071cb96bb78967c5841b997a919ac3a91dd0008f6bda67f5a5fdd2500a2435 &
+
+-------------------------------
+--link for implementing two tier architecture
+https://innersource.accenture.com/getting-started?next=/projects/ADOP-E-PUBLIC/repos/adop-c-hardened/browse/
+
+https://www.youtube.com/watch?v=IT1X42D1KeA&list=PL9ooVrP1hQOFWxRJcGdCot7AgJu29SVV3
+
+-------------------------------------------------
+----------docker commands---
+--adop docker compose file
+
+docker images (For listing out all the docker images in the local machine)
+docker ps (It will list out all the running containers)
+docker ps -a (It will list out all the running, exited and dead containers)
+
+
+Dockerfile(Writing all the required installment steps)
+
+Docker build command: docker build -t imagename . (Creating the images)
+
+Docker run command: docker run -d --name apache -p 3020:3020 –restart=always  imagename
+
+How to execute to the docker container
+
+Actual format : docker exec -it nameofthecontiner bash
+
+Ex: docker exec -it apache bash
+
+Docker cp filename containerame:pathofthecontainer whereyou wanttomovethefile
+
+
+##To start the docker daemon automatically when we reboot/restart the server
+systemctl enable docker
+
+/etc/nginx/sites-enabled
+Filename: tools-context.conf
+
+nginx -s reload (Relaoding the nginx)
+
+Whenever doing the extension of Adop, need to follow the steps as mentioned below. (need to be done in Nginx/proxy container)
+
+/resources/release_note/img/AATT.png
+/resources/release_note/bp
+ps-release-note.html
+ps-AATT-component.json
+
+/usr/share/nginx/html/img/AATT.png
+/usr/share/nginx/html/bp
+ps-release-note.html
+ps-AATT-component.json
+
+------------------------------------------------------
+java -jar slave.jar -auth anirban:Anirban@123 -jnlpUrl http://172.31.35.12/jenkins/computer/ADOP%20slave/slave-agent.jnlp -secret 6f071cb96bb78967c5841b997a919ac3a91dd0008f6bda67f5a5fdd2500a2435 &
+
+---------------------
+
+docker run container_name
+
+-------------------------------
+
+ 458  docker stop nodejs
+  459  docker ps -a
+  460  docker rm nodejs
+  461  docker ps -a
+  462  docker images
+  463  docker rmi node nodejsimage
+  464  docker images
+  465  docker status
+  466  docker ps
+  467  docker ps -a
+  468  systemctl | grep docker
+----------------------------------------------
+for Running the python command after Dipa Deployment
+cd /opt/Dipa
+python New_social_bot.py > bot_output.txt
+
+
+
+---------------
+---DSL Script
+http://172.31.35.12/gerrit/#/admin/projects/workspace_test/project_test/cartridge_test
+
+------------------------
+Docker Documentation
+https://docs.docker.com
+
+-----------------------------------
+--git commands for adding in innersource
+git init
+git add --all
+git commit -m "Initial Commit"
+git remote add origin https://ramkumar.manivel@innersource.accenture.com/scm/ps_cd/ps_adop_cartridge.git
+git push -u origin master 
+
+-------------------------------------
+--ssh key in jenkins
+http://172.31.35.12/jenkins/userContent/id_rsa.pub 
+
+--------------------------------------
+
+Instruct the team regarding pre-requisite in ADOP
+
+1.) Need to make the Adop-slave node up after restarting/rebooting the server
+2.) Need to install few things as mentioned below for job completion report (Only once after the new server is Provisioned)
+3.) Need to update the scripts for job completion report (Need to update the home path in the script depends on the workspace & project details)
+4.) In nginx need to updated the toolscontents.conf file, if there is any extension we have done as part of cartridge. Because when we reatart/reboot the server every time it will revert back to its original content. 
+ ---------------------
+/resources/configuration/sites-enabled/tools-context.conf
+/etc/nginx/sites-enabled/tools-context.conf
+
+#######This entry needs to be add in tools_context.conf in (/etc/nginx/sites-enabled/) this path after reboot of server or  ########################
+#######in (/resources/configuration/sites-enabled) this path , so that it can take it automatically after reboot for AATT extension ################
+location /AATT { 
+ rewrite ^/AATT http://\$host:3020; 
+ }
+ }
+#############################################################################################
+14/7
+
+http://webdriver.io/guide.html -- tested for fix the selenium integretion issue with jenkins
+
+############### Changes made in node related file in nodejs container to fix selenium integretion issue with nodejs in linux environment ############################
+
+setParameter('text', keys.then(keys => keys.join(''))).
+This is added in 2190th line in /opt/AccessibilityTool/node_modules/selenium-webdriver/lib/webdriver.js file to fix the selenium related issue in node js from linux 
+
+#####################################################################################################################################################################
+
+#### docker in windows url ########
+https://lostechies.com/gabrielschenker/2016/04/30/windows-docker-containers/
+
+########Step for creting new instance in AWS ##################################
+go to ec2-> launch instance -> m4.large -> give the disk size as per requirement - > Review all the things before clicking launch button
+
+
+
+#########step for creating user after launching new instance in AWS######################################### 
+Once the instance is created we need to use the keypair.pem file provided for authentication.The steps are:
+1)     open git bash
+2)     cd to directory where .pem file is located
+3)     ssh -i keyfilename.pem ec2-user@<Instance ip> (file://ec2-user@172.32.31.13)
+4)     sudo -i
+5)     cd /etc/ssh
+6)     chmod 777 sshd_config
+7)     vi /etc/ssh/sshd-config
+8)     enable password authentication yes
+9)     sudo service sshd restart
+10)  useradd username
+11)  passwd username
+12)  visudo 
+#############################################################################################################
+--link for increasing volume of aws instances
+http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html
+
+
+docker restart sonar
+
+#################################
+take data from a url and save it in pdf format
+/usr/bin/xvfb-run --server-args="-screen 0, 1920x1080x24" /usr/local/bin/wkhtmltopdf http://www.google.com /tmp/google.pdf
+###############################
+---set dispaly before firing firefox command----
+Xvfb :99 &
+export DISPLAY=:99
+Xvfb +extension RANDR
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/
+
+########
+---firefox version 42 installation on linux
+http://sourcedigit.com/17724-install-firefox-42-on-linux-ubuntu-15-10-ubuntu-14-04/
+
+####################
+
+step for integreting selenium with linux
+ geckodriver 15 is compatible with firefox 48 
+1) install firefox version 48
+   wget https://ftp.mozilla.org/pub/firefox/releases/48.0/linux-x86_64/en-US/firefox-48.0.tar.bz2
+   tar -xjf firefox-48.0.tar.bz2
+   sudo rm -rf  /opt/firefox
+   sudo mv firefox /opt/firefox
+   sudo mv /usr/bin/firefox /usr/bin/firefoxold
+   sudo ln -s /opt/firefox48/firefox /usr/bin/firefox
+2) Xvfb :99 & (After installing Xvfb)
+3) export DISPLAY=:99
+
+#########################
+Step for installing geckodriver on linux
+  cd /opt
+  
+1>wget https://github.com/mozilla/geckodriver/releases/download/v0.15.0/geckodriver-v0.15.0-linux64.tar.gz
+2>tar -xvzf geckodriver*
+3>chmod +x geckodriver
+  
+4> cp geckodriver /usr/bin/
+
+#########################
+$$> Blockchain path in appserver
+/root/.eris/apps/TestiMony
+$$> Fastrack path in appserver
+/opt/CommandCenter
+$$> Maya path in appserver
+/opt/PSInnovationMaya
+$$> Maya Schedular path in appserver
+/opt/temp/Maya_Scheduler
+/opt/temp
+$$> PrivcyIn service
+
+#################################
+
+Please see below details for the fix
+If issue reoccurs let me know we will investigate further.
+
+Container:proxy
+Path:/usr/share/nginx/html
+Config File: plugins.json
+
+Please look for the attached file, and update accordingly and restart nginx container.
+
+Command to restart proxy : nginx -s reload
+
+##########################################
+**)To get the IP of container
+docker inspect <container-name>
+e.g : docker inspect sonar-mysql
+
+############################
+
+C:\Program Files (x86)\SQLyog Enterprise Trial
+
+###############################
+
+"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld"
+##########################################
+--git commands
+*) create a new branch and swithced to this branch in gitbash
+$ git checkout -b ChatBotWebApp
+Switched to a new branch 'ChatBotWebApp'
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (ChatBotWebApp)
+*) pushed the newly created branch in git server
+$ git push -u origin ChatBotWebApp
+
+Total 0 (delta 0), reused 0 (delta 0)
+remote: Processing changes: refs: 1, done
+To http://172.31.35.12/gerrit/PS_WORKSPACE/PS_PROJECT/Dipa
+ * [new branch]      ChatBotWebApp -> ChatBotWebApp
+Branch ChatBotWebApp set up to track remote branch ChatBotWebApp from origin.
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (ChatBotWebApp)
+$
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (ChatBotWebApp)
+*) Switched from one branch to another branch
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (master)
+$ ls -lrt
+total 1
+-rw-r--r-- 1 anirban.khan 1049089 11 Aug 11 14:56 test
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (master)
+*) Switched from one branch to another branch
+$ git checkout ChatBotWebApp
+Switched to branch 'ChatBotWebApp'
+Your branch is up-to-date with 'origin/ChatBotWebApp'.
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (ChatBotWebApp)
+$ ls -lrt
+total 1
+-rw-r--r-- 1 anirban.khan 1049089 11 Aug 11 14:56 test
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (ChatBotWebApp)
+$ cd test
+bash: cd: test: Not a directory
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (ChatBotWebApp)
+$ vi test
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (ChatBotWebApp)
+$ git checkout develop
+Switched to a new branch 'develop'
+Branch develop set up to track remote branch develop from origin.
+
+anirban.khan@P3ALAP-5464Z5H MINGW64 ~/Desktop/chatbot/Dipa (develop)
+$ ls
+ChatBot/         complexQuery.pyc  current_name.pyc  DiPA_db_dump/  DiPA_SQL/            flow_selection_1.pyc  New_social_bot.py    New_social_bot_2.py  Social_Bot_Engine_version_3.0.py  test1.py
+complexQuery.py  current_name.py   DiPA_Data/        DiPA_Models/   flow_selection_1.py  logging_module.py     New_social_bot_1.py  New_social_bot_3.py  test                              test1.pyc
+###############################################################
+
+
+automation_testing_tool
+
+
+ldap admin password
+d70f708f4f051673
+#####################
+To see extension image in ADOP dashboard
+1) image file needs to be put in below path:
+/resources/release_note/img & /usr/share/nginx/html/img
+2)/resources/release_note/bp & /usr/share/nginx/html/bp
+
+3)need to add this entry in file (/etc/nginx/sites-enabled/tools-context.conf)
+
+location /AutomationTestingTool { 
+ rewrite ^/AutomationTestingTool http://\$host:4444; 
+ }
+ 
+
+4) Need to add below entry in ( /usr/share/nginx/html/plugins.json) file
+{
+                        "link": "/AutomationTestingTool/",
+                        "description": "Automation Testing Tool",
+                        "img": "img/selenium-ide.png",
+                        "title": "AutomationTestingTool",
+                        "id": "AutomationTestingTool"
+                      }
+#####################
+
+docker run -i -t --name automation_testing_tool -p 4444:4444 ubuntu-debootstrap /bin/bash
+selenium-ide.png
+
+#######
+
+
+ldap admin password
+d70f708f4f051673
+LDAP --
+
+1) create user
+   ou-people -> expand ->copy or move this entry -> change the field according to user -> update
+2) add user in gerrit developer
+   ou-groups -> gerrit-developer -> add-value -> update
+
+######
+add user and give access to VPN
+open vpn admin UI -> go to user permission section under user management section -> add new user 
+
+###
+add new repositories in gerrit
+create new project -> give project name -> add permission (browse repositories) -> save 
+git bash ()-> git clone the url (it will automatically checkout the branch master )-> add one file -> git add , commit ,push
+for createing develop branch -> git checkout -b new_branch_name -> after this do git push
+
+
+###########
+----Selenium Tool
+java -cp "selenium-hhs.jar" org.openqa.grid.selenium.GridLauncherV3 -role hub -servlets "com.selenium.servlet.NodeRobotServlet,com.selenium.servlet.NodeSwitchServlet"
+java -jar selenium-hhs.jar config.properties "chrome" "Linux" "10.231.99.41:5555"
+
+#######
+PS_Cartridge_Industry --- innersource directory for us
+
+######Manage and Assign Roles to users###############
+1) For new user go to ou-people section in ldap admin page and add the user
+2)Jenkins - > Manage and assign roles - > Manage Roles -> map the accesses(read, write , jobs run etc ) according to needs  to the project_admin, project_developer, 
+   workspace_admin, workspace_developer etc. 
+   it is to select appropriate job permission for dedicated workspace and project
+3) take the same user from ou-people and add the same in Global roles section under under Assign roles in Jenkins
+   Jenkins - > Manage and assign roles - > Assign Roles -> Global roles - > user/group to add 
+   give read/admin access according to requirement.
+4) Jenkins - > Manage and assign roles - > Assign Roles -> Project Roles -> add the user -> assign the respected project and workspace admin role or developer role according to needs
+
+################################
+
+oracle servers installation guide
+https://docs.oracle.com/cd/E35865_01/doc.1120/e29687/preinstall.htm#OLGET180
+
+
+#####MHRC Project related build #####
+ADOP Ant
+Target-- ejb-jar
+
+build
+**) oracle account credentials
+    anirban.khan@accenture.com/Apr@2017
+
+
+
+
+/workspace/MHRA_test_WORKSPACE/MHRA_test_PROJECT/buildjob/CUSTOM/Sentinel/src
+
+##### Sonar job Post Build action needs to be add #######
+
+MHRA_test_WORKSPACE/MHRA_test_PROJECT/deployjob
+
+
+B=${B}
+PARENT_BUILD=${JOB_NAME}
+
+##### Nexus job Post Build action needs to be add #######
+	
+B=${B}
+PARENT_BUILD=${JOB_NAME}
+
+##########################################################
+Setting up Apache for Angular Deployment
+
+1.1.	Setting up apache for Deployment:
+•	Installing Apache on CentOs with the help of given command:
+	sudo yum -y install httpd
+•	Next, enable Apache as a CentOS service so that it will automatically start after a reboot:
+	sudo systemctl enable httpd.service
+•	We will need to set up the directory that our virtual hosts will be stored in, as well as the directory that tells Apache that a virtual host is ready to serve to visitors. The sites-available directory will keep all our virtual host files, while the sites-enabled directory will hold symbolic links to virtual hosts that we want to publish. We can make both directories by typing:
+	sudo mkdir /etc/httpd/sites-available
+	 sudo mkdir /etc/httpd/sites-enabled
+•	Next, we should tell Apache to look for virtual hosts in the sites-enabled directory. To accomplish this, we will edit Apache's main configuration file and add a line declaring an optional directory for additional configuration files:
+	sudo nano /etc/httpd/conf/httpd.conf
+•	Add this line to the end of the file:
+	IncludeOptional sites-enabled/*.conf
+•	Create a virtual host file:
+	sudo nano /etc/httpd/sites-available/pact.com.conf
+•	Finally, we'll finish up by pointing to the root directory of our publicly accessible web documents.
+<VirtualHost *:80>
+ServerName 172.31.28.56    
+#ServerAlias example.com
+DocumentRoot /var/www/PrivacyIn/PrivacyInUI/dist
+<Directory "/var/www/PrivacyIn/PrivacyInUI/dist">
+Options Indexes FollowSymLinks
+AllowOverride All
+Require all granted
+  Allow from all
+  RewriteEngine On
+  #If an existing asset or directory is requested go to it as it is
+RewriteCond /var/www/PrivacyIn/PrivacyInUI/dist/%{REQUEST_URI} -f [OR]
+RewriteCond /var/www/PrivacyIn/PrivacyInUI/dist/%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+#If the requested resource doesn't exist, use index.html
+      RewriteRule ^ /index.html
+   </Directory>
+</VirtualHost>
+
+
+•	Now that we have created our virtual host files, we need to enable them so that Apache knows to serve them to visitors. To do this, we can create a symbolic link for each virtual host in the sites-enabled directory:
+	sudo ln -s /etc/httpd/sites-available/pact.com.conf /etc/httpd/sites-enabled/pact.com.conf
+•	Restart Apache to make these changes take effect:
+sudo apachectl restart
+
+
+#######################################################################
+
+jagadeesh.rajamani@accenture.com
+
+
+################################
+
+
+/workspace/MHRA_test_WORKSPACE/MHRA_test_PROJECT/buildjob/CUSTOM/Sentinel/lib/test
+junit-4.3.jar
+
+##########################
+/opt/AccessibilityTool/src ---PAET.JS
+/opt/AccessibilityTool/views -- index.htm
+/opt/AccessibilityTool/public/js/lib/--table2CSV.js
+
+###################################
+
+Accessibility Report post jobs :
+Trigger parameterized build on another project
+workspace_innersource/project_innersource/completionreportjob
+
+B=${B}
+PARENT_BUILD=${JOB_NAME}
+
+
+##############
+***) Sonar 
+ 4.5.1-4.5.7
+ 5.6
+*) url needs to be used in BeforeLogin.js in MHRA project
+https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency
+
+
+####Alternative approach to load different sonar container ######
+
+1) Create the Docker file like this
+*****######) Containt of Dockerfile (#######*********
+ FROM openjdk:8
+
+ENV SONAR_VERSION=5.6.6 \
+    SONARQUBE_HOME=/opt/sonarqube \
+    # Database configuration
+    # Defaults to using H2
+    SONARQUBE_JDBC_USERNAME=sonar \
+    SONARQUBE_JDBC_PASSWORD=sonar \
+    SONARQUBE_JDBC_URL= jdbc:mysql://sonar-mysql:3306/sonar?useUnicode=true&characterEncoding=utf8
+
+# Http port
+EXPOSE 9002
+
+RUN set -x \
+
+    # pub   2048R/D26468DE 2015-05-25
+    #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
+    # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
+    # sub   2048R/06855C1D 2015-05-25
+    && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys F1182E81C792928921DBCAB4CFCA4A29D26468DE \
+    && cd /opt \
+    && curl -o sonarqube.zip -fSL https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip \
+    && curl -o sonarqube.zip.asc -fSL https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip.asc \
+    && gpg --batch --verify sonarqube.zip.asc sonarqube.zip \
+    && unzip sonarqube.zip \
+    && mv sonarqube-$SONAR_VERSION sonarqube \
+    && rm sonarqube.zip* \
+    && rm -rf $SONARQUBE_HOME/bin/*
+
+VOLUME "$SONARQUBE_HOME/data"
+
+WORKDIR $SONARQUBE_HOME
+COPY run.sh $SONARQUBE_HOME/bin/
+ENTRYPOINT ["./bin/run.sh"]
+
+*) -----content of run.sh ----
+ #!/bin/bash
+
+set -e
+
+if [ "${1:0:1}" != '-' ]; then
+  exec "$@"
+fi
+
+exec java -jar lib/sonar-application-$SONAR_VERSION.jar \
+  -Dsonar.log.console=true \
+  -Dsonar.jdbc.username="$SONARQUBE_JDBC_USERNAME" \
+  -Dsonar.jdbc.password="$SONARQUBE_JDBC_PASSWORD" \
+  -Dsonar.jdbc.url="$SONARQUBE_JDBC_URL" \
+  -Dsonar.web.javaAdditionalOpts="$SONARQUBE_WEB_JVM_OPTS -Djava.security.egd=file:/dev/./urandom" \
+  "$@"
+
+2) Create the docker-compose.yml 
+******########) Contains of docker-compose.yml (******######
+     PS_Sonar:
+       container_name: sonarqubeps
+       restart: always
+       image: sonarqubepsimage
+       net: ${CUSTOM_NETWORK_NAME}
+       ports: 
+         - "9002:9002"
+*) docker build -t sonarqubepsimage .
+export CUSTOM_NETWORK_NAME=local_network
+docker-compose up -d
+
+3) Add the below entry in /etc/nginx/sites-enabled/tools-context.conf like this :
+   
+  echo -e 'location /sonarqube { 
+ rewrite ^/sonarqube http://\$host:9004; 
+ }
+ } '
+
+4) image file needs to be put in below path :
+	1)/resources/release_note/img & /usr/share/nginx/html/img
+	2)/resources/release_note/bp & /usr/share/nginx/html/bp
+
+5)Need to add below entry in ( /usr/share/nginx/html/plugins.json) file
+ {
+                        "link": "/PS_Sonar/",
+                        "description": "PS Sonar Tool",
+                        "img": "img/ps_sonar.png",
+                        "title": "PS_Sonar",
+                        "id": "PS_Sonar"
+                      } 
+
+###############
+
+docker run -d --name sonarqubeps \
+    -p 9002:9002 -p 9093:9093 \
+    -e SONARQUBE_JDBC_USERNAME=sonar \
+    -e SONARQUBE_JDBC_PASSWORD=sonar \
+    -e SONARQUBE_JDBC_URL=jdbc:mysql://sonar-mysql:3306/sonar?useUnicode=true \
+    sonarqube
+
+
+
+
+docker run -it --name sonarqubeps -p 9002:9002 -p 9092:9092 -e SONARQUBE_JDBC_USERNAME=sonar -e SONARQUBE_JDBC_PASSWORD=sonar -e SONARQUBE_JDBC_URL=jdbc:mysql://sonar-mysql:3306/sonar?useUnicode=true&characterEncoding=utf8 sonarqube:lts /bin/bash
+
+docker run -d --name sonarqubeps -p 9002:9002 -p 9093:9093 sonarqube:5.6.6
+
+
+
+---
+docker run -it --name sonarqube5.6 -p 9004:9000 -p 9094:9092 sonarqube:5.6.6 /bin/bash
+
+-------
+java -cp /opt/TestGenie/selenium-hhs.jar" com.selenium.main.SeleniumInvoker config.properties 
+------
+--command for change the editor mode
+  sudo update-alternatives --config editor
+--------
+
+ apt-get install xvfb xfonts-100dpi xfonts-75dpi xfonts-cyrillic xorg dbus-x11
+
+apt-get install -y gconf-service-backend gconf-service libgconf-2-4 libxss1 fonts-liberation libindicator7 libappindicator1 gconf2-common xdg-utils
+
+
+
+
+-----------------------------------------------------------------
+
+
+
+java -cp "selenium-hhs.jar" com.selenium.main.SeleniumInvoker config.properties
+
+
+
+------------------------------
+
+
+selenium version -- 3.3.1
+chrome version -- 57
+chromedriver version -- 2.29
+
+
+---------------------------------------------
+
+geckodriver 19 version -- https://github.com/mozilla/geckodriver/releases/download/v0.19.0/geckodriver-v0.19.0-linux32.tar.gz
+
+------
+
+reference link for integrate selenium with linux -- http://www.seleniumtests.com/2012/04/headless-tests-with-firefox-webdriver.html 
+google-chrome 57 version --   https://www.slimjet.com/chrome/download-chrome.php?file=lnx%2Fchrome64_57.0.2987.133.deb
+
+
+----------
+
+
+SSLEngine on
+SSLCertificateFile /etc/ssl/crt/mysitename.crt
+SSLCertificateKeyFile /etc/ssl/crt/mysitename.key 
+
+
+-----------------------git---------------------------
+--link for how to take git check in history with all necessary details : author name , author email , comments etc.
+  https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
+--gives the commiter name , date , comment name in git 
+git log --pretty=format:"%h - %an, %ar : %s"
+git log --pretty=format:"%h - %an, %ar : %ae : %s"
+
+############################################################
+
+smtp server host name : ind.smtp.accenture.com
+
+
+##########################################Mandatory Git commands #########################################################
+
+**) showing the latest commits in the branch . Head always points to the latest commit in the branch ..
+ls -1 .git/refs/heads/ 
+
+git clone http://anirban@172.31.35.12/gerrit/PS_WORKSPACE/PS_PROJECT/KT2
+last_committed_branch=`ls -1 .git/refs/heads/ | head -1`
+
+**) change the defualt editor to vim in git ...
+git config --global core.editor vim
+
+**) To verify git settings on local repositories
+git config --list
+
+**)Show the commit details along with author , chenged files , committer name etc.
+git log
+
+**)Show the differnce between the exist things and committed things.
+git show <commit_id>
+
+**)After commiting of other person , if you want to review and add/modify the chnges , if you want to over commit again 
+git commit --ammend -m "Modify the test file"
+
+**)To synchronize the locl repositories with remote one
+git pull 
+
+**) Suppose ny customer escallation comes , but the new changes shouldn't be delivered .then stash the changes using ...
+git stash
+
+**) After customer escallation solved , if you want to work on the new changes , on which you are woring on , back the changes things onto the current working area , using
+git stash pop
+
+**)If any file is renamed/deleted , then we can get the file to its previous state(reverting the changes) by simply , firing the command
+git checkout <filename>
+
+**) Shows the latest commit id :
+cat .git/refs/heads/master
+
+**)how to revert your changes in git after git commit and push
+git revert <commitid> -m "messages"
+
+**) how to reset the previous N th no. commit into one commit
+git reset --soft HEAD~N && git commit -m "reset Nth no commit into one commit" (N = is an integer) 
+**) how to see the current refernece in git
+git show-ref
+**)push code in the remote branch (somitimes , it gives error when this command ran : git push origin ChatBotUIBuilder)
+git push origin HEAD:ChatBotUIBuilder
+git push origin HEAD:chatbot_Python_Builder
+**)git merge
+   (i) git stash --> push your local changes to stash area
+   (ii)git pull <branch_name> --> checkout/pull the code from updated branch
+   (iii) git stash pop --> merge your local changes to updated branch
+
+#!/bin/sh
+curl "http://172.31.35.12/jenkins/job/workspace_test/job/project_test/job/hook_test/build?delay=10sec"
+
+
+
+curl http://172.31.35.12/jenkins/git/notifyCommit?url="http://172.31.35.12/gerrit/gitweb?p=PS_WORKSPACE%2FPS_PROJECT%2FKT2.git"
+http://yourserver/jenkins/git/notifyCommit?url=<URL of the Git repository>
+
+
+###############################
+git hooks references
+https://www.atlassian.com/git/tutorials/git-hooks
+
+git clone http://anirban@172.31.35.12/gerrit/PS_WORKSPACE/PS_PROJECT/KT2 && scp -p -P 29418 anirban@172.31.35.12:hooks/commit-msg KT2/.git/hooks/
+http://githooks.com/
+
+########################################
+when applying 
+########################################
+
+SELECT order_id,product_name,qty
+FROM orders
+WHERE foo = 'bar'
+INTO OUTFILE '/var/lib/mysql-files/orders.csv'
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+mysql -u sonar -p -e "select * from projects" > test.csv
+mysql -u sonar -psonar -e "USE sonar; SELECT * INTO OUTFILE 'testtable.csv' FROM projects;"
+
+Aborting commit due to empty commit message.
+
+
+#############################gerrit installation steps ###############################
+
+
+*****installation steps of postgress *****
+       cd /opt/
+       ls -lrt
+       mkdir software
+       chmod 777 software/
+       cd software/
+       pwd
+       ls -lrt
+       wget https://ftp.postgresql.org/pub/source/v9.4.4/postgresql-9.4.4.tar.gz
+       pwd
+       ls -lrt
+       chmod 777 postgresql-9.4.4.tar.gz
+       ls -lrt
+       tar xzf postgresql-9.4.4.tar.gz
+       ls -lrt
+       cd postgresql-9.4.4
+       pwd
+       ls -lrt
+       yum install -y readline-devel
+       ./configure
+       gmake world
+       gmake install-world
+       useradd pguser
+       mkdir -p /home/pguser/data
+       chown -R pguser:pguser /home/pguser
+       su pguser
+       pwd
+       cd ..
+       pwd
+       ls -lrt
+  ***** installation steps of gerrit ******
+       java -version
+       pwd
+       ls -lrt
+       wget https://gerrit.googlecode.com/files/gerrit-2.7-rc1.war
+       wget https://www.gerritcodereview.com/download/gerrit-2.11.3.war
+       java -jar gerrit-2.11.3.war init --batch -d ~/gerrit_example
+       git config -f ~/gerrit_example/etc/gerrit.config gerrit.canonicalWebUrl
+       vi  ~/gerrit_example/etc/gerrit.config
+       cd ~
+       pwd
+       cd gerrit_example/
+       ls -lrt
+       cd etc
+       ls -lrt
+       cp gerrit.config gerrit.config_bk
+       ls -lrt
+       vi gerrit.config
+       ~/gerrit_example/bin/gerrit.sh restart
+
+
+
+############################# Pending Tusks for tomorrow ( registration user on newly installed gerrit )########################
+
+
+  git config -f ~/gerrit_example/etc/gerrit.config --add http.proxy http://proxy:8081 -- Done 
+  gerrit@host:~$ git config -f ~/gerrit_example/etc/gerrit.config --add http.proxyUsername username -- Done
+  gerrit@host:~$ git config -f ~/gerrit_example/etc/gerrit.config --add http.proxyPassword password -- Done
+**) Do the remaining tusks after getting reference from this .
+https://gerrit-review.googlesource.com/Documentation/install-quick.html
+
+######################################
+
+ssh anirban.khan@172.31.28.56 -p 29419
+ip-172-31-28-56.ap-south-1.compute.internal
+
+######rsa public key#####
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMC3cbylFg2zqk7bs1IsB1iNmaMA1Izz98+8Vq3+5MWxScDHYtkn9+e1o1PAcWC2Fb9PDzrzT8Jsm/hL0QprpiSrDbjL+0rS38VaVtyoZLWGlGt/XjJF/TuGZPG+SkjuNXdSKbRjM82CyJ0PobjriDJVoas1LsOTLayJKWdJMzAEoJz3cE6GGOW0LHhay9+Ub7yy8vrgEQBGCbMkwREYRualnWo4XNolt+bB3aRIeFhN216uxGDcCQ41prw7na5xtnESbRRLNcCNmgH/mdAdAVPjV2FKrhBrkZpPMYlewhgKu3nxCXABIQbEn0uvlSxWv8VTuzKgnOoN/eDDeIQS8j anirban.khan@ip-172-31-28-56.ap-south-1.compute.internal
+###############
+**) gerrit single sign-on security
+https://dev.vaadin.com/review/Documentation/config-sso.html
+
+###############
+**) command giving git commit message
+git log -1 HEAD --pretty=format:%s
+credential of newly installed git/gerrit on Blockchain(172.31.28.56)
+Anirban/je4ItIrkSLil28BYP/3Y+hguxsI7j7bN0UQItcCxhQ
+
+#####Git commit and precommit message hook reference ######
+
+https://stackoverflow.com/questions/21998728/how-to-specify-a-git-commit-message-template-for-a-repository-in-a-file-at-a-rel
+https://stackoverflow.com/questions/3525341/can-i-use-a-scripted-commit-template-for-git/3525532#3525532
+
+
+je4ItIrkSLil28BYP/3Y+hguxsI7j7bN0UQItcCxhQ
+mrU5gHDlRSZpBmVK47mSazWpij0d2Sqm1mWKXAowzA
+
+################### Difference between GIT_AUTHOR and GIT_COMMITTER ###################################
+git commit --author="John Doe <john@doe.com>" -m "<the usual commit message>"
+where John Doe is some user in whose name I want to make the commit.
+
+It appears all right in git log. However, when I do a gitk, the author name is correct, but the committer name is picked from my global git config settings (and is thus set to my name/email).
+
+
+#########################################################################################################
+
+#!/bin/sh
+
+firstLine=$(head -n1 $1)
+
+if [ -z "$firstLine"  ] ;then
+    commitTemplate=$(cat `git rev-parse --git-dir`/commit-msg)
+    echo -e "$commitTemplate\n $(cat $1)" > $1
+fi
+
+
+
+####################
+
+*****) SonarLint (**********
+
+How to configure SonarLint on Linux
+
+######Git with Sonar reference ########## ########
+
+https://github.com/janosgyerik/sonarlint-git-hooks
+https://www.codeproject.com/Articles/528302/TortoiseSVN-pre-commit-hook-in-Csharp-Save-yoursel -- This hooks provides the pre-commit hooks for svn .
+https://git-scm.com/book/gr/v2/Customizing-Git-An-Example-Git-Enforced-Policy -- server side hook
+https://www.atlassian.com/git/tutorials/git-hooks
+https://wilsonmar.github.io/git-hooks/
+
+
+######
+
+
+CB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Committed By: \1/p')
+grep -qs "^$CB" "$1" || echo "$CB" >> "$1"
+
+
+##########################
+
+go to /usr/local/quorum/quorum-examples/examples/7nodes 
+run
+./stop.sh 
+
+##########################
+---docker stack url
+https://www.github.com/Jay-Wani/dockerstack.git
+
+########################
+
+docker run -d -p 389:389 -e SLAPD_PASSWORD=mysecretpassword -e SLAPD_DOMAIN=ldap.example.org dinkel/openldap
+
+
+######open ldap server in docker
+
+https://marc.xn--wckerlin-0za.ch/computer/setup-openldap-server-in-docker
+
+
+####command to see the logs in docker
+docker logs -f <container_name>
+e.g: docker logs -f ldap
+
+#####ldap youtube links ####
+https://www.youtube.com/watch?v=NcvIqK4G_fQ
+
+
+
+exe_path = os.path.relpath(exe_dir).split("/")
+exe_dir_path = os.path.join(*exe_path)
+
+
+
+  
+sudo ln -s /etc/httpd/sites-available/childsupport.com.conf /etc/httpd/sites-enabled/childsupport.com.conf 
+
+
+#################################
+
+
+docker run -d --name sonarqube \
+     --link ldap:ldap \
+     --link sonar-mysql:sonardb \
+    -p 9000:9000 -p 9092:9092 \
+    -e SONARQUBE_JDBC_USERNAME=sonar \
+    -e SONARQUBE_JDBC_PASSWORD=sonar \
+    -e DATABASE_TYPE=mysql \
+    -e AUTH_TYPE=LDAP \
+    -e LDAP_SERVER=ldap://ldap:389 \
+    -e LDAP_ACCOUNTBASE="dc=ldap,dc=example,dc=org" \
+    -e LDAP_USERNAME="cn=admin,dc=ldap,dc=example,dc=org" \
+    -e LDAP_PASSWORD=admin \
+    -e SONARQUBE_JDBC_URL="jdbc:mysql://sonar-mysql:3306/sonar?useUnicode=true&characterEncoding=utf8" \
+    sonarqube
+
+###################################
+
+ docker run --name sonar-mysql -d -p 3306:3306 -v /data/sonar:/var/lib/mysql  \
+      -e MYSQL_USERNAME=sonar \
+      -e MYSQL_PASSWORD=sonar \
+      -e MYSQL_DATABASE=sonar \
+      -e MYSQL_ROOT_PASSWORD=sonar mysql:5.7
+
+############################################
+
+
+#LDAP configuration
+#
+#General Configuration
+sonar.security.realm=LDAP
+ldap.url=ldap://ldap:389
+ldap.bindDn=cn=admin,dc=ldap,dc=example,dc=org
+ldap.bindPassword=admin
+
+#User configuration
+ldap.user.baseDn="ou=People,dc=ldap,dc=example,dc=org"
+ldap.user.request=(&(objectClass=inetOrgPerson)(uid={login}))
+ldap.user.realNameAttribute=cn
+ldap.user.emailAttribute=mail
+
+#Group configuration
+ldap.group.baseDn="ou=group,dc=ldap,dc=example,dc=org"
+ldap.group.request=(&(objectClass=posixGroup)(memberUid={uid}))
+
+################
+
+
+https://work.caltech.edu/lectures.html#lectures
+
+
+
+dirname = '{}_t{}.csv'.format(page, tn)
+            fname = os.path.join(topic_directory ,dirname)
+
+
+
+ChatBotUIBuilder
+chatbot_Python_Builder
+
+
+
+echo "go to ChatbotUI Builder Directory";
+cd /opt/chatbot_Builder/chatbot_ui_builder/chatbot_builder
+sudo npm start &
+echo "service started"
+
+############Steps For deleting data from Mongo db ####################
+
+[root@ip-172-31-24-242 FoodAsistance]# mongo
+MongoDB shell version: 2.6.12
+connecting to: test
+Server has startup warnings:
+2017-11-22T22:25:34.072+0530 [initandlisten]
+2017-11-22T22:25:34.072+0530 [initandlisten] ** WARNING: Readahead for /opt/mongodb is set to 4096KB
+2017-11-22T22:25:34.072+0530 [initandlisten] **          We suggest setting it to 256KB (512 sectors) or less
+2017-11-22T22:25:34.072+0530 [initandlisten] **          http://dochub.mongodb.org/core/readahead
+> show dbs
+RECOVER_YOUR_DATA  0.031GB
+admin              (empty)
+botDB              0.031GB
+hospitalDB         0.031GB
+incidentMgt        0.313GB
+local              0.031GB
+mhraDB             0.031GB
+myfamily           0.031GB
+> use botDB
+switched to db botDB
+> show collections
+chatbotlogs
+system.indexes
+topics
+> db.chatbotlogs.remove({})
+WriteResult({ "nRemoved" : 7 })
+> db.topics.remove({})
+WriteResult({ "nRemoved" : 1 })
+#Finding fields from a collection
+>db.collection.find()
+#Delete specific fields from collections
+>db.collection.remove({field:value})
+#Delete all fields from a collection
+>db.collection.remove({})
+########################################################################################
+-------Jira Installation path on server--------
+HTTP Port: 8080
+RMI Port: 8006
+Installation Directory: /opt/atlassian/jira
+Home Directory: /var/atlassian/application-data/jira
+
+.update({email:/anirban@gmail.com/}, {$set:{role:'ADMIN'}})
+
+
+
+
+############## Step for updating nodejs from 6 to 8(lower version to upperversion) #################
+1) Remove the .repo file under /etc/yum.repos.d folder which was saved during installing nodejs 6 in the server
+2)Run the below command to install .repo file for node 8 (which will save under /etc/yum.repos.d path) 
+  $> curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+3)see the repolist and check the noderepo is enable or not
+  $> yum repolist all
+4) If the repolist is not enabled , then run the below command to enable the repolist
+  $> yum-config-manager --enable nodesource-source
+5) Run the below command to installing nodejs 8 and check nodejs with version 8 is installing or not
+  $> yum install nodejs
+
+
+###############################
+---add a port in rhel server
+sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+sudo firewall-cmd --reload 
+
+##############################
+
+   cd /opt/chatbot_Builder/
+   ls -lrt
+   cd chatbot_assistant
+   ls -lrt
+   chmod -R 777 *
+   ls -lrt
+   npm -i
+   ls -lrt
+   npm i
+   ls -lrt
+   npm start &
+   cd py
+   ls -lrt
+   python ticket_server.py
+
+###############################
+
+##Bot running script path
+/opt/bot_running_script/start.sh
+
+#######
+
+UKPOST_Branding -- https://172.31.24.242:3030
+Anthem_Branding -- http://172.31.24.242:3334 (chatbot_assistance)
+chatbot_Laurate_Builder -- https://172.31.24.242:3096
+MHRA_Branding -- https://172.31.24.242:3057/
+rmg Branding -- https://172.31.24.242:3054/
+### Jira 
+--After expired the jira license , generate the license key from here
+https://my.atlassian.com/license/evaluation
+
+branch near me
+--and paste the new license in jira existing setup(
+
+
+
+
+
+
+#####
+
+> use myNewDataBase
+switched to db myNewDataBase
+> show collections
+myCollection
+mychatlogs
+system.indexes
+testchat
+> db.mychatlogs.remove({})
+WriteResult({ "nRemoved" : 3 })
+
+###
+
+AWGH100M
+
+###
+3081
+
+####
+find files between size range
+find . -size +386b -a -size -390b -exec rm -f {} \;
+
+#######
+docker documentation
+https://docs.docker.com/get-started/#docker-concepts
+
+####
+server credential for UKPOST 
+
+User ID :
+anirban.khan
+
+Current Password:
+Postoffice$123# 
+
+
+jira --
+http://192.168.3.9:8080/jira/login.jsp?os_destination=%2Fbrowse%2F
+http://192.168.3.9:8080/jira/secure/RapidBoard.jspa?rapidView=240&projectKey=IO
+
+ 
+confluence --
+http://192.168.3.9:8090/wiki/login.action?os_destination=%2Findex.action&permissionViolation=true 
+
+it is 192.168.32.24,  vcap user, password is -oY}W(y)pT7U , location is /opt/chatbot/chatbotv3/ 
+
+https://192.168.32.24:3030
+######################
+
+developer license
+
+acp.support
+
+#####
+
+Increase Volume in AWS
+
+
+No Title 
+Modifying the Size, IOPS, or Type of an EBS Volume on Linux
+If your Amazon EBS volume is attached to a current generation EC2 instance type, you can increase its size, change its volume type, or (for an io1 volume) adjust its IOPS performance, all without detaching it. You can apply these changes to detached volumes as well.
+Modifying an EBS Volume from the Console
+The following procedure shows how to apply available volume modifications from the Amazon EC2 console.
+Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.  
+Choose Volumes, select the volume to modify and then choose Actions, Modify Volume.  
+The Modify Volume window displays the volume ID and the volume's current configuration, including type, size, and IOPS. You can change any or all of these settings in a single action. Set new configuration values as follows:  
+To modify the type, choose a value for Volume Type.  
+To modify the size, enter an allowed integer value for Size.  
+If you chose Provisioned IOPS (IO1) as your volume type, enter an allowed integer value for IOPS. 
+After you have specified all of the modifications to apply, choose Modify, Yes. 
+An EBS volume being modified goes through a sequence of states. After you issue a ModifyVolume directive, whether from the console, CLI, API, or SDK, the volume enters first the Modifying state, then the Optimizing state, and finally the Complete state. At this point, the volume is ready to be further modified.
+To check which type of file system is used the command is :
+Sudo file -s <block name e.g /dev/xvdg>
+To check the block devices attached to the instance use:
+Lsblk
+If the file system is ext1,2,3,4 use the below command to expand the volume size:
+Sudo resize2fs <block name>
+If the filesystem is xfs then use:
+sudo yum install xfsprogs
+sudo xfs_growfs -d /mnt 
+
+########
+mhra dev -- /opt/mhra_main/ (mhra_develop git branch)
+mhra qa -- /opt/mhra_QA/ (master git branch)
+
+#######
+-- Article for creating docker private registry
+https://www.linuxtechi.com/setup-docker-private-registry-centos-7-rhel-7/
+###Docker service
+/usr/lib/systemd/system/docker.service
+
+
+#####
+how to configure and use sonarqube scanner for sonar job
+https://support.cloudbees.com/hc/en-us/articles/204947684-How-can-I-Run-A-Sonar-Analysis-Without-Maven-
+
+###
+installation of node js link
+https://www.npmjs.com/package/pm2
+###
+Anirban git hub account
+https://github.com/anirbankhan/ShellScript
+user : anirbankhan
+password : Apr@2017
+
+git init
+git add .
+git status
+git commit -m "sample dsl groovy script"
+git push origin master
+git push -u origin master
+git remote add origin https://github.com/anirbankhan/ShellScript.git
+git push -u origin master
+
+#######
+#####Docker installation steps on AWS rhel instance ################
+###For AWS instance
+sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+
+#To install docker Registry
+sudo tee /etc/yum.repos.d/docker.repo <<-EOF
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/7
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF
+
+#Installing Docker Engine (It contains docker-daemon as well)
+yum install docker-engine
+
+#Starting Docker
+service docker start
+
+#Installing Docker machine
+curl -L https://github.com/docker/machine/releases/download/v0.10.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
+  chmod +x /tmp/docker-machine &&
+  sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+
+#Installing the Docker compose
+curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/bin/docker-compose
+chmod +x /usr/bin/docker-compose
+
+##### Ansible installation and setup steps #############
+
+Installation :
+
+yum install epel-release
+yum install openssl
+yum install ansible
+yum install python
+yum install python-pip
+yum install python-devel
+
+after installation check the version
+ansible --version
+config path -- /etc/ansible/ansible.cfg
+change ansible.cfg file according to your env requirement , there is no daemon running in Ansible , so no need to restart service for ansible
+it will read the /etc/ansible/ansible.cfg command , whenever you run the ansible command
+
+Add hosts in /etc/ansible/hosts file
+
+create a ansible user in the server where ansible is installed and on remote server .
+$>useradd ansible
+$>passwd ansible
+established password less connectivity between servers
+$> ssh-keygen
+$> ssh-copy-id user@ip
+
+To Store the password in git permenently when you want to commit , command would be
+$) git config credential.helper store
+
+####Jira issue updater in jenkins post build action
+https://wiki.jenkins.io/display/JENKINS/Jira+Issue+Updater+Plugin
+https://github.com/jenkinsci/jira-issue-updater-plugin
+
+
+
