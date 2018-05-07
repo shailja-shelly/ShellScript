@@ -115,6 +115,10 @@ taking backup in aws
 
 -----------------------------
 jenkins job dsl pipelinng tutorial
+
+
+
+
 https://jenkinsci.github.io/job-dsl-plugin/
 http://job-dsl.herokuapp.com/
 https://www.cloudbees.com/jenkins/juc-2015/presentations/JUC-2015-USEast-Groovy-With-Jenkins-McCollum.pdf -- jekins/groovy PPT

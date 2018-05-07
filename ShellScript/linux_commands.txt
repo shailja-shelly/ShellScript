@@ -2,3 +2,26 @@
    a = show processes for all users
    u = display the process user / owner
    x = also show processes not attach to a terminal
+2) find differnt option
+   -type f ---> file
+   -type d ----> directory
+   -user   ----> user
+   -group -----> group
+   -perm  ----> permission
+   -mtime +<n> ---> modified time greater than the number
+   -mtime -<n>  ---> modified time less than the number
+   -atime +<n> ---> access time greter than the number
+   -atime -<n>  ---> access time less than the number
+   -size --> for files
+   -exec --> exec option execute the command on find files
+
+3) grep options 
+  grep -w --> for word only
+  grep -A <n> "string" filename  --> print the matched line along with nth line after it
+  grep -B <n> "string" filename  --> print the specified n line berore the match along with the matched line
+
+4) grep -r "string" *
+  It will find the string pattern in current directory nd its sub directories recursively
+
+5) Interchange two string in sed
+   sed -i -e 's/strinA/stringB/g' -e t -e 's/strinB/stringA/g' files.txt
