@@ -23,5 +23,5 @@
 4) grep -r "string" *
   It will find the string pattern in current directory nd its sub directories recursively
 
-5) Interchange two string in sed
-   sed -i -e 's/strinA/stringB/g' -e t -e 's/strinB/stringA/g' files.txt
+5) grep -v "pattern" filename
+   

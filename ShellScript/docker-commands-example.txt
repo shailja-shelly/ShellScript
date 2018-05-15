@@ -126,7 +126,41 @@ Images :
 27) docker image push <image_name>:tag
 28) I can make the repository as private while creating repository , in that case code will not be publish as public
 
+Docker volumes :
+The main purpose of docker volume is to store persistent data . or if container goes down .it can restore it comportatnt details , db details , configuration 
+details using docker volume .
+Docker volume basically maps the filesystem from docker UFS to localmachine filesystem 
+It is done by docker -v option 
  
+ 
+29) To see the list of all volumes
+$) docker volume ls -a
+
+30) To remove the volumes , that are not being used by any container
+$) docker prune <volume_id>
+
+31) volumes is creted by default if it is written in Docker file , volume is saved in the local like below path:
+     /var/lib/docker/volumes/<volume_id>
+  volumes can be shown from the command 
+  $) docker volume ls ( It will give the output like below :)
+     DRIVER              VOLUME NAME
+	 local               97da673bd057fe5fe21a0413ae100537575e6f0056287719372f3eb7ce7d2f41
+	 
+
+32) If you want to create a named volume , the run the docker container command in below format , while you creating a container 
+   $) docker run -d --name mysql2 -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql_db:/var/lib/mysql mysql
+     DRIVER              VOLUME NAME
+	  local               97da673bd057fe5fe21a0413ae100537575e6f0056287719372f3eb7ce7d2f41
+	  local               mysql_db
+33) To create docker volume
+   $) docker volume create
+   
+34) Bind Mounting
+  Bind Mounting is used for maps a host file or directory to a container host file or directory
+   docker run -v <host-machine-path>:<container-path>
+     
+	 
+       
  
   
 
