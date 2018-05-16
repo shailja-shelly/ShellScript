@@ -158,10 +158,100 @@ $) docker prune <volume_id>
 34) Bind Mounting
   Bind Mounting is used for maps a host file or directory to a container host file or directory
    docker run -v <host-machine-path>:<container-path>
-     
-	 
-       
- 
+   
+---Docker compose
+  docker compose is used to crete multi container docker projects , It uses one configuration file docker-compose.yml and one docker-compose cli tools 
+  e.g:  Below is the sample docker-compose.yml file
+#####################docker-compose.yml############
   
+version: 2
+services:
+   drupal:
+     image: drupal
+     ports:
+      - "8082:80"
+     volumes:
+      - drupal-modules:/var/www/html
+   postgres:
+      image: postgres
+      environment:
+        - POSTGRES_PASSWORD=mypasswd
+##################################################
+commnad for creating multi containers from docker-compose is
+$) docker-compose up -d
+  It will use default docker-compose.yml  .
+If the yml file named as other name like docker-compose-abc.yml , then for running the containers command would be 
+$) docker-compose -f docker-compose-abc.yml up -d
+
+$)docker-compose down
+This command is for stopping and removing the docker conatiners , which are created by docker-compose
+
+$)docker-compose down -v 
+Here -v is for delete the volume as well as , which is declared in the volume section of docker-compose file
+
+**)docker-compose file for creating custom image and container as well
+(It will create the image (nginx-custom) from the context current path using the nginx.Dockerfile )
+#############
+version: 2
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    image: nginx-custom
+    ports:
+      - '80:80'
+   web:
+    image: httpd
+    volumes:
+      - /html:/usr/local/apache2/htdocs 
+	 
+##############
+If you want to build the image from default docker-compose.yml , then the docker-compose file will be look like below:
+
+#########
+
+version: 2
+services:
+  proxy:
+    build: .
+    image: nginx-custom
+    ports:
+      - '80:80'
+   web:
+    image: httpd
+    volumes:
+      - /html:/usr/local/apache2/htdocs 
+	  
+################
+nginx details 
+
+nginx is a web server , it can be used as reverse proxy / proxy server , http cache , load balancing etc.
+sample nginx configuration file:
+###################
+server{
+  listen 80;
+  server_name ~^[0-9]
+  
+  access_log /var/log/nginx/access.log logstash;
+  proxy_set_header Host $host
+  proxy_set_header X-Real-IP $remote_addr
+  proxy_set_header X-Forwarded-For $remote_addr
+  proxy_set_header X-Forwarded-Proto $scheme
+  client_max_body_size 100m
+  location / {
+   root /usr/share/nginx/html;
+   index index.html index.htm
+   
+  }
+  location /jenkins {
+   proxy_pass http://jenkins:8080
+   proxy_set_header Host $host
+  }
+  location /gerrit {
+   proxy_pass http://gerrit:8080
+  }
+}
+
 
    
