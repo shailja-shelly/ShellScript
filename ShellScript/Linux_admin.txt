@@ -1,5 +1,9 @@
 1> LILO
-LILO is linux loader , It is configured initially for LINUX installation process , During installation it is used to load linux into memory and start the Operating system
+LILO is linux loader , It is configured initially for LINUX installation process , During installation it is used to load linux into memory and start the Operating system .
+below is the steps of LILO 
+  (i) Locating LInux Kernel
+  (ii) Identifying other supporting programs and loading them into memory .
+  (iii) loading the Linux kernel into main memory
 
 2> GRUB
 GRUB is a boot loader , Password protecting GRUB access prevents unauthorized users from entering single user mode and changing settings at boot time. 
@@ -30,3 +34,202 @@ The contents of /etc/motd are displaying by the unix login command after a succe
 
 8>content of /etc/issue file
 The file /etc/issue is a text file , which contains a message or system identification to be printed before the login prompt.
+
+9) finger service should be disable in linux , as remote user can get important information about the system by using finger command
+
+10) Differnce between cron and anacron 
+  Cron and anacron used for almost same purpose .
+  They have same differnce according to configuration and usage
+  (i) Minimum granularity with cron is minute , where minimum granularity with nacron is day .
+  (ii) cron job can be scheduled by any user , where anacronjob is scheduled only by super user.
+  (iii) cron expects to be system up and running every time , where anacron does not expect the system to be up and running every time .
+       If a job is scheduled , and that time system is off , then ancron will execute the job as soon as system is up .
+  -----crontab configuration file -----
+  cat /etc/crontab
+#######################  
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+*/1 * * * * root sudo sh /etc/init.d/start_demo.sh
+##############################
+
+---anacrontab configuration file-----
+
+cat /etc/anacrontab 
+
+# See anacron(8) and anacrontab(5) for details.
+
+SHELL=/bin/sh
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+# the maximal random delay added to the base delay of the jobs
+RANDOM_DELAY=45
+# the jobs will be started during the following hours only
+
+
+############special configuration of files #############
+sticky-bit :
+            
+START_HOURS_RANGE=3-22
+
+#period in days   delay in minutes   job-identifier   command
+1       5       cron.daily              nice run-parts /etc/cron.daily
+7       25      cron.weekly             nice run-parts /etc/cron.weekly
+@monthly 45     cron.monthly            nice run-parts /etc/cron.monthly
+
+11) what is the main system log files 
+ /var/log/messages -- This file contains all messages and the script written by the user
+ 
+12) user details are saved in /etc/passwd file in the below format
+    e.g - user:password(x):uid:gid:home_path:default_shell 
+    ansible:x:1015:1015::/home/ansible:/bin/bash
+	password is saved in /etc/passwd as (x) , where password is actually saved in /etc/shadow file as encrypted format
+	
+	useradd options 
+	-c == comment
+	-d == home_dir
+	-e == expire_date
+	-g == groupid
+	-s == shell
+	
+	/etc/passwd : user account information
+	/etc/shadow : secure user account information , where password is saved as encrypted format 
+	/etc/group : group account information
+	/etc/gshadow : secure group account information
+	/etc/default/useradd : default values for account creation
+	/etc/skel : Directory containing default files
+	/etc/login.defs : shadow password 
+
+Special permissions of files :
+1)suid :
+    suid / setid is a special permission of file , It is represented by s (octal -4 ) .
+	this is required , when as a system admin , you dont want to change some system configuration file ,
+	in case of /etc/passwd , it is set with suid , so other account can change their password and correspondingly the /etc/passwd and /etc/shadow file is updated.
+  how to set suid :
+    $) chmod u+s check.txt
+	  -rwSr--r--. 1 root         root          14 May 17 14:43 check.txt
+	$) chmod 4655 check2.txt
+	  -rwSr-xr-x. 1 root         root          14 May 17 14:45 check2.txt
+	  
+2)sgid :
+   sgid /setgroup id is also a special type of file permission . It is also represented by s(octal -2 ) .
+   If I set sgid on a folder /directory , then the user will get the file group permission for diectory and the subdirectories and files under it .
+   how to set sgid :
+    $) chmod g+s check
+	   drwxr-sr-x. 2 root         root           6 May 17 14:51 check
+	   
+3)sticky bit :
+  sticky bit is also a special type of file permission .It is represented by t (octal -1 )
+  If a sticky bit is set on file or directory , then the file / directory can be deleted only by owner of the file , owner of the directory and root .
+  This is usefule for publicly accessible directory like /tmp
+  how to set sticky bit :
+  $) chmod +t /tmp
+   ls -ld /tmp/
+	drwxrwxrwt 16 root root 4096 Jul 24 23:30 /tmp/
+	
+########################################
+installation using yum 
+yum repos --
+repositories for yum are stored in /etc/yum.repos.d/docker.repo like this format.
+sample repo file
+
+cat docker.repo
+[docker-main]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/7/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+
+[docker-testing]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/testing/centos/$releasever/
+enabled=0
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+
+[docker-beta]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/beta/centos/7/
+enabled=0
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+
+[docker-nightly]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/nightly/centos/7/
+enabled=0
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+
+## installation a package with yum
+# main configuration file for yum is 
+/etc/yum.conf
+$) yum install firefox
+   (It will ask for confirmation at the end )
+$) yum -y install firefox
+   (It will automatically accept confirmation)
+$) yum remove firefox
+   (To remove package using yum)
+$) yum -y remove firefox
+   (To remove firefox)
+   
+yum-config-manager (yum config manager is used for adding , enabling and disabling yum repositories )
+1) To add repo 
+  $) yum-config-manager --add-repo reposiitory url (It will save the .repo file under /etc/yum.repos.d directory
+  e.g -
+	yum-config-manager --add-repo http://www.example.com/example.repo
+	Loaded plugins: product-id, refresh-packagekit, subscription-manager
+	adding repo from: http://www.example.com/example.repo
+	grabbing file http://www.example.com/example.repo to /etc/yum.repos.d/example.repo
+	example.repo                                             |  413 B     00:00
+	repo saved to /etc/yum.repos.d/example.repo
+
+2) To enable repo 
+  yum-config-manager --enable repository
+ e.g.
+   yum-config-manager --enable example\*
+   Loaded plugins: product-id, refresh-packagekit, subscription-manager
+	============================== repo: example ==============================
+	[example]
+	bandwidth = 0
+	base_persistdir = /var/lib/yum/repos/x86_64/6Server
+	baseurl = http://www.example.com/repo/6Server/x86_64/
+	cache = 0
+	cachedir = /var/cache/yum/x86_64/6Server/example
+	[output truncated] 
+ 
+3) To disable repo
+  yum-config-manager --disable repository
+e.g. 
+  yum-config-manager --disable eris-sourceyum-config-manager --disable eris-source
+  yum list postgresql*
+
+installation package using yum
+
+For listing all available version
+
+	yum install postgresql-server
+	postgresql-setup initdb
+	systemctl enable postgresql.service
+	systemctl start postgresql.service
+
+	
+
+
+	
+	
+	
+
