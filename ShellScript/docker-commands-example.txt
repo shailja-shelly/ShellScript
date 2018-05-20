@@ -253,5 +253,25 @@ server{
   }
 }
 
+###############
+Docker Swarm
+-- Docker swarm is in-build clustering solution implemented inside docker
+-- Swarm provide in-build orchestration of docker containers
+-- Docker swarm works in manager - worker fashion .
+
+ physical nodes and virtual nodes can work together as docker swarm cluster
+ 
+---To create a node to work as a manager 
+docker swarm init --advertise-addr <ip>
+---To connect/join a node to work as a worker 
+docker swarm join --token SWMTKN-1-5kjfniru0en6l96lryrckl2mwl5qosg0q0nmg6lg01wtteb59b-68r6mae2yxoetnq1ze9wkuzmu 192.168.0.28:2377
+-- Any of the swarm command (e.g - docker node ls ) cant be run on worker , as they dont have the manager privilage
+-- To give manager role to any worker
+docker node update --role manager node2
+- To get the token anytime , so that it can be connected as a worker
+docker swarm join-token manager
+--create a service in docker
+docker service create --replicas 3 alpine
+
 
    
