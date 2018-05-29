@@ -1,0 +1,50 @@
+--elastic search installation
+1) download the key
+rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+
+2) created elasticsearch.repo under /etc/yum.repos.d path with below entry
+
+[elasticsearch-1.7]
+name=Elasticsearch repository for 1.7.x packages
+baseurl=http://packages.elastic.co/elasticsearch/1.7/centos
+gpgcheck=1
+gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+
+3)Installation of elasticsearch 
+yum install elasticsearch
+
+4)enable systemctl so that elasticsearch can start after system startup
+systemctl daemon-reload
+systemctl enable elasticsearch.service
+systemctl start elasticsearch.service
+
+5) check if it is installed successfully after installation
+curl http://172.31.24.242:9200
+It will give the below as standard output :
+{
+  "status" : 200,
+  "name" : "Kyle Gibney",
+  "cluster_name" : "elasticsearch",
+  "version" : {
+    "number" : "1.7.6",
+    "build_hash" : "c730b59357f8ebc555286794dcd90b3411f517c9",
+    "build_timestamp" : "2016-11-18T15:21:16Z",
+    "build_snapshot" : false,
+    "lucene_version" : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+
+---postgress installation
+$) yum install postgresql-server
+$) postgresql-setup initdb
+$) systemctl enable postgresql.service
+$) systemctl start postgresql.service
+
+After installation needs to check below configuration files :
+1) /var/lib/pgsql/data/postgresql.conf
+2) /var/lib/pgsql/data/pg_hba.conf
+
+---

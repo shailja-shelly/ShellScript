@@ -24,4 +24,26 @@
   It will find the string pattern in current directory nd its sub directories recursively
 
 5) grep -v "pattern" filename
+6) egrep - extended grep , It operates first , egrep works on regex pattern only
+   e.g - $) egrep '(h|g)ot' filename
+            It will search either hot or got from the filename and will display the result
+7) for deletion a particular line from a file
+  $) sed 'nd' filename
+  To delete the first line
+  $) sed '1d' filename
+  To delete the last line
+  $) sed '$d' filename
+
+8)sort 
+-u == for uniqly sort
+-n == numeric sort ( default increasing order )
+-r == sort on reverse order ( decreasing order )
+
+9)To list all top 10 processes on the basis of cpu utilization
+ps -aux | sed '1d' | sort -nr -k3 | head -10
+
+
+
+  
+
    

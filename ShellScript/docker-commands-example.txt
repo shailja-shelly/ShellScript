@@ -272,6 +272,24 @@ docker node update --role manager node2
 docker swarm join-token manager
 --create a service in docker
 docker service create --replicas 3 alpine
+-- Routing mesh load balancing is used by default for load balancing in docker swarm
+--overlay network mostly used in docker swarm , as overlay network allow us spam the service across the network
 
+docker service create --name vote -p 80:80 --network frontend --replicas 2 dockersamples/examplevotingapp_vote:before
+docker service create --name redis  --network frontend --replicas 2 redis:3.2
+
+### prune ###
+prune is used to remove unused objects , such as container , volume , images and network .
+These objects are generally not removed , untiil you explicitly says docker to do it .
+$) docker system prune
+ To clean up multiple types of objects at once
+$) docker image prune
+$) docker image prune -a --filter "until==24h"
+ prune images which is created within 24 hours
+$) docker container prune
+ when you dont remove any container , just stop it , then stopped container's writable layer can still take up disk space . 
+ after using the docker container  
+$) docker volume prune
+  It will remove the volumes that are not referenced by any containers
 
    
