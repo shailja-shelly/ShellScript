@@ -1,0 +1,24 @@
+----awk examples
+1> exclude first and last field from  file
+   $egrep -w "NO|NOT" Script_vulnerability_violation.txt | awk '{for (i=2;i<NF;i++) printf $i " "; print $NF}' | awk 'NF{NF-=1};1'  
+   
+2) Autoscalling may be done based on below metrics :
+  (i) cpu utilization
+  (ii) network IN/out
+  (iii) disk read/write
+  
+3) service models in AWS 
+ (i) IAAS : Infrustructure as a service
+    provding virtualized computing resources over the internet
+	dont have any control over underlying hardware
+	It is a abstarction over underlying hardware
+ (ii) SAAS: Software as a service
+  It lease the application / software , which will be available to the client as a software .
+  here , we dont have any knowledge about the underlying infrustructure (os,storage etc)
+  and hardware 
+ (iii) PAAS: Platform as a service 
+   In PAAS , it provides virtualized infrastructure as well (os , storage ) . 
+   It just gives a run time environment , according to your needs .
+   suppose you needs to run your java application , then it gives java runtime environment,
+   If you want to run nodejs runtime environment , then it gives nodejs runtime environment .
+   e.g. -- AWS ElasticBeanstalk

@@ -291,5 +291,20 @@ $) docker container prune
  after using the docker container  
 $) docker volume prune
   It will remove the volumes that are not referenced by any containers
-
+  
+### stack 
+1) stack creates another level of abstraction over docker swarm
+2) It accepts compose file as their declaretive definition for services , network and volumes 
+3) here docker stack deploy command is used instead of docker service create command to import the compose file and execute the steps 
+   based on the tasks defined in it.
+4) docker compose version 3 should be used in order to use it as stack
+5) deploy service from docker-compose.yml file 
+   docker stack deploy -c abc.yml abc 
+6) docker stack deploy commands create all the objects (network , image , container ) one by one and run the service as container defined in
+   .yml file 
+7) To see all the the tusks which is created by docker stack command 
+   docker stack ps voteapp
+8) After changing the yml file , same command,
+   docker stack deploy -c <name>.yml <service_name> should run , to update the services .
+   
    

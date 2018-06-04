@@ -47,4 +47,28 @@ After installation needs to check below configuration files :
 1) /var/lib/pgsql/data/postgresql.conf
 2) /var/lib/pgsql/data/pg_hba.conf
 
----
+--- MONGO DB installation steps :
+$) touch /etc/yum.repos.d/mongodb-org-3.6.repo
+$) save the file after appending below content :
+    [mongodb-org-3.6]
+    name=MongoDB Repository
+   baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
+   gpgcheck=1
+   enabled=1
+   gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+$) yum install -y mongodb-org-3.6.4 mongodb-org-server-3.6.4 mongodb-org-shell-3.6.4 mongodb-org-mongos-3.6.4 mongodb-org-tools-3.6.4
+$) mongod --smallfiles --dbpath /opt/mongodb --logpath /opt/mongodb/logs/mongod.log --bind_ip_all &
+
+----Node.js and angular installation steps :
+
+$) curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+$) yum -y install nodejs
+
+Check after installation of nodejs
+npm –version
+node --version
+
+Angular installation steps :
+npm install -g @angular/cli
+
+
