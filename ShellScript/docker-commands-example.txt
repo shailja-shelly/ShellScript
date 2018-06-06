@@ -307,4 +307,61 @@ $) docker volume prune
 8) After changing the yml file , same command,
    docker stack deploy -c <name>.yml <service_name> should run , to update the services .
    
+## secrets
+ secret is a blob of data , such as password , user id , ssh keys or another piece of data , which should not be transmitted over network and it is securly stored and transmitted 
+ to the container which needs it .
+ docker secrets are basically used to store data as a secret file , which are required during run time, like userid, password , ssh_keys etc .
+ examples --
+ echo "user" | docker secret create psql_user -
+ echo "password" | docker secret create psql_pass -
+  This secrete data is used while cretaing docker service , secret is useful only for swarm service and stack , it is not applicable in standalone container.
+  creation of container using secret file 
+  $) docker service create --name psql --secrets psql_user --secrets psql_pass -e POSTGRES_USER_FILE=/run/secrets/psql_user -e POSTGRES_PASSWORD_FILE=/run/secrets/psql_pass postgres
+  
+## secrets used in docker-compose
+1) create a docker-compose.yml file like below :
+  ---docker-compose.yml ---
+version: "3.1"
+
+services:
+   psql:
+     image: postgres
+     secrets:
+       - psql_user
+       - psql_password
+     environment:
+       POSTGRES_PASSWORD_FILE: /run/secrets/psql_password
+       POSTGRES_USER_FILE: /run/secrets/psql_user
+
+
+secrets:
+  psql_user:
+    file: ./psql_user.txt
+  psql_password:
+  
+2) create psql_user.txt and psql_password.txt file to store the credentials
+--- psql_user.txt ---
+user
+----psql_password.txt ----
+password
+
+3) Run the below docker stack command
+docker stack deploy -c docker-compose.yml mydb
+
+4) It will print the below output as stdout
+Creating network mydb_default
+Creating secret mydb_psql_password
+Creating secret mydb_psql_user
+Creating service mydb_psql
+
+5)To remove the created service , that will remove the service , network and secret file at one go
+docker stack rm mydb
+
+6) It will print the below output as stdout
+Removing service mydb_psql
+Removing secret mydb_psql_password
+Removing secret mydb_psql_user
+Removing network mydb_default
+  
+ 
    
