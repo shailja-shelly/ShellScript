@@ -1,0 +1,343 @@
+pattern
+I need a Accounts Payable role to Create Voucher
+Where I can create Voucher in PeopleSoft
+Where I can create Expense Report in PeopleSoft
+I want to create a ticket for PeopleSoft Support team
+My Pay cycle is stuck in between I am unable to proceed
+I want to know the status of my ticket raised with Support team
+Where I can check the status of Vendor
+I want to reset PeopleSoft password
+I am a new Employee I want to create Expense Reimbursement in Peoplesoft How do I do that
+What is frequency of LIAP02 or Voucher Build process
+Forgot Password link is not working
+Prerequisites of AM Reporting
+Which date is used during Depreciation related calculations
+Can I retire an asset by Quantity
+Can I reinstate an asset after retirement
+How to reinstate an asset after retirement
+Can I recategorize an asset
+How to recategorize an asset
+Can I adjust the cost of an asset
+How to adjust the cost of an asset
+Can I transfer an asset Intra Inter
+How to transfer an asset Intra Inter
+How to transfer an Inter Between Business Units
+How to transfer an Intra Within same Business Unit
+Where I can see the Depreciation information of an asset
+Where I can see the Accounting Entries of an asset
+I am not able to post the voucher though it is Approved
+What is Pay Terms
+What is Schedule Date
+What is Adjustment voucher
+What is Prepaid voucher
+What is Regular voucher
+What is Single Payment voucher
+What is Reversal voucher
+How to apply Regular voucher to Prepaid voucher
+Can I create a contract with same date
+What is voucher closing
+Why my voucher is not getting picked in the paycycle
+Why credit voucher not getting picked in pay cycle
+Why Regular voucher not getting picked in pay cycle
+How to cancel the payment
+Which option in Payment Status I should select while cancelling the payment
+Which option in Cancel Action I should select while cancelling the payment
+How I can create a PO from requisition
+Which role is required for voucher unmatching
+Which role is required for Document Tolerance Override access
+How to create an Expense Report
+How to correct Expense Report errors
+How to correct credit card related Expense Report error
+If credit card information is not empty
+How to correct acad discipline related Expense Report error
+How to correct preferred non preferred merchant related Expense Report error
+Can I post the journal after unposting it
+How to run the Trial Balance report
+PS Query output error
+Error message Accounting Period not open
+Where I can see the status of my process
+My voucher is in Recycle status Where I can see the errors
+I need the role to create the receipt
+I need a requestor role
+I need a buyer role
+I need a role to create the journals
+I need a role to create an asset in PeopleSoft
+How to process Credit vouchers
+What is Matching
+What is Document Tolerance
+What are different types are Match Status
+I want to know the Batch Schedule
+My requisition is not available after cancellation of PO
+My requisition is Approved But it is not available for Expedite
+How to Budget Check requisition
+What is Document Sequencing
+What is Profile ID
+Where I can see the details of an asset
+How to add an asset directly in AM
+What do you mean by consolidating an asset
+What is unitization in AM
+Navigation for Receipt creation
+Navigation to expedite the requisition
+How to create a Prepaid Voucher
+Requisition Creation
+HOW TO CREATE AN ASSET
+Journal creation
+Purchase Order PO Close
+Purchase Order PO Dispatch
+Purchase Order PO Budget Check
+PO receipt is not coming in voucher
+Voucher match exception
+Override voucher match exception
+Reroute vouchers for approval
+Reroute requisitions for approval
+Reroute vendors for approval
+Reroute expense reports for approval
+Aproval Delegation
+Access to delete a voucher or Voucher delete role
+Access to approve the requisition or Requisition approver role
+Access to approve the voucher or Voucher approver role
+Access to to unpost the voucher or Voucher Unpost role
+Access to post the voucher or Voucher Post role
+Access to create a voucher or Voucher Creation role
+Access to close the voucher or Voucher Close role
+Where I can enter my expenses
+When my expense report will be Paid
+Navigate to Expense creation
+Where I can check my expense report status
+From where I can modify my saved expense report
+How to delete expense report
+How to create cash advance
+Consolidation Issue Extra line did not get generated after consolidation
+How to create a voucher
+How to post expense report liabilities
+How to stage expense reports
+How to pay expense report
+Significance of EFT payment method
+Significance of ACH payment method
+Significance of System Check CHK payment method
+Significance of Wire WIR payment method
+How to generate subsystem journal
+How to create a journal
+How to copy journal
+Hoe to edit journal
+How to edit error journal
+How to approve a journal
+What is general ledger
+How to post a journal
+How to unpost a journal
+Where to check journal accounting entries
+How to create online journal
+From where I can create subsystem journal
+How to post vouchers
+How to pay vouchers
+How to unpost vouchers
+How to run budget check for vouchers
+How to run matching for vouchers
+Deleting a voucher
+How to create user template in Travel and expense
+How to change default creation method for expense report
+How to run ultipro load
+What is ultipro employee termination process
+How to load employee data
+Why my bank account is not updated correctly in PeopleSoft
+How to approve vouchers
+How to create voucher accounting entries
+How to void voucher payment
+Where to modify saved voucher
+How to delete voucher
+How to dispatch voucher payment
+How to do Payment Posting
+Where I can check accounting entries for voucher
+Where I can check voucher VAT details
+How to run pay cycle
+How many types of vouchers I can create
+How to reverse a voucher
+Why I am not able to cancel my Purchase Order PO
+Role required to view Document Tolerance
+Attachment error while creating a contract
+Attachment error while creating a expense report
+I am not able to dispatch my Purchase Order PO though it is approved
+Not able to create a receipt from Purchase Order PO
+Can I retire asset by amount
+Error You are not authorised to run this multiprocess job
+How to unmatch voucher
+How to import contract
+How to edit the contract
+How to check in the contract
+How to attach a supporting document to a contract
+How to Review Contract Version History
+How to delete a contract
+How to create a Amendment for a contract
+How to Deactivate a contract
+How to Reactivate a contract
+How to modify the wizard for a contract
+What is Effective Date in Contract
+What is Signature Date in Contract
+How to enter Effective Date in Contract
+How to enter Signature Date in Contract
+How to Dispatch the contract
+How to execute the process for contract
+How to approve a contract
+How to approve a contract through eMail
+How to approve a contract through Documents Pending section
+How to approve a contract through Worklist
+How to deny the contract
+What happens once the contract is Approved
+Role required for editing the journal
+Role required for Multicurrency Process page
+Role required for Update Profile page in Travel and Expense
+Error Message When Creating a Receipt
+Chart fields not appearing on Receipt copied from a Purchase order
+System displays an error of Missing GL BU while saving the receipt
+My requisition Approver not able to view requisition attachment
+Why is Approver is not able to view attachments of a Requisition from worklist
+Accounting date error message is appearing when saving a PO
+Not able to save PO as Accounting date is not open
+Contract not available to be copied in PO
+Printable version of Purchase Order not showing ship to details
+why ship to field showing see detail below on printable version of PO
+How can I change supplier ID on PO
+Not able to Change project ID on a PO
+Screen goes blank and everything is lost while entering a PO
+Screen goes blank and everything is lost while entering a voucher
+Time out issue faced while entering a PO
+System is taking long time The circle just spins
+Facing issue in Changing Supplier ID on Contract
+I want to clear my worklist
+Purchase Order is denied Can it be approved again
+PO stuck in pending cancellation status
+Requisition timing out
+System timing out while entering a large requisition
+Change description on line item of Purchase Order
+Unable to view pending req in manage req tab
+Where to see the cancelled PO
+How so submit a contract for approval after its denied
+PO amount exceeds contract amount error
+Can I see who has denied the PO
+Page Data is inconsistent with database
+Can I budget check a denied requisition
+I dispatched the PO but didn t get attachment PDF
+Performance Issue system working very slow
+How to reopen a Purchase Order PO
+Role for ePro Inquiry
+Applicability of Expense Report Guidelines
+Have a question about the guidelines
+What are the guidelines for expense reimbursement
+Which business courtesies are allowed
+Documentation and Approval Guidelines
+Are there any special Approval Requirements for Gifts and Promotional Items
+Are there any special Approval Requirements for Meals and Entertainment
+Are there any special Approval Requirements for Meals and Other Courtesies Related to Sponsored Events
+Are there any special Approval Requirements for Travel and TravelorRelated Expenses
+I need to update the LDW Laureate Department Workflow
+I void the voucher payment but Payment Status is Pending
+Invalid Chartfield Combination error while creating a requisition
+Where I can check the status of my Security form
+How to create a Receipt
+Error Origin Missing on your Operator profile
+I want to unstage my expense report
+How to cancel the Receipt
+Not able to open a voucher in PeopleSoft
+How to cancel Purchase Order PO
+Navigation to Report Manager
+Expense Report Close
+How to Purge the PO lines which are in error
+What is meaning of status See Lines on the requisition
+Attachment error on voucher
+How to apply credit voucher to regular voucher
+When PO is dispatched to whom email is triggered
+Vendor form and supporting document s were forwarded to our Accounts Payable When the vendor will be created
+How to add comments in the receipt
+How to add attachments in the receipt
+Journal Approval role
+How to resubmit the denied voucher
+Role to express add an asset
+PO is not visible while creating a Receipt
+Access to override non qualified Pos for close
+Basic role of a user
+How to Budget Check the PO
+How to change the useful life of an asset
+Can requester be tagged to 2 departments simultaneously
+Vendor is not appearing in the lookup
+How to stop voucher from getting picked in the pay cycle
+By using my alias email ID I dispatched the PO but didn t get any email
+Voucher shows Attachment as 1 but not able to see any attachment
+What is status of my invoice payment
+When the status of closed voucher will change
+How can I retire an asset without entering the proceeds
+How to check Asset Status
+How to make VAT amount 0 on the voucher level
+Why am I getting a Match Exception notification for a voucher
+Error which comes when we open voucher regarding internal loop
+Why remittance files are not being received
+I am not able to dispatch my Purchase Order PO
+Why voucher not getting picked for Budget check
+Why I am not able to cancel a requisition
+Interface files are rejected
+Why voucher is not available in bank reconciliation file
+In the vendor liability report why prepaid voucher not appearing
+Can we create a voucher with PO portion and non PO portion without exception
+Unable to generate PO
+Why PO is not available after closing a voucher
+How to check which requisitions and Pos are associated with my Contract
+How to check which requisitions are associated my PO
+How to check which Pos are associated with my requisition
+How to check which Pos are associated with my Receipts
+How to check which documents are associated with my vouchers
+How to create a voucher from Receipt
+How to use a new vendor location for an old date
+Financial Gateway access for Australia AUS
+Financial Gateway access for NewZeland NZL
+Role to Dispatch the PO for AUS
+Does credit voucher goes for approval
+How to make Expense location default for all the lines
+What is my expense payment status
+How to create PO without requisition
+Not able to open the attachment
+Why only one asset got created for 2 interface ID assets
+How to make quantity adjustment in asset
+How to change the invoice amount on the voucher line level
+How to change Vendor ID while expediting PO
+Voucher not appearing in batch process
+Why requisition was not getting routed to reviewer
+My journal is in error
+Role required to approve a Vendor
+Where I can see my Corporate Card Details
+Where does the expense report get routed after submission if employee s manager is terminated in the system
+How to Unapply the prepaid voucher from regular voucher
+Can we create an expense report in the current period if the period is not open
+Criteria to delete voucher
+Criteria to close voucher
+Frontline Footprint related issue
+How to Create online security form
+Navigation to run vendor liability aging report
+How to see my worklist items
+How to dispatch the PO again
+How to deauthorize the delegation
+HOW TO CLOSE A VOUCHER
+Vendor setup
+How to change requisition BU
+Why I am getting LOB size error while opening a voucher
+How to change default currency in expense claim
+How to change the default currency on Expense Report
+What is Net Due Date
+How to cancel the requisition
+I am vendor approver But still I am not able to approve a vendor
+How to check to whom my vendor is routed for approval
+Where I can check my supervisor details
+Can support team cancel the payments
+Where can view a voucher pending for my approval
+I ran the expedite requisition process but Purchase Order PO is not yet created
+My voucher is Pending for approval Where I can check it is pending with whom
+Why my requisition is not routed for approval
+Why my expense reports are not reconciled
+Issue with Mileage Claim
+Error while submitting the mileage claims like the transportation ID column drop down can not be blank
+I am not able to see voucher exception page
+How I can check the approvers of my requisition
+Errror Over shipped when you are trying to create receipt again while creating receipts
+Accounting Template is not valid error while creating a voucher
+Unable to upload journal through spreadsheet
+How I can give authority to someone to enter expense report on behalf of me
+How to Authorize expense user to enter expense report
+How to change the currency on the requisition

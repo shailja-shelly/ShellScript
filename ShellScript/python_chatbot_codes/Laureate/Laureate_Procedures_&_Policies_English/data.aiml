@@ -1,0 +1,66 @@
+<aiml version = "1.0.1" encoding = "UTF-8">
+<!-- data.aiml -->
+	
+	<category>
+        <pattern>APPLICABILITY OF EXPENSE REPORT GUIDELINES</pattern>
+        <template>
+        These Guidelines apply to every officer, director, full- and part-time employee, faculty member, contractor, and student worker of Laureate. They also apply to all agents, representatives, consultants, distributors, dealers, and other third parties doing business on behalf of Laureate or its affiliates.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HAVE A QUESTION ABOUT THE GUIDELINES</pattern>
+        <template>
+        Questions about these Guidelines should be addressed to the relevant Local Compliance Officer of through the Laureate Ethics Helpline.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT ARE THE GUIDELINES FOR EXPENSE REIMBURSEMENT</pattern>
+        <template>
+        These Guidelines address the provision and receipt of common courtesies, meals, gifts, entertainment, travel and travel-related expenses, and expenses associated with events such as conferences, seminars, college fairs, and training (collectively, “business courtesies”). We must never offer or receive courtesies under circumstances where they could affect, or appear to affect, decision making. Business courtesies given to or received from suppliers, students, and others outside Laureate must be related to a legitimate purpose and given or received without expectation of any favorable decision or unfair advantage.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHICH BUSINESS COURTESIES ARE ALLOWED</pattern>
+        <template>
+        Consistent with the Laureate Code of Conduct and Ethics, Laureate personnel may provide or receive business courtesies as long as they are:|• related to a legitimate purpose, such as the promotion, demonstration or explanation of products and services|• provided without expectation of any favorable decision, official action or unfair advantage|• reasonable, infrequent, and modest in amount|• not paid in cash or cash equivalents|• appropriate in character (e.g., no “adult” entertainment) and consistent with local business customs and practices|• documented with receipts and properly accounted for in our books and records|• authorized as required by relevant policies and procedures and|• consistent with applicable laws|Note on business courtesies for government officials:|Although these Guidelines apply to the provision of business courtesies to anyone outside Laureate, Laureate personnel must exercise particular caution in the payment, reimbursement, or provision of business courtesies to government officials, as they are often subject to more restrictive legal requirements. Any such expenses paid directly or reimbursed must be genuine, reasonable, directly related to a legitimate business activity of Laureate, and allowed by U.S. and local law. Government officials in many countries are not allowed to accept any gifts or other business courtesies, and these should not be provided unless it has been affirmatively determined that it will not violate any law.
+        </template>
+    </category>
+
+    <category>
+        <pattern>DOCUMENTATION AND APPROVAL GUIDELINES</pattern>
+        <template>
+        All business courtesy expenses must be properly documented to reflect |(a) the purpose of the gift or other courtesy|(b) the individual receiving it|(c) the recipient's organization and position|(d) a description of the business courtesy|(e) the identity of others attending (if a meal or other event) and |(f) the amount. All such expenses must be approved by the manager of the person providing the courtesy. If multiple Laureate personnel attend an event, the most senior person should pay, and approval should come from that person’s manager.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ARE THERE ANY SPECIAL APPROVAL REQUIREMENTS FOR GIFTS AND PROMOTIONAL ITEMS</pattern>
+        <template>
+        Laureate personnel may provide promotional items bearing a Laureate or institutional logo, or other modest gifts, worth up to US$50 to an individual once in a calendar year without prior approval, so long as such items are provided consistent with the Basic Guidance set out above. The payment, reimbursement, or provision of all other gifts and promotional items requires the advance approval of the relevant Local Compliance Officer. |Laureate personnel may accept gifts worth up to US$50 (total, from all sources) in a calendar year, so long as such items are provided consistent with the Basic Guidance set out above. The acceptance of all other gifts and promotional items from outside parties requires the approval of the relevant Local Compliance Officer. If there are applicable local Guidelines that set out different value amounts, personnel should follow those.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ARE THERE ANY SPECIAL APPROVAL REQUIREMENTS FOR MEALS AND ENTERTAINMENT</pattern>
+        <template>
+        Laureate personnel may provide modest meals and entertainment, such as lunches, dinners, or tickets to sporting events, not exceeding a total value of US$75 per person, as long as meals and entertainment to any one individual does not exceed US$300 in a calendar year, and the provision of the meals and entertainment is consistent with the Basic Guidance set out above. The payment, reimbursement, or provision of all other meals and entertainment requires the advance approval of the relevant Local Compliance Officer.|Laureate personnel may accept modest meals and entertainment, such as lunches, dinners, or tickets to sporting events, not exceeding at total value of US $75 per event, and not exceeding US$300 (total, from all sources) in a calendar year, and the acceptance of the meals and entertainment is consistent with the Basic Guidance set out above. The acceptance of all other meals and entertainment from outside parties requires the approval of the relevant Local Compliance Officer. If there are applicable local Guidelines that set out different value amounts, personnel should follow those.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ARE THERE ANY SPECIAL APPROVAL REQUIREMENTS FOR MEALS AND OTHER COURTESIES RELATED TO SPONSORED EVENTS</pattern>
+        <template>
+        Sponsored Events means Laureate-sponsored seminars, curriculum-development conferences or other organized meetings to further Laureate interests or the development educational opportunities in an institution, country or region. Such events may be held to promote Laureate’s goals, to further educational goals in a country or region and/ or to build goodwill for Laureate. The primary purpose of the Sponsored Event must be consistent with Laureate’s goals or the development of educational prospects, and not undertaken for entertainment purposes, to confer any personal benefit, or as a reward or inducement for doing business with Laureate or attending a Laureate institution. It is permissible if the purpose includes the highlighting of Laureate’s approach to education, though not to specifically induce participants to do business with Laureate in exchange for lavish or excessive gifts, meals, or entertainment.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ARE THERE ANY SPECIAL APPROVAL REQUIREMENTS FOR TRAVEL AND TRAVELORRELATED EXPENSES</pattern>
+        <template>
+        As part of a Sponsored Event or other meeting or demonstration of products and services, we may, under appropriate circumstances, provide airfare, other forms of transportation, or accommodations to outside parties. All such expenses require the advanced approval of the relevant Local Compliance Officer. All travel and travelrelated expenses must be provided consistent with the Basic Guidance set out above, as well as the following additional requirements.|• The travel must be for a legitimate purpose, such as meetings to tour a Laureate university or to observe or discuss Laureate programs;|• The expenses must be related entirely to the legitimate purpose (e.g., family members of the individual receiving legitimate travel reimbursement may not travel at Laureate expense) and must not include any lavish or excessive entertainment such as side-trips, unnecessary stopovers, or other activities unrelated to the legitimate purpose of the travel (unless paid for entirely by the individual in question);|• Travel expenses may only be reimbursed against appropriate receipts or equivalent documentation;|• Payments should be made directly to the hotel, airline, or service provider whenever possible. If an individual or government official personally pays expenses that Laureate agreed to cover, that person should fill out an expense report and supply it to his or her employer, after which Laureate may reimburse the employer.|Laureate Personnel may not accept travel and travel-related expenses from outside parties without approval from the relevant Local Compliance Officer.
+        </template>
+    </category>
+</aiml>

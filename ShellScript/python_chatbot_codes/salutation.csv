@@ -1,0 +1,56 @@
+Sr. No.,Salutation,Expected_Response
+1,hi,"Hi <username>, I am Emma. How can I help you?"
+2,how are you?,"Hello <username>, I am fine. Hope you are doing good. How can I help you?"
+3,are you a bot?,"Hi <username>, I am Emma. How can I help you?"
+4,what can you help me with?,"Hi <username>, I am Emma. I can help you with your queries related to PeopleSoft and/or Laureate Procedures & Policies."
+5,how can you help me,"Hi <username>, I am Emma. I can help you with your queries related to PeopleSoft and/or Laureate Procedures & Policies."
+6,what do you do?,"Hi <username>, I am Emma. I can help you with your queries related to PeopleSoft and/or Laureate Procedures & Policies."
+7,hey you!,"Hi <username>, I am Emma. How can I help you?"
+8,"hello, how are you?","Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+9,how are you today?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+10,i am not sure if a bot can help me but i want to give it a try.,"Hi <username>, I am Emma. I can help you with your queries related to PeopleSoft and/or Laureate Procedures & Policies."
+11,can you provide me few inputs?,"Hi <username>, I am Emma. I can help you with your queries related to PeopleSoft and/or Laureate Procedures & Policies."
+12,good morning,"Hello <username>, Good Morning. How can I help you?"
+13,good afternoon,"Hello <username>, Good Afternoon. How can I help you?"
+14,good evening,"Hello <username>, Good Evening. How can I help you?"
+15,hello,"Hi <username>, I am Emma. How can I help you?"
+16,thanks,Sure. I am glad that I could help you.
+17,thank you,Sure. I am glad that I could help you.
+18,thanks for your help,Sure. I am glad that I could help you.
+19,quick help please,"Hi <username>, I am Emma. How can I help you?"
+20,how do you do?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+21,hey,"Hi <username>, I am Emma. How can I help you?"
+22,how are you doing?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+23,how's it going?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+24,what's up?,"Hi <username>, I am Emma. How can I help you?"
+25,what's going on?,"Hi <username>, I am Emma. How can I help you?"
+26,what's new?,"Hi <username>, I am Emma. How can I help you?"
+27,how's everything?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+28,how are things?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+29,how's life?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+30,how's your day?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+31,how's your day going?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+32,good to chat with you,"<username>, I am glad that I could help you."
+33,it was nice to get a  chance to chat with you.,"<username>, I am glad that I could help you."
+34,how have you been?,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+35,its been a while,"Hi <username>, I am Emma. How can I help you?"
+36,long time no see,"Hi <username>, I am Emma. How can I help you?"
+37,hi emma! hope you are doing good,"Hi <username>, I am Emma. How can I help you?"
+38,Hey!happy to see you again,Hello <username>. Hope you are doing good. How can I help you?
+39,how's it going,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+40,hi! how are you,Couldn't be better! How can I help you?
+41,i am good. you tell,I'm doing my best to help you. Please start typing your query in the space provided.
+42,namaste,Namastey ! I am Emma. How can I help you?
+43,bye,Bye bye!
+44,see you later,Bye bye!
+45,gm,"Hello <username>, Good Morning. How can I help you?"
+46,hwz it goin,"Hello <username>, I am fine. Hope you are doing good too. How can I help you?"
+47,gd to cht wid u,"<username>, I am glad that I could help you."
+48,whatsup?,"Hi <username>, I am Emma. How can I help you?"
+49,thankyou,Sure. I am glad that I could help you.
+,,
+,,
+,Negative Scenarios,
+,i am not satisfied with the answer provide by you emma,"If I am not able to answer your questions, you can provide your feedback under feedback tab."
+,hope you could have worked better,"If I am not able to answer your questions, you can provide your feedback under feedback tab."
+,responses provided by you are worst,"If I am not able to answer your questions, you can provide your feedback under feedback tab."

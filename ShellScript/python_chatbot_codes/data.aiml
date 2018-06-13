@@ -1,0 +1,2398 @@
+<aiml version = "1.0.1" encoding = "UTF-8">
+<!-- data.aiml -->
+
+    <category>
+        <pattern>I NEED A ACCOUNTS PAYABLE ROLE TO CREATE VOUCHER</pattern>
+        <template>
+        If you know Role name then, please create an Access Request using below link |https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx  .Else create support a ticket
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN CREATE VOUCHER IN PEOPLESOFT</pattern>
+        <template>
+        Login to PeopleSoft and navigate below |Main Menu > Accounts Payable > Vouchers > Add/Update > Regular Entry
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN CREATE EXPENSE REPORT IN PEOPLESOFT</pattern>
+        <template>
+        Login to PeopleSoft and navigate below |Main Menu > Employee Self-Service > Travel and Expense Center > Expense Report > Create
+        </template>
+    </category>
+
+    <category>
+        <pattern>I WANT TO CREATE A TICKET FOR PEOPLESOFT SUPPORT TEAM</pattern>
+        <template>
+        Please send mail to |1. For AMEA Functional Questions: amea.peoplesoftsupport@laureate.net |2. For Global Technical Questions: l3peoplesoft@laureate.net |Else you can send a mail to frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY PAY CYCLE IS STUCK IN BETWEEN I AM UNABLE TO PROCEED</pattern>
+        <template>
+        Please reset the pay cycle. If you are unable to reset, please send mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>I WANT TO KNOW THE STATUS OF MY TICKET RAISED WITH SUPPORT TEAM</pattern>
+        <template>
+        Please send mail to frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN CHECK THE STATUS OF VENDOR</pattern>
+        <template>
+        Please navigate to below |Main Menu > Vendors > Vendor Information > Add/Update > Vendor > Vendor Information
+        </template>
+    </category>
+
+    <category>
+        <pattern>I WANT TO RESET PEOPLESOFT PASSWORD</pattern>
+        <template>
+        Click Forgot Password. |If system allows you to reset, then proceed. |Else please send mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net with details. | Note: In future, please set the security questions first to retrieve the password. |Navigation: Main Menu > My System Profile | 1. Click Change or set up forgotten password help |2. Select the question and response and then Save it.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM A NEW EMPLOYEE I WANT TO CREATE EXPENSE REIMBURSEMENT IN PEOPLESOFT HOW DO I DO THAT</pattern>
+        <template>
+        Login to PeopleSoft and navigate below |Main Menu > Employee Self-Service > Travel and Expense Center > Expense Report > Create
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS FREQUENCY OF LIAP02 OR VOUCHER BUILD PROCESS</pattern>
+        <template>
+        LIAP02 or Voucher Build process runs in every 2Hrs EST.
+        </template>
+    </category>
+
+    <category>
+        <pattern>FORGOT PASSWORD LINK IS NOT WORKING</pattern>
+        <template>
+        Please send mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net with details. | Note: In future, please set the security questions first to retrieve the password. |Navigation: Main Menu > My System Profile | 1. Click Change or set up forgotten password help|2. Select the question and response and then Save it.
+        </template>
+    </category>
+
+    <category>
+        <pattern>PREREQUISITES OF AM REPORTING</pattern>
+        <template>
+        Load Depreciation Reporting table |Navigation: Main Menu > Asset Management > Financial Reports > Load Reporting Tables > Depr Reporting Table
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHICH DATE IS USED DURING DEPRECIATION RELATED CALCULATIONS</pattern>
+        <template>
+        Transaction Date
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I RETIRE AN ASSET BY QUANTITY</pattern>
+        <template>
+        Yes. You can retire an asset by both Quantity or Cost.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I REINSTATE AN ASSET AFTER RETIREMENT</pattern>
+        <template>
+        Yes
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO REINSTATE AN ASSET AFTER RETIREMENT</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Asset Transactions > Asset Disposal > Retire/Reinstate Asset |1. Click Reinstate button, select Accounting Date and Save it.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I RECATEGORIZE AN ASSET</pattern>
+        <template>
+        Yes
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO RECATEGORIZE AN ASSET</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Asset Transactions > Financial Transaction > Cost Adjust/Transfer Asset|1. Select Transaction and Accounting Date and Action i.e. Recategorize. |2. On the next page, select new category and Save.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I ADJUST THE COST OF AN ASSET</pattern>
+        <template>
+        Yes
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO ADJUST THE COST OF AN ASSET</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Asset Transactions > Financial Transaction > Cost Adjust/Transfer Asset |1. Select Transaction and Accounting Date and Action i.e. Adjustment. |2. On the next page, enter the cost/Quantity by which you want to increase/decrease the asset. |3. Click on Apply and Save.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I TRANSFER AN ASSET INTRA INTER</pattern>
+        <template>
+        Yes
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO TRANSFER AN ASSET INTRA INTER</pattern>
+        <template>
+        Which type of asset transfer you want to do..?|1. How to transfer an Inter (Between Business Units):|2. How to transfer an Intra (Within same Business Unit):
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO TRANSFER AN INTER BETWEEN BUSINESS UNITS</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Asset Transactions > Financial Transaction > Cost Adjust/Transfer Asset |1. Select Transaction and Accounting Date and Action i.e. Interunit Transfer. |2. On the next page, enter the New Unit (BU) and click on Save.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO TRANSFER AN INTRA WITHIN SAME BUSINESS UNIT</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Asset Transactions > Financial Transaction > Cost Adjust/Transfer Asset |1. You can transfer an asset within Business Unit by changing location, chartfields like Dept ID, Oper Unit etc.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN SEE THE DEPRECIATION INFORMATION OF AN ASSET</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Depreciation > Review Depreciation Info > Asset Depreciation
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN SEE THE ACCOUNTING ENTRIES OF AN ASSET</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Accounting Entries > Review Financial Entries
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM NOT ABLE TO POST THE VOUCHER THOUGH IT IS APPROVED</pattern>
+        <template>
+        Please check the Document Tolerance status and Budget Check Status. Both should be Valid to make the voucher eligible for posting.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS PAY TERMS</pattern>
+        <template>
+        Payment terms are used to calculate schedule date for payment.|Invoice Date + Payment Terms = Schedule Date
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS SCHEDULE DATE</pattern>
+        <template>
+        Invoice Date + Payment Terms = Schedule Date. It is used in pay cycle.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS ADJUSTMENT VOUCHER</pattern>
+        <template>
+        Adjustment voucher is used for credit or debit memos, or for relating one voucher to another.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS PREPAID VOUCHER</pattern>
+        <template>
+        Prepaid vouchers are used when we need to pay before we receive any goods or services. Peoplesoft allows us to make  payment to vendor without an invoice.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS REGULAR VOUCHER</pattern>
+        <template>
+        Regular voucher is default voucher type. It is also used to enter purchase order vouchers and vouchers that require matching to purchase orders and receiving documents.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS SINGLE PAYMENT VOUCHER</pattern>
+        <template>
+        Single Payment voucher is used for making the payment to one-time vendors so that we don't need to define the vendor in the system.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS REVERSAL VOUCHER</pattern>
+        <template>
+        Reversal voucher is used to create the reversal accounting entries and back out encumbrances
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO APPLY REGULAR VOUCHER TO PREPAID VOUCHER</pattern>
+        <template>
+        1.Navigate to Main Menu > Accounts Payable > Payments > Manual Payment and Prepayment > Apply Vouchers to Prepayment|2. Enter BU and Prepaid voucher ID|3. Click Apply New Vouchers to Payment and search for Regular voucher.|4. Select the checkbox and Click Copy/Back|5. Click Apply and Save it
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I CREATE A CONTRACT WITH SAME DATE</pattern>
+        <template>
+        Yes. You can create a contract with same date for different vendors. But Peplesoft does not allow us to create a contract for same vendor with same date.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS VOUCHER CLOSING</pattern>
+        <template>
+        We close the voucher when we want the remaining liability to be written off the vendor balance and the voucher to be considered complete. For example, when we have items in dispute that we and the supplier have agreed that we will not make a payment on these items.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CLOSE A VOUCHER</pattern>
+        <template>
+        Navigate to Main Menu > Accounts Payable > Vouchers > Add/Update > Close Voucher. Enter Accounting Date and Save it. |Voucher can be closed only when voucher is :|1. Posted|2. No Selected for Payment|3. Not Fully Paid
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY MY VOUCHER IS NOT GETTING PICKED IN THE PAYCYCLE</pattern>
+        <template>
+        Please select from following : | 1. Why Credit Voucher not getting picked in pay cycle? | 2. Why Regular Voucher not getting picked in pay cycle?
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY CREDIT VOUCHER NOT GETTING PICKED IN PAY CYCLE</pattern>
+        <template>
+        In Payment Selection Criteria > Preferences tab, make sure Process Credit Vouchers option is selected. This will enable the credit voucher selection during Payment Selection process.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY REGULAR VOUCHER NOT GETTING PICKED IN PAY CYCLE</pattern>
+        <template>
+        1. Please check if the vendor used during voucher creation is to be paid in Pay Group. If yes, select the checkbox Use Vendor Pay Group on Preferences tab of Payment Selection Criteria. If no, uncheck the checkbox. | 2. Also, please check Schedule Date of voucher. It should fall between Payment From date and To Date. | 3. Payment Hold checkbox on Payments tab should not be selected.  | 4. Make sure Business Unit is selected on Source/BU tab. | 5. Make sure Bank and payment method of voucher are selected for processing on Bank/Method
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CANCEL THE PAYMENT</pattern>
+        <template>
+        Navigation: Main Menu > Accounts Payable > Payments > Cancel/Void Payments > Payment Cancellation|1. Enter Bank details, Payment Reference etc. |2. On the cancellation page, select one of the options and Save it.|3. Payment Status will change only after Payment Posting process is run after payment cancellation.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHICH OPTION IN PAYMENT STATUS I SHOULD SELECT WHILE CANCELLING THE PAYMENT</pattern>
+        <template>
+        1. Void: Select to void the payment. We void a payment when it has not been released.|2. Stop: Select to stop the payment. We stop a payment when it has been released. |3. Undo Cancel: We can undo any cancellation until we post the canceled payment. After posting, we cannot undo the cancellation. |1. Re-Open Voucher(s)/Re-Issue: Use to reselect the scheduled payments and reissue them the next time that you run a pay cycle |2. Re-Open Voucher(s)/Put on Hold: Use to reopen the scheduled payments, but places the reopened scheduled payments on hold for  your review. Select this option if you need to perform additional investigation or revise voucher information before proceeding with  payment. |3. Do Not Reissue/Close Liability: Use to cancel the payment and close any liabilities associated with it. The amount of the liability to close is calculated as the amount of unpaid liability remaining.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHICH OPTION IN CANCEL ACTION I SHOULD SELECT WHILE CANCELLING THE PAYMENT</pattern>
+        <template>
+        1. Re-Open Voucher(s)/Re-Issue: Use to reselect the scheduled payments and reissue them the next time that you run a pay cycle|2. Re-Open Voucher(s)/Put on Hold: Use to reopen the scheduled payments, but places the reopened scheduled payments on hold for  your review. Select this option if you need to perform additional investigation or revise voucher information before proceeding with  payment. |3. Do Not Reissue/Close Liability: Use to cancel the payment and close any liabilities associated with it. The amount of the liability to close is calculated as the amount of unpaid liability remaining.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW I CAN CREATE A PO FROM REQUISITION</pattern>
+        <template>
+        Navigation: Main Menu > eProcurement > Buyer Center > Expedite Requisition|1. Enter Business Unit, Requisition iD and search.|2. Enter Buyer and submit the request.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHICH ROLE IS REQUIRED FOR VOUCHER UNMATCHING</pattern>
+        <template>
+        1. Role: LI_AP_WRKBNCH_GLB|2. You also need to have following Process Groups: MTCHOVRD and MTCHEXPTN
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHICH ROLE IS REQUIRED FOR DOCUMENT TOLERANCE OVERRIDE ACCESS</pattern>
+        <template>
+        Raise an Online Security Request form for updating User Preferences.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE AN EXPENSE REPORT</pattern>
+        <template>
+        Navigate to Main Menu > Employee Self Service > Travel and Expense Center. Then click Create and enter the expense.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CORRECT EXPENSE REPORT ERRORS</pattern>
+        <template>
+        Which type of error..?|1. How to correct credit card related Expense Report error?|2. How to correct acad discipline related Expense Report error?|3. How to correct preferred non preferred merchant related Expense Report error?
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CORRECT CREDIT CARD RELATED EXPENSE REPORT ERROR</pattern>
+        <template>
+        Check if your credit card information is empty in your profile.
+        </template>
+    </category>
+
+    <category>
+        <pattern>IF CREDIT CARD INFORMATION IS NOT EMPTY</pattern>
+        <template>
+        Then check if the expense report date is prior to the credit card assigned date.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CORRECT ACAD DISCIPLINE RELATED EXPENSE REPORT ERROR</pattern>
+        <template>
+        Click on Accounting Defaults and enter Acad Discipline field.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CORRECT PREFERRED NON PREFERRED MERCHANT RELATED EXPENSE REPORT ERROR</pattern>
+        <template>
+        Enter either Preffered or Non-preffered merchant in Merchant tab of Expense Report.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I POST THE JOURNAL AFTER UNPOSTING IT</pattern>
+        <template>
+        No. Once a journal is unposted it cannot be posted again.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO RUN THE TRIAL BALANCE REPORT</pattern>
+        <template>
+        Navigation: Main Menu > Reporting Tools > PS/nVision > Define Report Request|1. Select the Report ID TR_BAL.
+        </template>
+    </category>
+
+    <category>
+        <pattern>PS QUERY OUTPUT ERROR</pattern>
+        <template>
+        Navigation: Main Menu > Reporting Tools > Query > Schedule Query|1. Enter Run Control ID|2. Enter Query Name and click Run.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ERROR MESSAGE ACCOUNTING PERIOD NOT OPEN</pattern>
+        <template>
+        Accounting date selected for Voucher/Asset/Journal is not within open period. Please select the Accounting Date which is within open period.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN SEE THE STATUS OF MY PROCESS</pattern>
+        <template>
+        Navigation: Main Menu > PeopleTools > Process Scheduler > Process Moniter
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY VOUCHER IS IN RECYCLE STATUS WHERE I CAN SEE THE ERRORS</pattern>
+        <template>
+        Navigation: Main Menu > Accounts Payable > Add/Update > Regular Entry|1. Enter Business Unit and Voucher ID|2. Click Error Summary tab to check the errors.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I NEED THE ROLE TO CREATE THE RECEIPT</pattern>
+        <template>
+        If you know the Role name then, please create an Access Request using below link - https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx . Else please create a new support a ticket.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I NEED A REQUESTOR ROLE</pattern>
+        <template>
+        If you know the Role name then, please create an Access Request using below link-https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx .Else please create a new support a ticket.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I NEED A BUYER ROLE</pattern>
+        <template>
+        If you know the Role name then, please create an Access Request using below link-https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx .Else please create a new support a ticket.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I NEED A ROLE TO CREATE THE JOURNALS</pattern>
+        <template>
+        If you know the Role name then, please create an Access Request using below link-https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx .Else please create a new support a ticket.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I NEED A ROLE TO CREATE AN ASSET IN PEOPLESOFT</pattern>
+        <template>
+        If you know the Role name then, please create an Access Request using below link-https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx .Else please create a new support a ticket.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO PROCESS CREDIT VOUCHERS</pattern>
+        <template>
+        In Payment Selection Criteria > Preferences tab, make sure Process Credit Vouchers option is selected. This will enable the credit voucher selection during Payment Selection process.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS MATCHING</pattern>
+        <template>
+        1. Matching process compares vouchers with purchase orders and receiving documents.|2. At Laureate, we have Three-way matching which compares vouchers, purchase orders, and receipts if the Receiving Required option is Required and the Inspection Required option is not selected for the receiver.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS DOCUMENT TOLERANCE</pattern>
+        <template>
+        Document tolerances are allowable percentages or amounts by which related procurement documents can differ.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT ARE DIFFERENT TYPES ARE MATCH STATUS</pattern>
+        <template>
+        Different Match Status are:|1. Exception|2. Manually Overridden|3. Manually Set to Credit Note|4. Matched|5. Match - Dispute|6. No Match
+        </template>
+    </category>
+
+    <category>
+        <pattern>I WANT TO KNOW THE BATCH SCHEDULE</pattern>
+        <template>
+        Please create a ticket by sending a mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY REQUISITION IS NOT AVAILABLE AFTER CANCELLATION OF PO</pattern>
+        <template>
+        Requisition may not be appearing because at the time of PO cancellation, you have not selected the option Re-source Requisition. If no, then please raise a ticket to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY REQUISITION IS APPROVED BUT IT IS NOT AVAILABLE FOR EXPEDITE</pattern>
+        <template>
+        1. Please check the Budget status of requisition. It should be Valid.| 2. Also check if PR is already linked to any PO which is not cancelled yet or in process. In such cases requistion will not be available | 3. Also check Inventory Source Flag on requsition line level. So should be unchecked to make requisition available for expedite. |Else, kindly contact amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO BUDGET CHECK REQUISITION</pattern>
+        <template>
+        On the Review and Submit tab of requisition, click button Check Budget.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS DOCUMENT SEQUENCING</pattern>
+        <template>
+        1. Sometimes it is required that all financial transactions (documents) be classified into different transaction types, |2. And within each transaction type, all documents entered be numbered sequentially. |3. The Document Sequencing feature helps us maintain established business practices by meeting both of these requirements.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS PROFILE ID</pattern>
+        <template>
+        1. An asset profile is a template that contains standard depreciation criteria for an asset type and its corresponding asset books. |2. The information established in an asset profile can be used as default values when you're adding assets to the system.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN SEE THE DETAILS OF AN ASSET</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Asset Transactions > Owned Asset > Basic Add
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO ADD AN ASSET DIRECTLY IN AM</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Asset Transactions > Owned Asset > Express Add
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DO YOU MEAN BY CONSOLIDATING AN ASSET</pattern>
+        <template>
+        1. Before running the Transaction Loader, we can consolidate many load lines into a single asset|2. Example: You may pay for Desktop, CPU, mouse, keyboard seperately. But if you don't consolidate, 4 assets will get created but actually it is an sngle asset which is Computer.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS UNITIZATION IN AM</pattern>
+        <template>
+        1. Before running the Transaction Loader, we can split a load line into many assets (unitize) manually |2. Example: You may pay for 10 computers with one voucher line. If you run the Interface without unitizing, this voucher line becomes one pending load line for one asset, and the quantity is equal to 10 which should be 10 separate lines.
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAVIGATION FOR RECEIPT CREATION</pattern>
+        <template>
+        Navigation: Main Menu > Purchasing > Receipts > Add/Update Receipts
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAVIGATION TO EXPEDITE THE REQUISITION</pattern>
+        <template>
+        Navigation: Main Menu > eProcurement > Buyer Center > Expedite Requisition|1. Enter Business Unit, Requisition iD and search.|2. Enter Buyer and submit the request.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE A PREPAID VOUCHER</pattern>
+        <template>
+        Navigation: |Main Menu > Accounts Payable > Vouchers > Add/Update > Regular Entry|1. Select Voucher Style as Prepaid voucher|2. Enter all the details like regular voucher and Save it.
+        </template>
+    </category>
+
+    <category>
+        <pattern>REQUISITION CREATION</pattern>
+        <template>
+        Navigation:|Main Menu > eProcurement > Create Requisition
+        </template>
+    </category>
+
+    <category>
+        <pattern>ASSET CREATION</pattern>
+        <template>
+        Asset is created through interface from AP to AM. Please follow below steps:|1. Main Menu > Accounts Payable > Batch Process > Extracts and Loads > Load Asset Request|2. Main Menu > Asset Management > Send/Receive Information > Retrieve Info from AP/PO|3. Unitize/Consolidate the asset if required |4. Main Menu > Asset Management > Send/Receive Information > Load Transaction > Load Transacion into AM
+        </template>
+    </category>
+
+    <category>
+        <pattern>JOURNAL CREATION</pattern>
+        <template>
+        Navigation to create an online journal:|Main Menu > General Ledger > Journals > Journal Entry > Create/Update Journal Entries
+        </template>
+    </category>
+
+    <category>
+        <pattern>PURCHASE ORDER PO CLOSE</pattern>
+        <template>
+        Navigation: Main Menu > Purchasing > Purchase Orders > Buyer's Workbench| 1. Select the checkbox for required PO and click Close.| 2. If prompted to Budget Check, please click yes, Budget Check.
+        </template>
+    </category>
+
+    <category>
+        <pattern>PURCHASE ORDER PO DISPATCH</pattern>
+        <template>
+        PO can be dispatched by 3 ways: |1. Through PO page: |Main Menu > Purchasing > Purchase Orders > Add/Update Pos|2. Through Dispatch Pos page:|Main Menu > Purchasing > Purchase Orders > Dispatch Pos|3. Through Buyer's Workbench:|Main Menu > Purchasing > Purchase Orders > Buyer's Workbench
+        </template>
+    </category>
+
+    <category>
+        <pattern>PURCHASE ORDER PO BUDGET CHECK</pattern>
+        <template>
+        Budget checking for PO is a batch process which runs twice a day.
+        </template>
+    </category>
+
+    <category>
+        <pattern>PO RECEIPT IS NOT COMING IN VOUCHER</pattern>
+        <template>
+        1. Check the Match Status of Receipt. If it is fully matched, receipt will not come on voucher. It should be Partially matched |2. In Process Flag should be No. This can only be seen thoriugh database. So please raise a ticket by sending issue to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>VOUCHER MATCH EXCEPTION</pattern>
+        <template>
+        If vouchers do not pass the Matching process, the system flags them as exceptions.
+        </template>
+    </category>
+
+    <category>
+        <pattern>OVERRIDE VOUCHER MATCH EXCEPTION</pattern>
+        <template>
+        Navigation:|Main Menu > Accounts Payable > Vouchers > Add/Update > Regular Entry|1. Click Exceptions link|2. Select Voucher Match Action and Voucher Line Match Action Override and click Apply. |3. Save it|4. Run he matching process again
+        </template>
+    </category>
+
+    <category>
+        <pattern>REROUTE VOUCHERS FOR APPROVAL</pattern>
+        <template>
+        Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>REROUTE REQUISITIONS FOR APPROVAL</pattern>
+        <template>
+        Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>REROUTE VENDORS FOR APPROVAL</pattern>
+        <template>
+        Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>REROUTE EXPENSE REPORTS FOR APPROVAL</pattern>
+        <template>
+        Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>APROVAL DELEGATION</pattern>
+        <template>
+        Navigation:|Main Menu > My System Profile|1. Enter Alternate User ID|2. Enter From Date and To Date|3. Click Save|For any further clarification, Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCESS TO DELETE A VOUCHER OR VOUCHER DELETE ROLE</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link:  | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx | LI_AP_VCHRDLT_GLB (GLB AP Voucher Delete Role)
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCESS TO APPROVE THE REQUISITION OR REQUISITION APPROVER ROLE</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx | LI_PV_APPROVER_GLB    ePRO Req Aprover Role
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCESS TO APPROVE THE VOUCHER OR VOUCHER APPROVER ROLE</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx | LI_AP_APPROVER_GLB    voucher approval role
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCESS TO TO UNPOST THE VOUCHER OR VOUCHER UNPOST ROLE</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx | LI_AP_VCHRUNPST_GLB (GLB AP Voucher Unpost Role)
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCESS TO POST THE VOUCHER OR VOUCHER POST ROLE</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx | LI_AP_VCHRPST_GLB (GLB AP Voucher Post Role)
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCESS TO CREATE A VOUCHER OR VOUCHER CREATION ROLE</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx | LI_AP_VCHRENTRY_GLB (GLB AP Voucher Entry Role)
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCESS TO CLOSE THE VOUCHER OR VOUCHER CLOSE ROLE</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx | LI_AP_VCHRCLS_GLB (GLB AP Voucher Close Role)
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN ENTER MY EXPENSES</pattern>
+        <template>
+        Login to PeopleSoft and navigate below |Main Menu > Employee Self-Service > Travel and Expense Center > Expense Report > Create
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN MY EXPENSE REPORT WILL BE PAID</pattern>
+        <template>
+        Once the expense is Approved and status is staged, it will be eligible for payment.
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAVIGATE TO EXPENSE CREATION</pattern>
+        <template>
+        Login to PeopleSoft and navigate below |Main Menu > Employee Self-Service > Travel and Expense Center > Expense Report > Create
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN CHECK MY EXPENSE REPORT STATUS</pattern>
+        <template>
+        Navigation: |Main Menu > Employee Self-Service > Travel and Expense Center > Expense Report > View|Enter Report ID and check Status field.
+        </template>
+    </category>
+
+    <category>
+        <pattern>FROM WHERE I CAN MODIFY MY SAVED EXPENSE REPORT</pattern>
+        <template>
+        Navigation:|Main Menu > Employee Self-Service > Travel and Expense Center > Expense Report > Modify
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DELETE EXPENSE REPORT</pattern>
+        <template>
+        Navigation: |Main Menu > Employee Self-Service > Travel and Expense Center > Expense Report > Delete
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE CASH ADVANCE</pattern>
+        <template>
+        Navigation:|Main Menu > Employee Self-Service > Travel and Expense Center > Cash Advance > Create
+        </template>
+    </category>
+
+    <category>
+        <pattern>CONSOLIDATION ISSUE EXTRA LINE DID NOT GET GENERATED AFTER CONSOLIDATION</pattern>
+        <template>
+        Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE A VOUCHER</pattern>
+        <template>
+        Login to PeopleSoft and navigate below |Main Menu > Accounts Payable > Vouchers > Add/Update > Regular Entry
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO POST EXPENSE REPORT LIABILITIES</pattern>
+        <template>
+        Posting Liabilities is a batch process and it runs every 4 hours.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO STAGE EXPENSE REPORTS</pattern>
+        <template>
+        Staging expense reports is a batch process and it runs every 4 hours.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO PAY EXPENSE REPORT</pattern>
+        <template>
+        Expense payment is made through expense pay cycle.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SIGNIFICANCE OF EFT PAYMENT METHOD</pattern>
+        <template>
+        EFT payment is paperless format. It require that you create an electronic file that contains the necessary bank information which is processed through bank.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SIGNIFICANCE OF ACH PAYMENT METHOD</pattern>
+        <template>
+        ACH payment is paperless format. It require that you create an electronic file that contains the necessary bank information which is processed by a clearinghouse.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SIGNIFICANCE OF SYSTEM CHECK CHK PAYMENT METHOD</pattern>
+        <template>
+        It is printed payment format for regularly scheduled payments. It can be System check or Manual check. If it is System check, it is processed through a pay cycle. If it is Manual check, it is marked Paid and is prepared for payment posting as Manual checks are usually issued for payments that you have already made by physically writing a check.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SIGNIFICANCE OF WIRE WIR PAYMENT METHOD</pattern>
+        <template>
+        A wire transfer is a transaction that you initiate through your bank. You can create a manual payment and run pay cycle processes to process your wire transfer payments.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO GENERATE SUBSYSTEM JOURNAL</pattern>
+        <template>
+        Journal Generator is a batch process. User can run it Ad-Hoc by following navigation:|Main Menu > General ledger > Journals > Subsystem Journals > Generate Journals|1. Select Business Unit, SetID, appropriate Accounting Definition Name and Date Range|2. Run FS_JGEN process.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE A JOURNAL</pattern>
+        <template>
+        Navigation:|Main Menu > General ledger > Journals > Journal Entry > Create/update Journal entries
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO COPY JOURNAL</pattern>
+        <template>
+        Main Menu > General ledger > Journals > Journal Entry > Copy Journal
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOE TO EDIT JOURNAL</pattern>
+        <template>
+        Main Menu > General ledger > Journals > Journal Entry > Create/Update Journal Entries|1. Find an Existing value and open the required journal|2. Click Lines tab, select Edit Journal from the drop down and click Process
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO EDIT ERROR JOURNAL</pattern>
+        <template>
+        Navigation to create an online journal:|Main Menu > General Ledger > Journals > Journal Entry > Create/Update Journal Entries
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO APPROVE A JOURNAL</pattern>
+        <template>
+        IF you have the approver roles, then click Worklist and select the Journal which you want to approve. Click Approve after writing approval comments.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS GENERAL LEDGER</pattern>
+        <template>
+        General Ledger serves as the core of the PeopleSoft Financial Management System. The PeopleSoft subsystem applications, such as Payables and Receivables, create accounting entries that you select to process in the journal generator. Journal Generator creates the appropriate journals from the accounting entries and sends them to General Ledger for posting to the appropriate ledgers. From this posted accounting data, you can obtain both detail and summary accounting information and produce numerous financial reports for your organization.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO POST A JOURNAL</pattern>
+        <template>
+        Journal posting is a batch process which runs everyday.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO UNPOST A JOURNAL</pattern>
+        <template>
+        Navigation:|Main Menu > General Ledger > Journals > Process Journals > Mark Journals for Unposting|Search for the required journal, check the check Process and click Unpost Selected Journals to run the process.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE TO CHECK JOURNAL ACCOUNTING ENTRIES</pattern>
+        <template>
+        Navigation:|Main Menu > General ledger > Journals > Journal Entry > Create/update Journal entries
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE ONLINE JOURNAL</pattern>
+        <template>
+        Navigation: | Main Menu > General ledger > Journals > Journal Entry > Create/update Journal entries
+        </template>
+    </category>
+
+    <category>
+        <pattern>FROM WHERE I CAN CREATE SUBSYSTEM JOURNAL</pattern>
+        <template>
+        Journal Generator is a batch process. User can run it Ad-Hoc by following navigation:|Main Menu > General ledger > Journals > Subsystem Journals > Generate Journals|1. Select Business Unit, SetID, appropriate Accounting Definition Name and Date Range|2. Run FS_JGEN process.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO POST VOUCHERS</pattern>
+        <template>
+        Voucher posting is a batch process which runs every 2 hours.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO PAY VOUCHERS</pattern>
+        <template>
+        Voucher payment is done through a pay cycle. Navigation:|Main Menu > Accounts Payable > Payments > Pay Cycle Processing > Payment Selection Criteria
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO UNPOST VOUCHERS</pattern>
+        <template>
+        Navigation:|Main Menu > Accounts Payable > Vouchers > Add/Update > Unpost Voucher
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO RUN BUDGET CHECK FOR VOUCHERS</pattern>
+        <template>
+        Navigation:|Main Menu > Accounts Payable > Batch Process > Vouchers > Budget Check
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO RUN MATCHING FOR VOUCHERS</pattern>
+        <template>
+        Navigation:|Main Menu > Accounts Payable > Batch Process > Vouchers > Matching
+        </template>
+    </category>
+
+    <category>
+        <pattern>DELETING A VOUCHER</pattern>
+        <template>
+        Navigation:|Main Menu > Accounts Payable > Vouchers > Add/Update > Delete Voucher
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE USER TEMPLATE IN TRAVEL AND EXPENSE</pattern>
+        <template>
+        Main Menu > Employee Self-Service > Travel and Expense > User Preferences > Create/Udate User Template
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHANGE DEFAULT CREATION METHOD FOR EXPENSE REPORT</pattern>
+        <template>
+        Main Menu > Employee Self-Service > Travel and Expense > Review/Edit Profile Tab: User defaults: Change default creation method | 1. Open a Blank Report | 2. Copy from a Travel Auth. | 3. Copy an exisiting report | 4. Copy from a Template
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO RUN ULTIPRO LOAD</pattern>
+        <template>
+        Main Menu > Travel and Expense > Manage Employee Information > Load Employee Data
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS ULTIPRO EMPLOYEE TERMINATION PROCESS</pattern>
+        <template>
+        All the employees which are marked as terminated in Ultipro will be terminated in PeopleSoft also when the process LIGBLPSUET will run. Navigation is Main Menu > Laureate Global > Processes > Ultipro Employee Terminations
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO LOAD EMPLOYEE DATA</pattern>
+        <template>
+        The processes LIPSTEJ1 and LIPSTEJ2 load all the data which comes from Ultipro. This contains data for the employees which are newly crteated, rehired etc. navigation: Main Menu > Travel and Expense > Manage Employee Information > Load Employee Data
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY MY BANK ACCOUNT IS NOT UPDATED CORRECTLY IN PEOPLESOFT</pattern>
+        <template>
+        Bank account information is updated when it gets loaded from Ultipro. Ultipro process runs everyday at 3.00 Am EST. So please wait till next batch runs else raise a ticket by sending mail to https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO APPROVE VOUCHERS</pattern>
+        <template>
+        IF you have the approver roles, then click Worklist and select the voucher which you want to approve. Click Approve after writing approval comments.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE VOUCHER ACCOUNTING ENTRIES</pattern>
+        <template>
+        Voucher accounting entries will be generated when the voucher is posted. Voucher posting is a batch process and restricted users can run it through Main Menu > Accounts Payable > Batch Process > Vouchers > Voucher Posting.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO VOID VOUCHER PAYMENT</pattern>
+        <template>
+        Navigation: Main Menu > Accounts Payable > Payments > Cancel/Void Payments > Payment Cancellation|1. Enter Bank details, Payment Reference etc. |2. On the cancellation page, select one of the options and Save it.|3. Payment Status will change only after Payment Posting process is run after payment cancellation.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE TO MODIFY SAVED VOUCHER</pattern>
+        <template>
+        Login to PeopleSoft and navigate below |Main Menu > Accounts Payable > Vouchers > Add/Update > Regular Entry|1. Click Find an existing Value|2. Enter Business Unit and your Voucher's ID and search
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DELETE VOUCHER</pattern>
+        <template>
+        Navigation:|Main Menu > Accounts Payable > Vouchers > Add/Update > Delete Voucher
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DISPATCH VOUCHER PAYMENT</pattern>
+        <template>
+        Main menu > Financial Gateway > Process Payments > Payment Dispatch
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DO PAYMENT POSTING</pattern>
+        <template>
+        Payment postimng is a batch process. The navigation through which we can manually run the process is: |Main menu > Account Payable > Batch Processes > Payment > Payment posting
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN CHECK ACCOUNTING ENTRIES FOR VOUCHER</pattern>
+        <template>
+        Main menu > Account Payable > Review Account Payable Info > Vouchers > Accounting Entries
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN CHECK VOUCHER VAT DETAILS</pattern>
+        <template>
+        Navigation: |Main Menu > Account Payable > Review Account Payable Info > Vouchers > VAT Details
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO RUN PAY CYCLE</pattern>
+        <template>
+        Navigation:|Main Menu > Accounts Payable > Payments > Pay Cycle Processing > Pay Cycle Manager
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW MANY TYPES OF VOUCHERS I CAN CREATE</pattern>
+        <template>
+        Regular Voucher|Adjustment Voucher|Pre-paid Voucher|Single Payment Voucher|Template Voucher|Journal Voucher|Register Voucher|Reversal Voucher
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO REVERSE A VOUCHER</pattern>
+        <template>
+        Main menu > Account Payable > Voucher > Add/Update > Regular Voucher |Select Voucher Type as Reversal Voucher and click on Add
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY I AM NOT ABLE TO CANCEL MY PURCHASE ORDER PO</pattern>
+        <template>
+        Please check if receipt is created for this PO. If Receipt is created, first cancel the recipt and then PO.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ROLE REQUIRED TO VIEW DOCUMENT TOLERANCE</pattern>
+        <template>
+        Please raise Online Security Request Form for role LI_FN_DOCTOLEXCPT_GLB.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ATTACHMENT ERROR WHILE CREATING A CONTRACT</pattern>
+        <template>
+        Please check the name of attachment file. It should be of standard size (around 20-25 letters)
+        </template>
+    </category>
+
+    <category>
+        <pattern>ATTACHMENT ERROR WHILE CREATING A EXPENSE REPORT</pattern>
+        <template>
+        Please check the name of attachment file. It should be of standard size (around 20-25 letters)
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM NOT ABLE TO DISPATCH MY PURCHASE ORDER PO THOUGH IT IS APPROVED</pattern>
+        <template>
+        Please check Budget Status and Document Tolerance status. Both should be valid to make PO eligible for dispatch.
+        </template>
+    </category>
+
+    <category>
+        <pattern>NOT ABLE TO CREATE A RECEIPT FROM PURCHASE ORDER PO</pattern>
+        <template>
+        Purchase Order should be dispatched to be eligible for receipt creation. If PO is not in Dispatched status, please get in touch with the Buyer. Also PO should not be closed. If the PO is closed, re-open the PO by navigation Purchasing > Purchase Orders > Reconcile Pos > Reopen POs. So please check the staus of PO.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I RETIRE ASSET BY AMOUNT</pattern>
+        <template>
+        Yes. You can retire an asset by amount.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ERROR YOU ARE NOT AUTHORISED TO RUN THIS MULTIPROCESS JOB</pattern>
+        <template>
+        You don't have the role which is required to run the process. Please raise a ticket for the required role and then raise an Online Security Request form for the role assignment.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO UNMATCH VOUCHER</pattern>
+        <template>
+        Navigation:|Main Menu > Account Payable > Review Account Payable Info > Vouchers > Match Workbench|1. Enter Business Unit, select Match Status as Matched and search for the required voucher|2. Select the checkbox Undo Match and select Unmatch from the dropdown. and proceed
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO IMPORT CONTRACT</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. select a source transaction (Ad Hoc), Document Type etc..|2. Click Add a Document|3. Select chartfields, administrator etc.|4. Click Import Document. Answer all Wizard Questions and proceed.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO EDIT THE CONTRACT</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Edit Document button|3. To replace the contract version uploaded incorrectly, the contract has to be checkout from the system.|4. Open the contract and edit it.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHECK IN THE CONTRACT</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. To replace the new version Contract uploaded incorrectly, the contract has to be check in from the system. Click the Check In button.|3. Enter Comments and click OK|4. Browse the required document and upload it|5. You can check the status on the Document Version History link.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO ATTACH A SUPPORTING DOCUMENT TO A CONTRACT</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Add Attachments/Related Documents link.|3. Click the Upload a Document Attachment File button and upload the attachment
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO REVIEW CONTRACT VERSION HISTORY</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Document Version History link.|3. Review the versions
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DELETE A CONTRACT</pattern>
+        <template>
+        A contract can be deleted if it is in the 'Draft' state.|Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Delete option.|3. Click the Delete Selected Documents button
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE A AMENDMENT FOR A CONTRACT</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Create Amendment button.|3. Click the Amendment Option list and select Amend Contract Only list item.|4. Enter comments and click OK|5. The Contract will be in Draft status, as well as the version control updates the following number and identifies the document as Amendment
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DEACTIVATE A CONTRACT</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Deactivate Document button. Deactivate the contract is to stop the contract management process.|3. Enter comments and click OK.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO REACTIVATE A CONTRACT</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Reactivate Document button. |3. Enter Comments and click OK
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO MODIFY THE WIZARD FOR A CONTRACT</pattern>
+        <template>
+        You can modify the wizard so that you have the option to update data such as: supplier, quantity, budget, complete revision, renewal or accounting. Accounts (business unit, department or operating unit).|Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Wizard Details link|3. Change the values which you want to modify|4. Once done, click Finish
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS EFFECTIVE DATE IN CONTRACT</pattern>
+        <template>
+        Effective Date is the initial date of validity of the contract and becomes effective.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS SIGNATURE DATE IN CONTRACT</pattern>
+        <template>
+        Signature Date is the final date committed to conclude the approval flow.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO ENTER EFFECTIVE DATE IN CONTRACT</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Document Details link.|3. Click in the Effective Date field. |4. Select the appropriate date and click OK
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO ENTER SIGNATURE DATE IN CONTRACT</pattern>
+        <template>
+        Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Document Details link.|3. Click in the Signed Date field. |4. Select the appropriate date and click OK
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DISPATCH THE CONTRACT</pattern>
+        <template>
+        The Dispatch process is to notify by e-mail to the users of the Contract released the lasted version.|Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Modify Attachments/Related Documents link.|3. Click the Upload another Document Attachment File button and Upload the signed contract as an attachment.|4. Click the Allow Email/Dispatch option and click Dispatch.|5. Select all the attachments which need to be dispatched and click OK.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO EXECUTE THE PROCESS FOR CONTRACT</pattern>
+        <template>
+        The Dispatch process is to notify by e-mail to the users of the Contract released the lasted version.|Navigation:|Main Menu > Legal Contracts > Create Contracts > Contract Management|1. Search and open the existing required contract|2. Click the Modify Attachments/Related Documents link.|3. Click the Upload another Document Attachment File button and Upload the signed contract as an attachment.|4. Click the Allow Email/Dispatch option and click Dispatch.|5. Select all the attachments which need to be dispatched and click OK.|6. Click the Execute Contract button.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO APPROVE A CONTRACT</pattern>
+        <template>
+        3 ways to approve a contract:|1. eMail|2. Documents Pending Action|3. Worklist
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO APPROVE A CONTRACT THROUGH EMAIL</pattern>
+        <template>
+        The Approver can review the contract by log in into the system through the eMail notification received. Once user clicks the link provided in the eMail, appropriate actions can be taken on the Document Management page.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO APPROVE A CONTRACT THROUGH DOCUMENTS PENDING SECTION</pattern>
+        <template>
+        1. Click Content link in your Peoplesoft homepage, Documents Pending Action, and save it.|2. On homepage, you can now see all the pending contracts.|3. Click the required contract and proceed.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO APPROVE A CONTRACT THROUGH WORKLIST</pattern>
+        <template>
+        1. Click the Worklist link in the Peoplesoft homepage.|2. The contract transaction always will be identified as “Document”. Click the Document link|3. The approver will review the contract and details. Click the View Document button.|4. To review attachments and contract history, click the Document Version History link.|5. Click Approve/Deny
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DENY THE CONTRACT</pattern>
+        <template>
+        3 ways to deny a contract:|1. eMail|2. Documents Pending Action|3. Worklist|When denying the approval of a contract, it is necessary to enter comments in the Approver Comments section providing details of the reasons the contract approval is being denied.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT HAPPENS ONCE THE CONTRACT IS APPROVED</pattern>
+        <template>
+        When the approval process ends, the system:|1. Change the contract status to Approved or Denied.|2. Inserts a process detail history row indicating if the contract was approved or denied.|3. Send a notification to the contract administrator indicating the contract has been approved or denied.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ROLE REQUIRED FOR EDITING THE JOURNAL</pattern>
+        <template>
+        LI_GL_JRNLPOST_GLB Please raise an Online Security Request form for this role by using link https://psaccess.laureate.net/
+        </template>
+    </category>
+
+    <category>
+        <pattern>ROLE REQUIRED FOR MULTICURRENCY PROCESS PAGE</pattern>
+        <template>
+        LI_GL_PROCESSES_GLB Please raise an Online Security Request form for this role by using link https://psaccess.laureate.net/
+        </template>
+    </category>
+
+    <category>
+        <pattern>ROLE REQUIRED FOR UPDATE PROFILE PAGE IN TRAVEL AND EXPENSE</pattern>
+        <template>
+        LI_EX_PROFILE_ADMIN_GLB Please raise an Online Security Request form for this role by using link https://psaccess.laureate.net/
+        </template>
+    </category>
+
+    <category>
+        <pattern>ERROR MESSAGE WHEN CREATING A RECEIPT</pattern>
+        <template>
+        System is not able to save a receipt from a PO and displays an error message when a buyer mentioned on PO has left the department. Security team deactivates the buyer in system and hence no receipts can be generated for PO's created any buyer who has left the department.|To resolve this issue please raise an incident.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CHART FIELDS NOT APPEARING ON RECEIPT COPIED FROM A PURCHASE ORDER</pattern>
+        <template>
+        System is not able to save a receipt from a PO and displays an error message when a buyer mentioned on PO has left the department. Security team deactivates the buyer in system and hence no receipts can be generated for PO's created any buyer who has left the department.|To resolve this issue please raise an incident.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SYSTEM DISPLAYS AN ERROR OF MISSING GL BU WHILE SAVING THE RECEIPT</pattern>
+        <template>
+        System is not able to save a receipt from a PO and displays an error message when a buyer mentioned on PO has left the department. Security team deactivates the buyer in system and hence no receipts can be generated for PO's created any buyer who has left the department.|To resolve this issue please raise an incident.
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY REQUISITION APPROVER NOT ABLE TO VIEW REQUISITION ATTACHMENT</pattern>
+        <template>
+        Follow the steps below to view the Header Attachment: |1. Navigate to eProcurement > Manage Requisition |2. Enter the Business Unit and Requisition ID and click on Search|3. Click on the Requisition ID|4. Click on the Header Comments Attachment and the Line Comments Attachment Icon to view attachments at the Header and Line respectively
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY IS APPROVER IS NOT ABLE TO VIEW ATTACHMENTS OF A REQUISITION FROM WORKLIST</pattern>
+        <template>
+        Follow the steps below to view the Header Attachment:| 1. Navigate to eProcurement > Manage Requisition |2. Enter the Business Unit and Requisition ID and click on Search|3. Click on the Requisition ID|4. Click on the Header Comments Attachment and the Line Comments Attachment Icon to view attachments at the Header and Line respectively
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCOUNTING DATE ERROR MESSAGE IS APPEARING WHEN SAVING A PO</pattern>
+        <template>
+        System does not allows user to save any changes made to a PO which has it's Accounting Date in a Closed Period. Please follow the steps below to change the Accounting date of a PO.|1. Open the PO|2. Click on Header Details |3. Make the Accounting Date as the current date and then click on OK|4. Try to save the PO.
+        </template>
+    </category>
+
+    <category>
+        <pattern>NOT ABLE TO SAVE PO AS ACCOUNTING DATE IS NOT OPEN</pattern>
+        <template>
+        System does not allows user to save any changes made to a PO which has it's Accounting Date in a Closed Period. Please follow the steps below to change the Accounting date of a PO.|1. Open the PO|2. Click on Header Details |3. Make the Accounting Date as the current date and then click on OK|4. Try to save the PO.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CONTRACT NOT AVAILABLE TO BE COPIED IN PO</pattern>
+        <template>
+        There is a maximum amount on the contract header. A Purchase Order cannot be create for more than the max amount of contract. If a PO of maximum amount has already been created from contract, then contract would not be available to be copied into another PO. | In this case create a new version of contract and can increase its max amount.
+        </template>
+    </category>
+
+    <category>
+        <pattern>PRINTABLE VERSION OF PURCHASE ORDER NOT SHOWING SHIP TO DETAILS</pattern>
+        <template>
+        With a printable version of the Purchase Order, whenever a PO has multiple lines, the Ship to field in front of supplier field will show 'See Detail Below' and ship to address will be displayed at lines information. When there is only one PO line, the ship to field will show ship to address while creating printable version.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY SHIP TO FIELD SHOWING SEE DETAIL BELOW ON PRINTABLE VERSION OF PO</pattern>
+        <template>
+        With a printable version of the Purchase Order, whenever a PO has multiple lines, the Ship to field in front of supplier field will show 'See Detail Below' and ship to address will be displayed at lines information. When there is only one PO line, the ship to field will show ship to address while creating printable version.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW CAN I CHANGE SUPPLIER ID ON PO</pattern>
+        <template>
+        The Supplier ID’s can only be changed while the PO is in ‘Open’ status. Once the PO has been submitted for approval the supplier ID can’t be changed. To change the supplier ID, the existing PO with incorrect information will need to be canceled and a new one created with correct supplier ID.
+        </template>
+    </category>
+
+    <category>
+        <pattern>NOT ABLE TO CHANGE PROJECT ID ON A PO</pattern>
+        <template>
+        The project ID can be changed if no receipt or voucher have been created for the Purchase Order. If either a receipt or a voucher have been created from the PO the project ID on a PO cannot be changed.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SCREEN GOES BLANK AND EVERYTHING IS LOST WHILE ENTERING A PO</pattern>
+        <template>
+        This is a temporary issue. Please clear browser cache once and try entering the information again. Follow below steps:-|1. Log out from the application |2. Clear browser cache |3. Close and re-open the browser |4. Log back in to the system and try again.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SCREEN GOES BLANK AND EVERYTHING IS LOST WHILE ENTERING A VOUCHER</pattern>
+        <template>
+        This is a temporary issue. Please clear browser cache once and try entering the information again. Follow below steps:-|1. Log out from the application |2. Clear browser cache |3. Close and re-open the browser |4. Log back in to the system and try again.
+        </template>
+    </category>
+
+    <category>
+        <pattern>TIME OUT ISSUE FACED WHILE ENTERING A PO</pattern>
+        <template>
+        This is a temporary issue. Please clear browser cache once and try entering the information again. Follow below steps:-|1. Log out from the application |2. Clear browser cache |3. Close and re-open the browser |4. Log back in to the system and try again.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SYSTEM IS TAKING LONG TIME THE CIRCLE JUST SPINS</pattern>
+        <template>
+        This is a temporary issue. Please clear browser cache once and try entering the information again. Follow below steps:-|1. Log out from the application |2. Clear browser cache |3. Close and re-open the browser |4. Log back in to the system and try again.
+        </template>
+    </category>
+
+    <category>
+        <pattern>FACING ISSUE IN CHANGING SUPPLIER ID ON CONTRACT</pattern>
+        <template>
+        The Supplier ID on a contract can be changed before its approval. If the contract has been approved, the supplier ID cannot change on the contract. If the entered Supplier ID is wrong on a contract. The contract will need to be cancelled along with the Purchase Order associated with this contract. Then create a new contract with correct supplier ID.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I WANT TO CLEAR MY WORKLIST</pattern>
+        <template>
+        Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>PURCHASE ORDER IS DENIED CAN IT BE APPROVED AGAIN</pattern>
+        <template>
+        The Purchase Order can be submitted for approved again if it has been denied. To re-triggering the workflow, make a change the PO quantity/amount of any line and save. Then re-edit the PO quantity /amount to the previous value and save the PO once again .This will re-trigger the routing workflow for the Purchase Order.
+        </template>
+    </category>
+
+    <category>
+        <pattern>PO STUCK IN PENDING CANCELLATION STATUS</pattern>
+        <template>
+        Cancelling a PO is a two step process.|1. Cancelling the PO|2. Dispatching a cancelled PO so that status changes to Cancelled status
+        </template>
+    </category>
+
+    <category>
+        <pattern>REQUISITION TIMING OUT</pattern>
+        <template>
+        Click on “Save for later”  button after adding each line. This will allow you to save multiple lines without getting timed out.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SYSTEM TIMING OUT WHILE ENTERING A LARGE REQUISITION</pattern>
+        <template>
+        Click on “Save for later”  button after adding each line. This will allow you to save multiple lines without getting timed out.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CHANGE DESCRIPTION ON LINE ITEM OF PURCHASE ORDER</pattern>
+        <template>
+        The PO line item description can only be changed for PO's which have never been Dispatched. Once the PO is dispatched system never allows changing the description of PO inspire of creating change order.
+        </template>
+    </category>
+
+    <category>
+        <pattern>UNABLE TO VIEW PENDING REQ IN MANAGE REQ TAB</pattern>
+        <template>
+        Kindly enter the Business Unit first and click on search, this will populate search results which include requisition Id you are searching for.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE TO SEE THE CANCELLED PO</pattern>
+        <template>
+        To view these PO's navigate to Main Menu > Purchasing > Purchase Orders > Review PO Information
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW SO SUBMIT A CONTRACT FOR APPROVAL AFTER ITS DENIED</pattern>
+        <template>
+        To submit the contract for approval again, Please change the contract status to open and then Submit for approval again
+        </template>
+    </category>
+
+    <category>
+        <pattern>PO AMOUNT EXCEEDS CONTRACT AMOUNT ERROR</pattern>
+        <template>
+        While creating a PO from contract, kindly check if the  total contract amount is already used or not. If this is not the case then if contracts partial amount is used, then make the merchandise amount on PO equal to contracts released amount or you can also increase the maximum amount of contract by creating new version
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I SEE WHO HAS DENIED THE PO</pattern>
+        <template>
+        Click on the view approval link and then click the comment history and click on the links present there – you will be directed to the page stating who denied it .
+        </template>
+    </category>
+
+    <category>
+        <pattern>PAGE DATA IS INCONSISTENT WITH DATABASE</pattern>
+        <template>
+        If you are getting this error message then try clearing out your browser cache first.  This may be an issue with your temporary internet files.  If the issue persists please submit a ticket to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN I BUDGET CHECK A DENIED REQUISITION</pattern>
+        <template>
+        Budget check does not run when a requisition is in Open or denied status . Please submit the requisition for approval again and then budget check .
+        </template>
+    </category>
+
+    <category>
+        <pattern>I DISPATCHED THE PO BUT DIDN T GET ATTACHMENT PDF</pattern>
+        <template>
+        Redispatch the PO using following navigation: | Main Menu > Purchasing > Purchase Orders > Dispatch Pos|Select Business Unit and select the Dispatched Check Box . After that select the PO ID in PO ID prompt.|After selecting the PO ID click on the Print Copy checkbox and run the process by selecting appropriate job according to your Business Unit|After this process goes to success you can get the file generated from Report Manager.
+        </template>
+    </category>
+
+    <category>
+        <pattern>PERFORMANCE ISSUE SYSTEM WORKING VERY SLOW</pattern>
+        <template>
+        This is a temporary issue. Please clear browser cache once and try entering the information again. Follow below steps:-|1. Log out from the application |2. Clear browser cache |3. Close and re-open the browser |4. Log back in to the system and try again.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO REOPEN A PURCHASE ORDER PO</pattern>
+        <template>
+        Navigate to Main Menu > Purchasing > Purchase Orders > Reconcile Pos > Reopen PO. Enter Business Unit, PO ID and and run the process.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ROLE FOR EPRO INQUIRY</pattern>
+        <template>
+        Please create an Access Request using below link | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx  |Role Name: LI_PV_REQINQ_GLB (eProcurement Inquiry -  This role allows for access to ePro, requisitions, payments and receipts inquiry)
+        </template>
+    </category>
+
+    <category>
+        <pattern>APPLICABILITY OF EXPENSE REPORT GUIDELINES</pattern>
+        <template>
+        These Guidelines apply to every officer, director, full- and part-time employee, faculty member, contractor, and student worker of Laureate. They also apply to all agents, representatives, consultants, distributors, dealers, and other third parties doing business on behalf of Laureate or its affiliates.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HAVE A QUESTION ABOUT THE GUIDELINES</pattern>
+        <template>
+        Questions about these Guidelines should be addressed to the relevant Local Compliance Officer of through the Laureate Ethics Helpline.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT ARE THE GUIDELINES FOR EXPENSE REIMBURSEMENT</pattern>
+        <template>
+        These Guidelines address the provision and receipt of common courtesies, meals, gifts, entertainment, travel and travel-related expenses, and expenses associated with events such as conferences, seminars, college fairs, and training (collectively, “business courtesies”). We must never offer or receive courtesies under circumstances where they could affect, or appear to affect, decision making. Business courtesies given to or received from suppliers, students, and others outside Laureate must be related to a legitimate purpose and given or received without expectation of any favorable decision or unfair advantage.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHICH BUSINESS COURTESIES ARE ALLOWED</pattern>
+        <template>
+        Consistent with the Laureate Code of Conduct and Ethics, Laureate personnel may provide or receive business courtesies as long as they are:|• related to a legitimate purpose, such as the promotion, demonstration or explanation of products and services|• provided without expectation of any favorable decision, official action or unfair advantage|• reasonable, infrequent, and modest in amount|• not paid in cash or cash equivalents|• appropriate in character (e.g., no “adult” entertainment) and consistent with local business customs and practices|• documented with receipts and properly accounted for in our books and records|• authorized as required by relevant policies and procedures and|• consistent with applicable laws|Note on business courtesies for government officials:|Although these Guidelines apply to the provision of business courtesies to anyone outside Laureate, Laureate personnel must exercise particular caution in the payment, reimbursement, or provision of business courtesies to government officials, as they are often subject to more restrictive legal requirements. Any such expenses paid directly or reimbursed must be genuine, reasonable, directly related to a legitimate business activity of Laureate, and allowed by U.S. and local law. Government officials in many countries are not allowed to accept any gifts or other business courtesies, and these should not be provided unless it has been affirmatively determined that it will not violate any law.
+        </template>
+    </category>
+
+    <category>
+        <pattern>DOCUMENTATION AND APPROVAL GUIDELINES</pattern>
+        <template>
+        All business courtesy expenses must be properly documented to reflect |(a) the purpose of the gift or other courtesy|(b) the individual receiving it|(c) the recipient's organization and position|(d) a description of the business courtesy|(e) the identity of others attending (if a meal or other event) and |(f) the amount. All such expenses must be approved by the manager of the person providing the courtesy. If multiple Laureate personnel attend an event, the most senior person should pay, and approval should come from that person’s manager.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ARE THERE ANY SPECIAL APPROVAL REQUIREMENTS FOR GIFTS AND PROMOTIONAL ITEMS</pattern>
+        <template>
+        Laureate personnel may provide promotional items bearing a Laureate or institutional logo, or other modest gifts, worth up to US$50 to an individual once in a calendar year without prior approval, so long as such items are provided consistent with the Basic Guidance set out above. The payment, reimbursement, or provision of all other gifts and promotional items requires the advance approval of the relevant Local Compliance Officer. |Laureate personnel may accept gifts worth up to US$50 (total, from all sources) in a calendar year, so long as such items are provided consistent with the Basic Guidance set out above. The acceptance of all other gifts and promotional items from outside parties requires the approval of the relevant Local Compliance Officer. If there are applicable local Guidelines that set out different value amounts, personnel should follow those.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ARE THERE ANY SPECIAL APPROVAL REQUIREMENTS FOR MEALS AND ENTERTAINMENT</pattern>
+        <template>
+        Laureate personnel may provide modest meals and entertainment, such as lunches, dinners, or tickets to sporting events, not exceeding a total value of US$75 per person, as long as meals and entertainment to any one individual does not exceed US$300 in a calendar year, and the provision of the meals and entertainment is consistent with the Basic Guidance set out above. The payment, reimbursement, or provision of all other meals and entertainment requires the advance approval of the relevant Local Compliance Officer.|Laureate personnel may accept modest meals and entertainment, such as lunches, dinners, or tickets to sporting events, not exceeding at total value of US $75 per event, and not exceeding US$300 (total, from all sources) in a calendar year, and the acceptance of the meals and entertainment is consistent with the Basic Guidance set out above. The acceptance of all other meals and entertainment from outside parties requires the approval of the relevant Local Compliance Officer. If there are applicable local Guidelines that set out different value amounts, personnel should follow those.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ARE THERE ANY SPECIAL APPROVAL REQUIREMENTS FOR MEALS AND OTHER COURTESIES RELATED TO SPONSORED EVENTS</pattern>
+        <template>
+        Sponsored Events means Laureate-sponsored seminars, curriculum-development conferences or other organized meetings to further Laureate interests or the development educational opportunities in an institution, country or region. Such events may be held to promote Laureate’s goals, to further educational goals in a country or region and/ or to build goodwill for Laureate. The primary purpose of the Sponsored Event must be consistent with Laureate’s goals or the development of educational prospects, and not undertaken for entertainment purposes, to confer any personal benefit, or as a reward or inducement for doing business with Laureate or attending a Laureate institution. It is permissible if the purpose includes the highlighting of Laureate’s approach to education, though not to specifically induce participants to do business with Laureate in exchange for lavish or excessive gifts, meals, or entertainment.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ARE THERE ANY SPECIAL APPROVAL REQUIREMENTS FOR TRAVEL AND TRAVELORRELATED EXPENSES</pattern>
+        <template>
+        As part of a Sponsored Event or other meeting or demonstration of products and services, we may, under appropriate circumstances, provide airfare, other forms of transportation, or accommodations to outside parties. All such expenses require the advanced approval of the relevant Local Compliance Officer. All travel and travelrelated expenses must be provided consistent with the Basic Guidance set out above, as well as the following additional requirements.|• The travel must be for a legitimate purpose, such as meetings to tour a Laureate university or to observe or discuss Laureate programs;|• The expenses must be related entirely to the legitimate purpose (e.g., family members of the individual receiving legitimate travel reimbursement may not travel at Laureate expense) and must not include any lavish or excessive entertainment such as side-trips, unnecessary stopovers, or other activities unrelated to the legitimate purpose of the travel (unless paid for entirely by the individual in question);|• Travel expenses may only be reimbursed against appropriate receipts or equivalent documentation;|• Payments should be made directly to the hotel, airline, or service provider whenever possible. If an individual or government official personally pays expenses that Laureate agreed to cover, that person should fill out an expense report and supply it to his or her employer, after which Laureate may reimburse the employer.|Laureate Personnel may not accept travel and travel-related expenses from outside parties without approval from the relevant Local Compliance Officer.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I NEED TO UPDATE THE LDW LAUREATE DEPARTMENT WORKFLOW</pattern>
+        <template>
+        Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>I VOID THE VOUCHER PAYMENT BUT PAYMENT STATUS IS PENDING</pattern>
+        <template>
+        The Payment Posting process is not run yet. When it will run as a part of batch, payment status will get updated.
+        </template>
+    </category>
+
+    <category>
+        <pattern>INVALID CHARTFIELD COMBINATION ERROR WHILE CREATING A REQUISITION</pattern>
+        <template>
+        Please enter Account, Operating Unit, Department ID as those are mandatory fields.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN CHECK THE STATUS OF MY SECURITY FORM</pattern>
+        <template>
+        Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE A RECEIPT</pattern>
+        <template>
+        Navigation: Main Menu > Purchasing > Receipts > Add/Update Receipts | 1. Select the required PO and click search |2. Select the checkbox for which PO you want to create the receipt and click on Ok button. |3. Click Save
+        </template>
+    </category>
+
+    <category>
+        <pattern>ERROR ORIGIN MISSING ON YOUR OPERATOR PROFILE</pattern>
+        <template>
+        Please raise an Online Security Request form using link | https://psaccess.laureate.net/ and mention in the comments section: |“Need voucher origin to be updated as ONL at Main Menu > Set up Financials/Supply Chain > Common Definitions > User Preferences > Define User Preferences >> Payables Online Vouchering Update Origin to ONL.”
+        </template>
+    </category>
+
+    <category>
+        <pattern>I WANT TO UNSTAGE MY EXPENSE REPORT</pattern>
+        <template>
+        Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CANCEL THE RECEIPT</pattern>
+        <template>
+        Navigate to: |Main Menu > Purchasing > Receipts > Add/Update Receipts|Click on the X symbol and then click Yes.
+        </template>
+    </category>
+
+    <category>
+        <pattern>NOT ABLE TO OPEN A VOUCHER IN PEOPLESOFT</pattern>
+        <template>
+        This is because of the Voucher attachment size which is greater than 5MB. Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CANCEL PURCHASE ORDER PO</pattern>
+        <template>
+        On the Add/Update PO page, click red cross to cancel the PO. You can also cancel it through navigation Main Menu > Purchasing > Purchase Orders > Buyer's Workbench. Select the checkbox for required PO. If you want to make requisition available gaain, select Yes - Re-source all of the requisitions and proceed.
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAVIGATION TO REPORT MANAGER</pattern>
+        <template>
+        Main Menu > Reporting Tools > Report Manager
+        </template>
+    </category>
+
+    <category>
+        <pattern>EXPENSE REPORT CLOSE</pattern>
+        <template>
+        Navigation:  |Travel and Expenses > Process Expenses > Close Expenses > Mark Expense Report for Close|For the expense report to be closed, report should be Posted and Approved for Payment.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO PURGE THE PO LINES WHICH ARE IN ERROR</pattern>
+        <template>
+        Navigation: |Main Menu > Purchasing > Purchase Orders > Stage/Source Requests > Sourcing Workbench|Select those lines which are in Error. Then click Purge button and Save it.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS MEANING OF STATUS SEE LINES ON THE REQUISITION</pattern>
+        <template>
+        See Lines means the lines of requisition are in various stages of the approval process and the lines have different statuses (i.e. pending, approved, etc.)
+        </template>
+    </category>
+
+    <category>
+        <pattern>ATTACHMENT ERROR ON VOUCHER</pattern>
+        <template>
+        Please check the name of attachment file. It should be of standard size (around 20-25 letters)
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO APPLY CREDIT VOUCHER TO REGULAR VOUCHER</pattern>
+        <template>
+        1. Create the Credit and Regular voucher. Get it Approved and Posted. | 2. Make sure both the vouchers are selected in the pay cycle at the same time. |3. For this purpose, in Payment Selection Criteria > Preferences tab, make sure Process Credit Vouchers option is selected. |4. Also, payment details like Bank, Bank Details, Payment method etc. are same for both the vouchers.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN PO IS DISPATCHED TO WHOM EMAIL IS TRIGGERED</pattern>
+        <template>
+        Email gets triggered to Buyer, Supplier (Vendor) or the email ID which is provided while dispatching the PO.
+        </template>
+    </category>
+
+    <category>
+        <pattern>VENDOR FORM AND SUPPORTING DOCUMENT S WERE FORWARDED TO OUR ACCOUNTS PAYABLE WHEN THE VENDOR WILL BE CREATED</pattern>
+        <template>
+        If the request is related to new vendor registration / setup in Peoplesoft system, then kindly send the details to AMEA.servicecenter@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO ADD COMMENTS IN THE RECEIPT</pattern>
+        <template>
+        Navigate to Main Menu > Purchasing > Receipts > Add/Update Receipts. Click Add Header Comments and write the comments in the box.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO ADD ATTACHMENTS IN THE RECEIPT</pattern>
+        <template>
+        Navigate to Main Menu > Purchasing > Receipts > Add/Update Receipts. Click Add Header Comments and click Attach button.
+        </template>
+    </category>
+
+    <category>
+        <pattern>JOURNAL APPROVAL ROLE</pattern>
+        <template>
+        Please create an Access Request using below link: | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx  |Role Names: | Level 1: LI_GL_WF_APRV1_GLB | Level 2: LI_GL_WF_APRV2_GLB|Level 3: LI_GL_WF_APRV3_GLB
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO RESUBMIT THE DENIED VOUCHER</pattern>
+        <template>
+        Edit the voucher by making any changes and Save the voucher. Then click Submit for Approval on Voucher Attributes tab or Invoice Information tab.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ROLE TO EXPRESS ADD AN ASSET</pattern>
+        <template>
+        Please create an Access Request using below link |https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx |Role Name: LI_AM_ASTENTRY_GLB
+        </template>
+    </category>
+
+    <category>
+        <pattern>PO IS NOT VISIBLE WHILE CREATING A RECEIPT</pattern>
+        <template>
+        Select the correct date range
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCESS TO OVERRIDE NON QUALIFIED POS FOR CLOSE</pattern>
+        <template>
+        Please create an Access Request using below link | https://laureatena.sharepoint.com/sites/corporatefinancepolicies/PSAccess/SitePages/Home.aspx  |Select the checkbox Override Non-Qualified Pos for close in User Preferences
+        </template>
+    </category>
+
+    <category>
+        <pattern>BASIC ROLE OF A USER</pattern>
+        <template>
+        Basic roles of any user are expense creation roles.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO BUDGET CHECK THE PO</pattern>
+        <template>
+        Main Menu > Purchasing > Purchase Orders > Buyer's Workbench Use any existing Workbench ID and search for the desired PO. Select the checkbox and click Budget check
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHANGE THE USEFUL LIFE OF AN ASSET</pattern>
+        <template>
+        1. For the assets which are already created, you can change the Useful Life by BOOK by following below navigation: |Navigation: Main Menu > Asset Management > Asset Transactions > Asset Book Information > Define Tax/Depr Criteria |2. For the assets which you will create in future, you can change the useful life at Asset Profile level |Navigation: Main Menu > Set Up Financials/Supply Chain > Product Related > Asset Management > Profiles > Asset Profiles
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN REQUESTER BE TAGGED TO 2 DEPARTMENTS SIMULTANEOUSLY</pattern>
+        <template>
+        Requester's Default Department is only one which is specified at Requester Setup but you can change the Department ID while creating the requisition if you have the necessary access.
+        </template>
+    </category>
+
+    <category>
+        <pattern>VENDOR IS NOT APPEARING IN THE LOOKUP</pattern>
+        <template>
+        Check the Vendor Status. One of the reasons can be it is Unapproved. But to make it available for selection, vendor should be Approved.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO STOP VOUCHER FROM GETTING PICKED IN THE PAY CYCLE</pattern>
+        <template>
+        Select the checkbox Hold Payment on Payments tab of voucher and Save it.
+        </template>
+    </category>
+
+    <category>
+        <pattern>BY USING MY ALIAS EMAIL ID I DISPATCHED THE PO BUT DIDN T GET ANY EMAIL</pattern>
+        <template>
+        PeopleSoft cannot resolve alias email IDs. So you need to use your normal original email ID for PO Dispatch.
+        </template>
+    </category>
+
+    <category>
+        <pattern>VOUCHER SHOWS ATTACHMENT AS 1 BUT NOT ABLE TO SEE ANY ATTACHMENT</pattern>
+        <template>
+        In voucher, default attachment count is shown as 1 .So if it shows Attachments as 1, it means there are no attachments and if it shows 2, there is 1 and likewise.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS STATUS OF MY INVOICE PAYMENT</pattern>
+        <template>
+        Status of invoice payments can be received from regional AP team
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN THE STATUS OF CLOSED VOUCHER WILL CHANGE</pattern>
+        <template>
+        Status will be updated once voucher posting batch process will run.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW CAN I RETIRE AN ASSET WITHOUT ENTERING THE PROCEEDS</pattern>
+        <template>
+        Please select a different Retirement By option to avoid entering Proceeds like Scrap.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHECK ASSET STATUS</pattern>
+        <template>
+        You can check the status of an asset by using following navigation: |Main Menu > Asset Management > Search for an Asset. |Enter Business Unit and Asset ID and check the status.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO MAKE VAT AMOUNT 0 ON THE VOUCHER LEVEL</pattern>
+        <template>
+        1. Click on the VAT Summary link on the invoice information page of the voucher. The system has calculated VAT recovery amount. To make it 0 you have to make both the invoice line VAT applicability to Out of scope.|2. Click on link in Invoice Line VAT Information tab. Click on expand all sections ,then in VAT Details tab select Applicability as Outside of Scope of VAT. Click on Adjust Affected Vat Defaults Button in Adjust/Reset Vat defaults. Click on Go back to vat summary.|3. After that repeat the same process for other invoice line as well. After following both the steps VAT becomes 0.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY AM I GETTING A MATCH EXCEPTION NOTIFICATION FOR A VOUCHER</pattern>
+        <template>
+        You will get these notifications if you have created this voucher or you are Buyer of the PO from which voucher is created.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ERROR WHICH COMES WHEN WE OPEN VOUCHER REGARDING INTERNAL LOOP</pattern>
+        <template>
+        It is only a warning message and it can be ignored. Click OK and proceed.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY REMITTANCE FILES ARE NOT BEING RECEIVED</pattern>
+        <template>
+        User will not get the remittance file emails if AP_EMAIL_ADV application engine will be in NO SUCCESS. Please raise a ticket to delete all such Process Instances.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM NOT ABLE TO DISPATCH MY PURCHASE ORDER PO</pattern>
+        <template>
+        PO should be Approved. Also, please check Budget Status and Document Tolerance status. Both should be valid to make PO eligible for dispatch.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY VOUCHER NOT GETTING PICKED FOR BUDGET CHECK</pattern>
+        <template>
+        Check the accounting date of the voucher. It should be withing open period.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY I AM NOT ABLE TO CANCEL A REQUISITION</pattern>
+        <template>
+        If a PO or PO RECEIPT or PO RECEIPT VOUCHER is created for the requisition a requisition cannot be cancelled.
+        </template>
+    </category>
+
+    <category>
+        <pattern>INTERFACE FILES ARE REJECTED</pattern>
+        <template>
+        Interface file contains duplicate transaction line numbers. Hence it is rejected.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY VOUCHER IS NOT AVAILABLE IN BANK RECONCILIATION FILE</pattern>
+        <template>
+        If journals are not created for the voucher they will not come in bank reconciliation report.
+        </template>
+    </category>
+
+    <category>
+        <pattern>IN THE VENDOR LIABILITY REPORT WHY PREPAID VOUCHER NOT APPEARING</pattern>
+        <template>
+        It appears only if it has been applied to any regular voucher.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN WE CREATE A VOUCHER WITH PO PORTION AND NON PO PORTION WITHOUT EXCEPTION</pattern>
+        <template>
+        No. We cannot create such voucher.
+        </template>
+    </category>
+
+    <category>
+        <pattern>UNABLE TO GENERATE PO</pattern>
+        <template>
+        1. Please check the Budget status of requisition. It should be Valid. |2. Also check if PR is already linked to any PO which is not cancelled yet or in process. In such cases requistion will not be available. |3. Also check Inventory Source Flag on requsition line level. So should be unchecked to make requisition available for expedite.|Else, kindly contact amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY PO IS NOT AVAILABLE AFTER CLOSING A VOUCHER</pattern>
+        <template>
+        At the time fo closing the voucher, system asks you if you want to unmatch the associated PO if any. Please select Yes so that PO will be available again.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHECK WHICH REQUISITIONS AND POS ARE ASSOCIATED WITH MY CONTRACT</pattern>
+        <template>
+        Navigation: Main Menu > Procurement Contracts > Review Contract Information > Document Status
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHECK WHICH REQUISITIONS ARE ASSOCIATED MY PO</pattern>
+        <template>
+        Navigation: Main Menu > Purchasing > Purchase Orders > Review PO Information > Document Status
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHECK WHICH POS ARE ASSOCIATED WITH MY REQUISITION</pattern>
+        <template>
+        Navigation: Main Menu > Purchasing > Requisitions > Review Requisition Information > Document Status
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHECK WHICH POS ARE ASSOCIATED WITH MY RECEIPTS</pattern>
+        <template>
+        Navigation: Main Menu > Purchasing > Receipts > Review Receipt Information > Document Status
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHECK WHICH DOCUMENTS ARE ASSOCIATED WITH MY VOUCHERS</pattern>
+        <template>
+        Navigation: Main Menu > Accounts Payable > Review Accounts Payable Info > Vouchers > Document Status
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE A VOUCHER FROM RECEIPT</pattern>
+        <template>
+        Navigation: | Main Menu > Accounts Payable > Vouchers > Add/Update > Regular Entry | 1. Select PO Receipt in Copy From and search the required Receipt. |2. Select the checkbox and click Copy/Back|3. Save the voucher
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO USE A NEW VENDOR LOCATION FOR AN OLD DATE</pattern>
+        <template>
+        There are 2 ways: |1. Update the vendor bank in Location with the latest effective date amongst already present dates|2. Add a new line with an effective date greater than latest effective date amongst already present dates with the required vendor bank details. After adding this line this will become the latest effective dated location details.
+        </template>
+    </category>
+
+    <category>
+        <pattern>FINANCIAL GATEWAY ACCESS FOR AUSTRALIA AUS</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: |https://psaccess.laureate.net/ |Role Name: LI_FG_SECRULE_AUS (Australia and New Zealand FG Security Rule)
+        </template>
+    </category>
+
+    <category>
+        <pattern>FINANCIAL GATEWAY ACCESS FOR NEWZELAND NZL</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: | https://psaccess.laureate.net/   |Role Name: LI_FG_SECRULE_AUS (Australia and New Zealand FG Security Rule)
+        </template>
+    </category>
+
+    <category>
+        <pattern>ROLE TO DISPATCH THE PO FOR AUS</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: |https://psaccess.laureate.net/ | Role Name: LI_PO_SUPPOBJCUSTOM_AUS
+        </template>
+    </category>
+
+    <category>
+        <pattern>DOES CREDIT VOUCHER GOES FOR APPROVAL</pattern>
+        <template>
+        No. Credit voucher is Auto-Approved and does not go for approval.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO MAKE EXPENSE LOCATION DEFAULT FOR ALL THE LINES</pattern>
+        <template>
+        Navigation: Main Menu > Employee Self Service > Travel and Expenses > Review/Edit Profile.Here, you can select Expense Location and it will be default for all the lines
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS MY EXPENSE PAYMENT STATUS</pattern>
+        <template>
+        Please check with Regional AP Team.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE PO WITHOUT REQUISITION</pattern>
+        <template>
+        You can create PO by navigating to Main Menu > Purchasing > Purchase Orders > Add/Update Pos
+        </template>
+    </category>
+
+    <category>
+        <pattern>NOT ABLE TO OPEN THE ATTACHMENT</pattern>
+        <template>
+        Check if PDF reader/Adobe Reader is installed on the system. Also in case of PDF attachments, also check if pop-up blocker is not enabled.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY ONLY ONE ASSET GOT CREATED FOR 2 INTERFACE ID ASSETS</pattern>
+        <template>
+        It is possible that it has been created from the same receipt line. If this does not resolve your query, then please raise a ticket in frontline.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO MAKE QUANTITY ADJUSTMENT IN ASSET</pattern>
+        <template>
+        Navigation: Main Menu > Asset Management > Asset Transactions > Financial Transaction > Cost Adjust/Transfer Asset |1. Select Transaction and Accounting Date and Action i.e. Adjustment. |2. On the next page, enter the cost/Quantity by which you want to increase/decrease the asset. |3. Click on Apply and Save.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHANGE THE INVOICE AMOUNT ON THE VOUCHER LINE LEVEL</pattern>
+        <template>
+        You need to modify the Voucher Invoice lines which has been created for creating Credit Note Vouchers. Once the invoice line amount is adjusted the Document tolerance error should change to valid once the Document tolerance batch process runs. Negative credit voucher can be created only if the Receipt and PO has negative entries in the same.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHANGE VENDOR ID WHILE EXPEDITING PO</pattern>
+        <template>
+        Navigation: Main Menu > eProcurement > Buyer Center > Expedite Requisition|1. Enter Business Unit, Requisition ID and search.|2. Change Vendor in field Vendor Name.|3. Submit the request.
+        </template>
+    </category>
+
+    <category>
+        <pattern>VOUCHER NOT APPEARING IN BATCH PROCESS</pattern>
+        <template>
+        Please check if any batch process is running which has already picked those vouchers.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY REQUISITION WAS NOT GETTING ROUTED TO REVIEWER</pattern>
+        <template>
+        Please check if it has Item ID present. If ITEM ID is present, ii will not go to reviewer.
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY JOURNAL IS IN ERROR</pattern>
+        <template>
+        Please correct the journal error and run edit journal after correcting error tab.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ROLE REQUIRED TO APPROVE A VENDOR</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: | https://psaccess.laureate.net/ | Role Name: LI_AP_VNDRAPRV_GLB (GLB AP Vendor Approve Role). Also, mention in the commenst to select the checkbox. Authority to approve vendors checkbox in User preferences.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN SEE MY CORPORATE CARD DETAILS</pattern>
+        <template>
+        Navigation:|Main Menu > Travel and Expenses > Manage Employee Information > Update Profile |1. Enter Business Unit and employee ID|2. Click Corporate Card Information tab and check the card details.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE DOES THE EXPENSE REPORT GET ROUTED AFTER SUBMISSION IF EMPLOYEE S MANAGER IS TERMINATED IN THE SYSTEM</pattern>
+        <template>
+        Expense Report gets routed to PSFIELDAMEA after submission if employee's manager is terminated in the system
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO UNAPPLY THE PREPAID VOUCHER FROM REGULAR VOUCHER</pattern>
+        <template>
+        Navigation:|Main Menu > Accounts Payable > Review Accounts Payable Info > Payments > Payment|Please check Payment Status
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN WE CREATE AN EXPENSE REPORT IN THE CURRENT PERIOD IF THE PERIOD IS NOT OPEN</pattern>
+        <template>
+        No. You cannot create an expense report in the current period  if the period is not open.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CRITERIA TO DELETE VOUCHER</pattern>
+        <template>
+        Voucher can be deleted only when voucher is :|1. Not posted|2. Not Selected for payment|3. Not any portion of the vouchers ever have been paid.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CRITERIA TO CLOSE VOUCHER</pattern>
+        <template>
+        Voucher can be closed only when voucher is :|1. Posted|2. No Selected for Payment|3. Not Fully Paid
+        </template>
+    </category>
+
+    <category>
+        <pattern>FRONTLINE FOOTPRINT RELATED ISSUE</pattern>
+        <template>
+        For any Frontline/Footprint related queries, send the request to frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CREATE ONLINE SECURITY FORM</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: |https://psaccess.laureate.net/
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAVIGATION TO RUN VENDOR LIABILITY AGING REPORT</pattern>
+        <template>
+        Navigation: |Main Menu > Accounts Payable > Reports > Voucher Reconciliation > Vendor Liability Aging
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO SEE MY WORKLIST ITEMS</pattern>
+        <template>
+        Click Worklist link on right top of your home screen. You will all the items which are Pending for your approval.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DISPATCH THE PO AGAIN</pattern>
+        <template>
+        Redispatch the PO using following navigation:| Main Menu > Purchasing > Purchase Orders > Dispatch Pos| Select Business Unit and select the Dispatched Check Box . After that select the PO ID in PO ID prompt. After selecting the PO ID click on the Print Copy checkbox and run the process by selecting appropriate job according to your Business Unit. | After this process goes to success you can get the file generated from Report Manager.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO DEAUTHORIZE THE DELEGATION</pattern>
+        <template>
+        Navigation:|Main Menu > My System Profile|1. Remove Alternate User ID|2. Remove From Date and To Date|3. Click Save|For any further clarification, Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>VENDOR SETUP</pattern>
+        <template>
+        If the request is related to new vendor registration / setup in Peoplesoft system, then kindly send the details to AMEA.servicecenter@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHANGE REQUISITION BU</pattern>
+        <template>
+        Once the requisition has been submitted, BU of the requisition can not be changed.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY I AM GETTING LOB SIZE ERROR WHILE OPENING A VOUCHER</pattern>
+        <template>
+        It can be in error because the attachment which was added to the voucher exceeds the size. Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHANGE DEFAULT CURRENCY IN EXPENSE CLAIM</pattern>
+        <template>
+        The default currency can be changed at expense line level.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHANGE THE DEFAULT CURRENCY ON EXPENSE REPORT</pattern>
+        <template>
+        Default currency is setup at Profile Level and this data comes from Ultipro. If you want to change the default currency, please ask HR team to change it in Ultipro.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS NET DUE DATE</pattern>
+        <template>
+        Please note that the Net Due/ Schedule due date is calculated on the basis of the Pay Term you select in the voucher.If the voucher needs to be paid immediately you can select the pay term 000 i.e. Due Now. If you are selecting anything else i.e. for e.g. 030 NET30 then the system calculates the Net due date and schedule data as Invoice date + 30 days. If the due date is falling on any date less than the current date then the schedule due date is set to current date and the net due date is set as per the formula i.e. invoice date + pay-terms.|Please note that the payment of the voucher is dependent on the Schedule due date only. This field is editable all the time before the payment is made and can be increased or decreased according to the requirement.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CANCEL THE REQUISITION</pattern>
+        <template>
+        Navigation:|Main Menu > eProcurement > Manage Requisition |1 . Enter the Business Unit and Requisition ID and click on Search| 2 . Select Cancel Requisition from the dropdown and click Go.|If a PO or PO RECEIPT or PO RECEIPT VOUCHER is created for the requisition a requisition cannot be cancelled.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM VENDOR APPROVER BUT STILL I AM NOT ABLE TO APPROVE A VENDOR</pattern>
+        <template>
+        If you have all the approver roles and still you are not able to approve vendor, please check if vendor is marked as Inactive. Change it and you will be able to approve it.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHECK TO WHOM MY VENDOR IS ROUTED FOR APPROVAL</pattern>
+        <template>
+        Navigate to Main Menu > Vendors > Vendor Information > Add/Update > Vendor. Search for the required vendor and click View Approvals. You can see to whom voucher is routed for approval.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE I CAN CHECK MY SUPERVISOR DETAILS</pattern>
+        <template>
+        Navigation: | Main Menu > Travel and Expenses > Review Edit Profile | 1. Click Organizational Data | 2. Check Supervisor Information and the user ID present.
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN SUPPORT TEAM CANCEL THE PAYMENTS</pattern>
+        <template>
+        No support team cannot cancel the payment.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE CAN VIEW A VOUCHER PENDING FOR MY APPROVAL</pattern>
+        <template>
+        Main Menu > Accounts Payable > Vouchers > Approve > Approval Framework - Vouchers
+        </template>
+    </category>
+
+    <category>
+        <pattern>I RAN THE EXPEDITE REQUISITION PROCESS BUT PURCHASE ORDER PO IS NOT YET CREATED</pattern>
+        <template>
+        Purchase Order (PO) may not be created as they are stuck in staging tables. |1. Navigate to Main Menu > Purchasing > Purchase Orders > Stage/Source Requests > Sourcing Workbench and search for required Requisition ID.  |2. After selection, check the lines which are in Error and just click on Purge.|3. Now, expedite the requisition again and PO will be created successfully.|For any further clarification, Please raise a ticket by sending mail to amea.peoplesoftsupport@laureate.net or l3peoplesoft@laureate.net or frontline.team@laureate.net
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY VOUCHER IS PENDING FOR APPROVAL WHERE I CAN CHECK IT IS PENDING WITH WHOM</pattern>
+        <template>
+        Navigation: Main Menu > Accounts Payable > Add/Update > Regular Entry |1. Search for the required voucher.|2. Click Approval History. You will be able to see the person with whom the voucher is Pending.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY MY REQUISITION IS NOT ROUTED FOR APPROVAL</pattern>
+        <template>
+        Please check if you have submitted the requisition for approval. If requisition status is Open, this means you have not submitted the requisition for approval yet.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHY MY EXPENSE REPORTS ARE NOT RECONCILED</pattern>
+        <template>
+        If your expense reports are created without applying any cash advance and if they are paid, they cannot be reconciled.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ISSUE WITH MILEAGE CLAIM</pattern>
+        <template>
+        Your vehicle information may not be registered. Please register the information and try again.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ERROR WHILE SUBMITTING THE MILEAGE CLAIMS LIKE THE TRANSPORTATION ID COLUMN DROP DOWN CAN NOT BE BLANK</pattern>
+        <template>
+        Your vehicle information may not be registered. Please register the information and try again.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM NOT ABLE TO SEE VOUCHER EXCEPTION PAGE</pattern>
+        <template>
+        Please create an Online Security Request Form for the below role using following link: | https://psaccess.laureate.net/ |  Role Name: LI_AP_INQUIRY_GLB (AP Inquiry Role)
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW I CAN CHECK THE APPROVERS OF MY REQUISITION</pattern>
+        <template>
+        Navigation: Main Menu > eProcurement > Manage Requisitions|Search for the requisition, select View Approvals from the dropdown and click Go. You can see the approvers.|Navigation: Main Menu > Purchasing > Requisitions > Review Requisition Information > Requisitions|Search for the requisition, click Status tab and second icon View Approvals.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ERRROR OVER SHIPPED WHEN YOU ARE TRYING TO CREATE RECEIPT AGAIN WHILE CREATING RECEIPTS</pattern>
+        <template>
+        You are creating a receipt for a PO against which already receipts are created. POs are fully utilized by PO amount and Quantity.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACCOUNTING TEMPLATE IS NOT VALID ERROR WHILE CREATING A VOUCHER</pattern>
+        <template>
+        Error occures because this Template is not present in lookup. To correct this error, please click lookup and select the value from the list.
+        </template>
+    </category>
+
+    <category>
+        <pattern>UNABLE TO UPLOAD JOURNAL THROUGH SPREADSHEET</pattern>
+        <template>
+        Please use new template as your current template might have few errors.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW I CAN GIVE AUTHORITY TO SOMEONE TO ENTER EXPENSE REPORT ON BEHALF OF ME</pattern>
+        <template>
+        Navigation: Main Menu > Travel and Expense > Manage Expense Security > Authorize Expense Users | Click plus sign and enter the User ID.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO AUTHORIZE EXPENSE USER TO ENTER EXPENSE REPORT</pattern>
+        <template>
+        Navigation: Main Menu > Travel and Expense > Manage Expense Security > Authorize Expense Users |Click plus sign and enter the User ID.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO CHANGE THE CURRENCY ON THE REQUISITION</pattern>
+        <template>
+        Please change the currency while adding item or on the Review and Submit page before submitting the requisition for approval.
+        </template>
+    </category>
+
+</aiml>
