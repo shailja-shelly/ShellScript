@@ -3,6 +3,10 @@
 Installation :
 
 yum install epel-release
+     or
+wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+rpm -ivh epel-release-latest-7.noarch.rpm
+
 yum install openssl
 yum install ansible
 yum install python
@@ -188,9 +192,53 @@ notify and handlers is used in playbook to run dependent tasks
      service:
         name: nginx
         enabled: yes
-        state: restarted    
+        state: restarted 
+
+
+---Important module 
+1) ping
+2) copy
+3) yum
+4) systemctl
+5) service
+6) debug ( for using debug module you need to register a variable from tasks ,
+           and use this in another tasks using debug )   
 
 ansible-playbook notify.yaml		
+
+-- To see the documentation in ansible playbook 
+ansible-doc <module_name>
+e.g - ansible-doc ping
+
+-- use -b option while running ansible-playbook command , it will run the command with sudo privilage , if become_method is not specified in yaml 
+ eg: ansible-playbook test.yaml -b
+
+-- ansible-doc -l | grep service
+ this command search the available moduled that matched the searched word in cli
+
+-- Dry run using ansible playbook (--check option is used for dry run ) 
+ansible-playbook sample.yaml -b --check
+
+-- ansible vault - ansible vault has a feature to store sensitive information like password 
+   and keys in encrypted format rather than plan text format
+ To create vault file
+  ansible-vault create foo.yml
+  ansible-vault view foo.yml
+  ansible-playbook site.yml -ask-vault-pass ( use to decrypt the password and execute the commands on remote machine / use to retrive the sensitive information from the vault ) 
+
+-- different module in ansible
+
+1) setup module :
+  this module automatically called by ansible to gather useful information about remote hosts , that can be used in playbooks . 
+
+2) Ansible roles :
+   
+   Ansible roles is used to bundle same type of tasks together and call/invoke
+   them from a main module .
+   
+  ansible-playbook init role <role_name>
+  It will create a default role folder structure for you . and you can modify it according to   your needs . 
+
   
 
  
